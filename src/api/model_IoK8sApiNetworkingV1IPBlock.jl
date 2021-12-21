@@ -2,15 +2,15 @@
 # Do not modify this file directly. Modify the swagger specification instead.
 
 
-@doc raw"""IPBlock describes a particular CIDR (Ex. \&quot;192.168.1.1/24\&quot;) that is allowed to the pods matched by a NetworkPolicySpec&#39;s podSelector. The except entry describes CIDRs that should not be included within this rule.
+@doc raw"""IPBlock describes a particular CIDR (Ex. \&quot;192.168.1.1/24\&quot;,\&quot;2001:db9::/64\&quot;) that is allowed to the pods matched by a NetworkPolicySpec&#39;s podSelector. The except entry describes CIDRs that should not be included within this rule.
 
     IoK8sApiNetworkingV1IPBlock(;
         cidr=nothing,
         except=nothing,
     )
 
-    - cidr::String : CIDR is a string representing the IP Block Valid examples are \&quot;192.168.1.1/24\&quot;
-    - except::Vector{String} : Except is a slice of CIDRs that should not be included within an IP Block Valid examples are \&quot;192.168.1.1/24\&quot; Except values will be rejected if they are outside the CIDR range
+    - cidr::String : CIDR is a string representing the IP Block Valid examples are \&quot;192.168.1.1/24\&quot; or \&quot;2001:db9::/64\&quot;
+    - except::Vector{String} : Except is a slice of CIDRs that should not be included within an IP Block Valid examples are \&quot;192.168.1.1/24\&quot; or \&quot;2001:db9::/64\&quot; Except values will be rejected if they are outside the CIDR range
 """
 mutable struct IoK8sApiNetworkingV1IPBlock <: SwaggerModel
     cidr::Any # spec type: Union{ Nothing, String } # spec name: cidr

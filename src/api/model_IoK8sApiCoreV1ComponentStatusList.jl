@@ -2,7 +2,7 @@
 # Do not modify this file directly. Modify the swagger specification instead.
 
 
-@doc raw"""Status of all the conditions for the component as a list of ComponentStatus objects.
+@doc raw"""Status of all the conditions for the component as a list of ComponentStatus objects. Deprecated: This API is deprecated in v1.19+
 
     IoK8sApiCoreV1ComponentStatusList(;
         apiVersion=nothing,

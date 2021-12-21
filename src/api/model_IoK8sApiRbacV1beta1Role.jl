@@ -2,7 +2,7 @@
 # Do not modify this file directly. Modify the swagger specification instead.
 
 
-@doc raw"""Role is a namespaced, logical grouping of PolicyRules that can be referenced as a unit by a RoleBinding. Deprecated in v1.17 in favor of rbac.authorization.k8s.io/v1 Role, and will no longer be served in v1.20.
+@doc raw"""Role is a namespaced, logical grouping of PolicyRules that can be referenced as a unit by a RoleBinding. Deprecated in v1.17 in favor of rbac.authorization.k8s.io/v1 Role, and will no longer be served in v1.22.
 
     IoK8sApiRbacV1beta1Role(;
         apiVersion=nothing,

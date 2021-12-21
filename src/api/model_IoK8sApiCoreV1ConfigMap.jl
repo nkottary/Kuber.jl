@@ -8,6 +8,7 @@
         apiVersion=nothing,
         binaryData=nothing,
         data=nothing,
+        immutable=nothing,
         kind=nothing,
         metadata=nothing,
     )
@@ -15,6 +16,7 @@
     - apiVersion::String : APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
     - binaryData::Dict{String, Vector{UInt8}} : BinaryData contains the binary data. Each key must consist of alphanumeric characters, &#39;-&#39;, &#39;_&#39; or &#39;.&#39;. BinaryData can contain byte sequences that are not in the UTF-8 range. The keys stored in BinaryData must not overlap with the ones in the Data field, this is enforced during validation process. Using this field will require 1.10+ apiserver and kubelet.
     - data::Dict{String, String} : Data contains the configuration data. Each key must consist of alphanumeric characters, &#39;-&#39;, &#39;_&#39; or &#39;.&#39;. Values with non-UTF-8 byte sequences must use the BinaryData field. The keys stored in Data must not overlap with the keys in the BinaryData field, this is enforced during validation process.
+    - immutable::Bool : Immutable, if set to true, ensures that data stored in the ConfigMap cannot be updated (only object metadata can be modified). If not set to true, the field can be modified at any time. Defaulted to nil. This is a beta field enabled by ImmutableEphemeralVolumes feature gate.
     - kind::String : Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
     - metadata::IoK8sApimachineryPkgApisMetaV1ObjectMeta : Standard object&#39;s metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
 """
@@ -22,10 +24,11 @@ mutable struct IoK8sApiCoreV1ConfigMap <: SwaggerModel
     apiVersion::Any # spec type: Union{ Nothing, String } # spec name: apiVersion
     binaryData::Any # spec type: Union{ Nothing, Dict{String, Vector{UInt8}} } # spec name: binaryData
     data::Any # spec type: Union{ Nothing, Dict{String, String} } # spec name: data
+    immutable::Any # spec type: Union{ Nothing, Bool } # spec name: immutable
     kind::Any # spec type: Union{ Nothing, String } # spec name: kind
     metadata::Any # spec type: Union{ Nothing, IoK8sApimachineryPkgApisMetaV1ObjectMeta } # spec name: metadata
 
-    function IoK8sApiCoreV1ConfigMap(;apiVersion=nothing, binaryData=nothing, data=nothing, kind=nothing, metadata=nothing)
+    function IoK8sApiCoreV1ConfigMap(;apiVersion=nothing, binaryData=nothing, data=nothing, immutable=nothing, kind=nothing, metadata=nothing)
         o = new()
         validate_property(IoK8sApiCoreV1ConfigMap, Symbol("apiVersion"), apiVersion)
         setfield!(o, Symbol("apiVersion"), apiVersion)
@@ -33,6 +36,8 @@ mutable struct IoK8sApiCoreV1ConfigMap <: SwaggerModel
         setfield!(o, Symbol("binaryData"), binaryData)
         validate_property(IoK8sApiCoreV1ConfigMap, Symbol("data"), data)
         setfield!(o, Symbol("data"), data)
+        validate_property(IoK8sApiCoreV1ConfigMap, Symbol("immutable"), immutable)
+        setfield!(o, Symbol("immutable"), immutable)
         validate_property(IoK8sApiCoreV1ConfigMap, Symbol("kind"), kind)
         setfield!(o, Symbol("kind"), kind)
         validate_property(IoK8sApiCoreV1ConfigMap, Symbol("metadata"), metadata)
@@ -41,8 +46,8 @@ mutable struct IoK8sApiCoreV1ConfigMap <: SwaggerModel
     end
 end # type IoK8sApiCoreV1ConfigMap
 
-const _property_map_IoK8sApiCoreV1ConfigMap = Dict{Symbol,Symbol}(Symbol("apiVersion")=>Symbol("apiVersion"), Symbol("binaryData")=>Symbol("binaryData"), Symbol("data")=>Symbol("data"), Symbol("kind")=>Symbol("kind"), Symbol("metadata")=>Symbol("metadata"))
-const _property_types_IoK8sApiCoreV1ConfigMap = Dict{Symbol,String}(Symbol("apiVersion")=>"String", Symbol("binaryData")=>"Dict{String, Vector{UInt8}}", Symbol("data")=>"Dict{String, String}", Symbol("kind")=>"String", Symbol("metadata")=>"IoK8sApimachineryPkgApisMetaV1ObjectMeta")
+const _property_map_IoK8sApiCoreV1ConfigMap = Dict{Symbol,Symbol}(Symbol("apiVersion")=>Symbol("apiVersion"), Symbol("binaryData")=>Symbol("binaryData"), Symbol("data")=>Symbol("data"), Symbol("immutable")=>Symbol("immutable"), Symbol("kind")=>Symbol("kind"), Symbol("metadata")=>Symbol("metadata"))
+const _property_types_IoK8sApiCoreV1ConfigMap = Dict{Symbol,String}(Symbol("apiVersion")=>"String", Symbol("binaryData")=>"Dict{String, Vector{UInt8}}", Symbol("data")=>"Dict{String, String}", Symbol("immutable")=>"Bool", Symbol("kind")=>"String", Symbol("metadata")=>"IoK8sApimachineryPkgApisMetaV1ObjectMeta")
 Base.propertynames(::Type{ IoK8sApiCoreV1ConfigMap }) = collect(keys(_property_map_IoK8sApiCoreV1ConfigMap))
 Swagger.property_type(::Type{ IoK8sApiCoreV1ConfigMap }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_IoK8sApiCoreV1ConfigMap[name]))}
 Swagger.field_name(::Type{ IoK8sApiCoreV1ConfigMap }, property_name::Symbol) =  _property_map_IoK8sApiCoreV1ConfigMap[property_name]

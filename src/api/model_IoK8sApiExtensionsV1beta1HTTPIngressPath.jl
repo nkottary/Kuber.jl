@@ -2,32 +2,37 @@
 # Do not modify this file directly. Modify the swagger specification instead.
 
 
-@doc raw"""HTTPIngressPath associates a path regex with a backend. Incoming urls matching the path are forwarded to the backend.
+@doc raw"""HTTPIngressPath associates a path with a backend. Incoming urls matching the path are forwarded to the backend.
 
     IoK8sApiExtensionsV1beta1HTTPIngressPath(;
         backend=nothing,
         path=nothing,
+        pathType=nothing,
     )
 
     - backend::IoK8sApiExtensionsV1beta1IngressBackend : Backend defines the referenced service endpoint to which the traffic will be forwarded to.
-    - path::String : Path is an extended POSIX regex as defined by IEEE Std 1003.1, (i.e this follows the egrep/unix syntax, not the perl syntax) matched against the path of an incoming request. Currently it can contain characters disallowed from the conventional \&quot;path\&quot; part of a URL as defined by RFC 3986. Paths must begin with a &#39;/&#39;. If unspecified, the path defaults to a catch all sending traffic to the backend.
+    - path::String : Path is matched against the path of an incoming request. Currently it can contain characters disallowed from the conventional \&quot;path\&quot; part of a URL as defined by RFC 3986. Paths must begin with a &#39;/&#39;. When unspecified, all paths from incoming requests are matched.
+    - pathType::String : PathType determines the interpretation of the Path matching. PathType can be one of the following values: * Exact: Matches the URL path exactly. * Prefix: Matches based on a URL path prefix split by &#39;/&#39;. Matching is   done on a path element by element basis. A path element refers is the   list of labels in the path split by the &#39;/&#39; separator. A request is a   match for path p if every p is an element-wise prefix of p of the   request path. Note that if the last element of the path is a substring   of the last element in request path, it is not a match (e.g. /foo/bar   matches /foo/bar/baz, but does not match /foo/barbaz). * ImplementationSpecific: Interpretation of the Path matching is up to   the IngressClass. Implementations can treat this as a separate PathType   or treat it identically to Prefix or Exact path types. Implementations are required to support all path types. Defaults to ImplementationSpecific.
 """
 mutable struct IoK8sApiExtensionsV1beta1HTTPIngressPath <: SwaggerModel
     backend::Any # spec type: Union{ Nothing, IoK8sApiExtensionsV1beta1IngressBackend } # spec name: backend
     path::Any # spec type: Union{ Nothing, String } # spec name: path
+    pathType::Any # spec type: Union{ Nothing, String } # spec name: pathType
 
-    function IoK8sApiExtensionsV1beta1HTTPIngressPath(;backend=nothing, path=nothing)
+    function IoK8sApiExtensionsV1beta1HTTPIngressPath(;backend=nothing, path=nothing, pathType=nothing)
         o = new()
         validate_property(IoK8sApiExtensionsV1beta1HTTPIngressPath, Symbol("backend"), backend)
         setfield!(o, Symbol("backend"), backend)
         validate_property(IoK8sApiExtensionsV1beta1HTTPIngressPath, Symbol("path"), path)
         setfield!(o, Symbol("path"), path)
+        validate_property(IoK8sApiExtensionsV1beta1HTTPIngressPath, Symbol("pathType"), pathType)
+        setfield!(o, Symbol("pathType"), pathType)
         o
     end
 end # type IoK8sApiExtensionsV1beta1HTTPIngressPath
 
-const _property_map_IoK8sApiExtensionsV1beta1HTTPIngressPath = Dict{Symbol,Symbol}(Symbol("backend")=>Symbol("backend"), Symbol("path")=>Symbol("path"))
-const _property_types_IoK8sApiExtensionsV1beta1HTTPIngressPath = Dict{Symbol,String}(Symbol("backend")=>"IoK8sApiExtensionsV1beta1IngressBackend", Symbol("path")=>"String")
+const _property_map_IoK8sApiExtensionsV1beta1HTTPIngressPath = Dict{Symbol,Symbol}(Symbol("backend")=>Symbol("backend"), Symbol("path")=>Symbol("path"), Symbol("pathType")=>Symbol("pathType"))
+const _property_types_IoK8sApiExtensionsV1beta1HTTPIngressPath = Dict{Symbol,String}(Symbol("backend")=>"IoK8sApiExtensionsV1beta1IngressBackend", Symbol("path")=>"String", Symbol("pathType")=>"String")
 Base.propertynames(::Type{ IoK8sApiExtensionsV1beta1HTTPIngressPath }) = collect(keys(_property_map_IoK8sApiExtensionsV1beta1HTTPIngressPath))
 Swagger.property_type(::Type{ IoK8sApiExtensionsV1beta1HTTPIngressPath }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_IoK8sApiExtensionsV1beta1HTTPIngressPath[name]))}
 Swagger.field_name(::Type{ IoK8sApiExtensionsV1beta1HTTPIngressPath }, property_name::Symbol) =  _property_map_IoK8sApiExtensionsV1beta1HTTPIngressPath[property_name]

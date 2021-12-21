@@ -53,6 +53,7 @@ Swagger.property_type(::Type{ IoK8sApiCoreV1LimitRangeItem }, name::Symbol) = Un
 Swagger.field_name(::Type{ IoK8sApiCoreV1LimitRangeItem }, property_name::Symbol) =  _property_map_IoK8sApiCoreV1LimitRangeItem[property_name]
 
 function check_required(o::IoK8sApiCoreV1LimitRangeItem)
+    (getproperty(o, Symbol("type")) === nothing) && (return false)
     true
 end
 

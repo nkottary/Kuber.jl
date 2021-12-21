@@ -65,11 +65,10 @@ function createPolicyV1beta1PodSecurityPolicy(_api::PolicyV1beta1Api, response_s
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_deletePolicyV1beta1CollectionNamespacedPodDisruptionBudget(_api::PolicyV1beta1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_deletePolicyV1beta1CollectionNamespacedPodDisruptionBudget(_api::PolicyV1beta1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/apis/policy/v1beta1/namespaces/{namespace}/poddisruptionbudgets", ["BearerToken"], body)
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
-    Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
     Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
     Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
@@ -79,8 +78,8 @@ function _swaggerinternal_deletePolicyV1beta1CollectionNamespacedPodDisruptionBu
     Swagger.set_param(_ctx.query, "orphanDependents", orphanDependents)  # type Bool
     Swagger.set_param(_ctx.query, "propagationPolicy", propagationPolicy)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
-    Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
     Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
     return _ctx
@@ -91,7 +90,6 @@ end
 delete collection of PodDisruptionBudget
 Param: namespace::String (required)
 Param: pretty::String
-Param: allowWatchBookmarks::Bool
 Param: body::IoK8sApimachineryPkgApisMetaV1DeleteOptions
 Param: __continue__::String
 Param: dryRun::String
@@ -102,24 +100,23 @@ Param: limit::Int32
 Param: orphanDependents::Bool
 Param: propagationPolicy::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
-Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1Status
 """
-function deletePolicyV1beta1CollectionNamespacedPodDisruptionBudget(_api::PolicyV1beta1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deletePolicyV1beta1CollectionNamespacedPodDisruptionBudget(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deletePolicyV1beta1CollectionNamespacedPodDisruptionBudget(_api::PolicyV1beta1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deletePolicyV1beta1CollectionNamespacedPodDisruptionBudget(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function deletePolicyV1beta1CollectionNamespacedPodDisruptionBudget(_api::PolicyV1beta1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deletePolicyV1beta1CollectionNamespacedPodDisruptionBudget(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deletePolicyV1beta1CollectionNamespacedPodDisruptionBudget(_api::PolicyV1beta1Api, response_stream::Channel, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deletePolicyV1beta1CollectionNamespacedPodDisruptionBudget(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_deletePolicyV1beta1CollectionPodSecurityPolicy(_api::PolicyV1beta1Api; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_deletePolicyV1beta1CollectionPodSecurityPolicy(_api::PolicyV1beta1Api; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/apis/policy/v1beta1/podsecuritypolicies", ["BearerToken"], body)
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
-    Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
     Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
     Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
@@ -129,8 +126,8 @@ function _swaggerinternal_deletePolicyV1beta1CollectionPodSecurityPolicy(_api::P
     Swagger.set_param(_ctx.query, "orphanDependents", orphanDependents)  # type Bool
     Swagger.set_param(_ctx.query, "propagationPolicy", propagationPolicy)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
-    Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
     Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
     return _ctx
@@ -140,7 +137,6 @@ end
 
 delete collection of PodSecurityPolicy
 Param: pretty::String
-Param: allowWatchBookmarks::Bool
 Param: body::IoK8sApimachineryPkgApisMetaV1DeleteOptions
 Param: __continue__::String
 Param: dryRun::String
@@ -151,17 +147,17 @@ Param: limit::Int32
 Param: orphanDependents::Bool
 Param: propagationPolicy::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
-Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1Status
 """
-function deletePolicyV1beta1CollectionPodSecurityPolicy(_api::PolicyV1beta1Api; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deletePolicyV1beta1CollectionPodSecurityPolicy(_api; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deletePolicyV1beta1CollectionPodSecurityPolicy(_api::PolicyV1beta1Api; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deletePolicyV1beta1CollectionPodSecurityPolicy(_api; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function deletePolicyV1beta1CollectionPodSecurityPolicy(_api::PolicyV1beta1Api, response_stream::Channel; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deletePolicyV1beta1CollectionPodSecurityPolicy(_api; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deletePolicyV1beta1CollectionPodSecurityPolicy(_api::PolicyV1beta1Api, response_stream::Channel; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deletePolicyV1beta1CollectionPodSecurityPolicy(_api; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
@@ -203,7 +199,7 @@ function deletePolicyV1beta1NamespacedPodDisruptionBudget(_api::PolicyV1beta1Api
 end
 
 function _swaggerinternal_deletePolicyV1beta1PodSecurityPolicy(_api::PolicyV1beta1Api, name::String; pretty=nothing, body=nothing, dryRun=nothing, gracePeriodSeconds=nothing, orphanDependents=nothing, propagationPolicy=nothing, _mediaType=nothing)
-    _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/apis/policy/v1beta1/podsecuritypolicies/{name}", ["BearerToken"], body)
+    _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApiPolicyV1beta1PodSecurityPolicy, "/apis/policy/v1beta1/podsecuritypolicies/{name}", ["BearerToken"], body)
     Swagger.set_param(_ctx.path, "name", name)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
@@ -225,7 +221,7 @@ Param: dryRun::String
 Param: gracePeriodSeconds::Int32
 Param: orphanDependents::Bool
 Param: propagationPolicy::String
-Return: IoK8sApimachineryPkgApisMetaV1Status
+Return: IoK8sApiPolicyV1beta1PodSecurityPolicy
 """
 function deletePolicyV1beta1PodSecurityPolicy(_api::PolicyV1beta1Api, name::String; pretty=nothing, body=nothing, dryRun=nothing, gracePeriodSeconds=nothing, orphanDependents=nothing, propagationPolicy=nothing, _mediaType=nothing)
     _ctx = _swaggerinternal_deletePolicyV1beta1PodSecurityPolicy(_api, name; pretty=pretty, body=body, dryRun=dryRun, gracePeriodSeconds=gracePeriodSeconds, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, _mediaType=_mediaType)
@@ -259,7 +255,7 @@ function getPolicyV1beta1APIResources(_api::PolicyV1beta1Api, response_stream::C
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listPolicyV1beta1NamespacedPodDisruptionBudget(_api::PolicyV1beta1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listPolicyV1beta1NamespacedPodDisruptionBudget(_api::PolicyV1beta1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiPolicyV1beta1PodDisruptionBudgetList, "/apis/policy/v1beta1/namespaces/{namespace}/poddisruptionbudgets", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
@@ -269,6 +265,7 @@ function _swaggerinternal_listPolicyV1beta1NamespacedPodDisruptionBudget(_api::P
     Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -287,21 +284,22 @@ Param: fieldSelector::String
 Param: labelSelector::String
 Param: limit::Int32
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiPolicyV1beta1PodDisruptionBudgetList
 """
-function listPolicyV1beta1NamespacedPodDisruptionBudget(_api::PolicyV1beta1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listPolicyV1beta1NamespacedPodDisruptionBudget(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listPolicyV1beta1NamespacedPodDisruptionBudget(_api::PolicyV1beta1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listPolicyV1beta1NamespacedPodDisruptionBudget(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listPolicyV1beta1NamespacedPodDisruptionBudget(_api::PolicyV1beta1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listPolicyV1beta1NamespacedPodDisruptionBudget(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listPolicyV1beta1NamespacedPodDisruptionBudget(_api::PolicyV1beta1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listPolicyV1beta1NamespacedPodDisruptionBudget(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listPolicyV1beta1PodDisruptionBudgetForAllNamespaces(_api::PolicyV1beta1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listPolicyV1beta1PodDisruptionBudgetForAllNamespaces(_api::PolicyV1beta1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiPolicyV1beta1PodDisruptionBudgetList, "/apis/policy/v1beta1/poddisruptionbudgets", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -310,6 +308,7 @@ function _swaggerinternal_listPolicyV1beta1PodDisruptionBudgetForAllNamespaces(_
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -327,21 +326,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiPolicyV1beta1PodDisruptionBudgetList
 """
-function listPolicyV1beta1PodDisruptionBudgetForAllNamespaces(_api::PolicyV1beta1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listPolicyV1beta1PodDisruptionBudgetForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listPolicyV1beta1PodDisruptionBudgetForAllNamespaces(_api::PolicyV1beta1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listPolicyV1beta1PodDisruptionBudgetForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listPolicyV1beta1PodDisruptionBudgetForAllNamespaces(_api::PolicyV1beta1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listPolicyV1beta1PodDisruptionBudgetForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listPolicyV1beta1PodDisruptionBudgetForAllNamespaces(_api::PolicyV1beta1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listPolicyV1beta1PodDisruptionBudgetForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listPolicyV1beta1PodSecurityPolicy(_api::PolicyV1beta1Api; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listPolicyV1beta1PodSecurityPolicy(_api::PolicyV1beta1Api; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiPolicyV1beta1PodSecurityPolicyList, "/apis/policy/v1beta1/podsecuritypolicies", ["BearerToken"])
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
@@ -350,6 +350,7 @@ function _swaggerinternal_listPolicyV1beta1PodSecurityPolicy(_api::PolicyV1beta1
     Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -367,17 +368,18 @@ Param: fieldSelector::String
 Param: labelSelector::String
 Param: limit::Int32
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiPolicyV1beta1PodSecurityPolicyList
 """
-function listPolicyV1beta1PodSecurityPolicy(_api::PolicyV1beta1Api; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listPolicyV1beta1PodSecurityPolicy(_api; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listPolicyV1beta1PodSecurityPolicy(_api::PolicyV1beta1Api; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listPolicyV1beta1PodSecurityPolicy(_api; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listPolicyV1beta1PodSecurityPolicy(_api::PolicyV1beta1Api, response_stream::Channel; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listPolicyV1beta1PodSecurityPolicy(_api; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listPolicyV1beta1PodSecurityPolicy(_api::PolicyV1beta1Api, response_stream::Channel; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listPolicyV1beta1PodSecurityPolicy(_api; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
@@ -671,7 +673,7 @@ function replacePolicyV1beta1PodSecurityPolicy(_api::PolicyV1beta1Api, response_
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchPolicyV1beta1NamespacedPodDisruptionBudget(_api::PolicyV1beta1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchPolicyV1beta1NamespacedPodDisruptionBudget(_api::PolicyV1beta1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/apis/policy/v1beta1/watch/namespaces/{namespace}/poddisruptionbudgets/{name}", ["BearerToken"])
     Swagger.set_param(_ctx.path, "name", name)  # type String
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
@@ -682,6 +684,7 @@ function _swaggerinternal_watchPolicyV1beta1NamespacedPodDisruptionBudget(_api::
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -701,21 +704,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchPolicyV1beta1NamespacedPodDisruptionBudget(_api::PolicyV1beta1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchPolicyV1beta1NamespacedPodDisruptionBudget(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchPolicyV1beta1NamespacedPodDisruptionBudget(_api::PolicyV1beta1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchPolicyV1beta1NamespacedPodDisruptionBudget(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchPolicyV1beta1NamespacedPodDisruptionBudget(_api::PolicyV1beta1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchPolicyV1beta1NamespacedPodDisruptionBudget(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchPolicyV1beta1NamespacedPodDisruptionBudget(_api::PolicyV1beta1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchPolicyV1beta1NamespacedPodDisruptionBudget(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchPolicyV1beta1NamespacedPodDisruptionBudgetList(_api::PolicyV1beta1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchPolicyV1beta1NamespacedPodDisruptionBudgetList(_api::PolicyV1beta1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/apis/policy/v1beta1/watch/namespaces/{namespace}/poddisruptionbudgets", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
@@ -725,6 +729,7 @@ function _swaggerinternal_watchPolicyV1beta1NamespacedPodDisruptionBudgetList(_a
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -743,21 +748,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchPolicyV1beta1NamespacedPodDisruptionBudgetList(_api::PolicyV1beta1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchPolicyV1beta1NamespacedPodDisruptionBudgetList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchPolicyV1beta1NamespacedPodDisruptionBudgetList(_api::PolicyV1beta1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchPolicyV1beta1NamespacedPodDisruptionBudgetList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchPolicyV1beta1NamespacedPodDisruptionBudgetList(_api::PolicyV1beta1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchPolicyV1beta1NamespacedPodDisruptionBudgetList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchPolicyV1beta1NamespacedPodDisruptionBudgetList(_api::PolicyV1beta1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchPolicyV1beta1NamespacedPodDisruptionBudgetList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchPolicyV1beta1PodDisruptionBudgetListForAllNamespaces(_api::PolicyV1beta1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchPolicyV1beta1PodDisruptionBudgetListForAllNamespaces(_api::PolicyV1beta1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/apis/policy/v1beta1/watch/poddisruptionbudgets", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -766,6 +772,7 @@ function _swaggerinternal_watchPolicyV1beta1PodDisruptionBudgetListForAllNamespa
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -783,21 +790,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchPolicyV1beta1PodDisruptionBudgetListForAllNamespaces(_api::PolicyV1beta1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchPolicyV1beta1PodDisruptionBudgetListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchPolicyV1beta1PodDisruptionBudgetListForAllNamespaces(_api::PolicyV1beta1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchPolicyV1beta1PodDisruptionBudgetListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchPolicyV1beta1PodDisruptionBudgetListForAllNamespaces(_api::PolicyV1beta1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchPolicyV1beta1PodDisruptionBudgetListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchPolicyV1beta1PodDisruptionBudgetListForAllNamespaces(_api::PolicyV1beta1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchPolicyV1beta1PodDisruptionBudgetListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchPolicyV1beta1PodSecurityPolicy(_api::PolicyV1beta1Api, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchPolicyV1beta1PodSecurityPolicy(_api::PolicyV1beta1Api, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/apis/policy/v1beta1/watch/podsecuritypolicies/{name}", ["BearerToken"])
     Swagger.set_param(_ctx.path, "name", name)  # type String
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
@@ -807,6 +815,7 @@ function _swaggerinternal_watchPolicyV1beta1PodSecurityPolicy(_api::PolicyV1beta
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -825,21 +834,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchPolicyV1beta1PodSecurityPolicy(_api::PolicyV1beta1Api, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchPolicyV1beta1PodSecurityPolicy(_api, name; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchPolicyV1beta1PodSecurityPolicy(_api::PolicyV1beta1Api, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchPolicyV1beta1PodSecurityPolicy(_api, name; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchPolicyV1beta1PodSecurityPolicy(_api::PolicyV1beta1Api, response_stream::Channel, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchPolicyV1beta1PodSecurityPolicy(_api, name; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchPolicyV1beta1PodSecurityPolicy(_api::PolicyV1beta1Api, response_stream::Channel, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchPolicyV1beta1PodSecurityPolicy(_api, name; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchPolicyV1beta1PodSecurityPolicyList(_api::PolicyV1beta1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchPolicyV1beta1PodSecurityPolicyList(_api::PolicyV1beta1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/apis/policy/v1beta1/watch/podsecuritypolicies", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -848,6 +858,7 @@ function _swaggerinternal_watchPolicyV1beta1PodSecurityPolicyList(_api::PolicyV1
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -865,17 +876,18 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchPolicyV1beta1PodSecurityPolicyList(_api::PolicyV1beta1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchPolicyV1beta1PodSecurityPolicyList(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchPolicyV1beta1PodSecurityPolicyList(_api::PolicyV1beta1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchPolicyV1beta1PodSecurityPolicyList(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchPolicyV1beta1PodSecurityPolicyList(_api::PolicyV1beta1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchPolicyV1beta1PodSecurityPolicyList(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchPolicyV1beta1PodSecurityPolicyList(_api::PolicyV1beta1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchPolicyV1beta1PodSecurityPolicyList(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 

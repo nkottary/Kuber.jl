@@ -5,25 +5,30 @@
 @doc raw"""HorizontalPodAutoscalerSpec describes the desired functionality of the HorizontalPodAutoscaler.
 
     IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerSpec(;
+        behavior=nothing,
         maxReplicas=nothing,
         metrics=nothing,
         minReplicas=nothing,
         scaleTargetRef=nothing,
     )
 
+    - behavior::IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerBehavior : behavior configures the scaling behavior of the target in both Up and Down directions (scaleUp and scaleDown fields respectively). If not set, the default HPAScalingRules for scale up and scale down are used.
     - maxReplicas::Int32 : maxReplicas is the upper limit for the number of replicas to which the autoscaler can scale up. It cannot be less that minReplicas.
     - metrics::Vector{IoK8sApiAutoscalingV2beta2MetricSpec} : metrics contains the specifications for which to use to calculate the desired replica count (the maximum replica count across all metrics will be used).  The desired replica count is calculated multiplying the ratio between the target value and the current value by the current number of pods.  Ergo, metrics used must decrease as the pod count is increased, and vice-versa.  See the individual metric source types for more information about how each type of metric must respond. If not set, the default metric will be set to 80% average CPU utilization.
     - minReplicas::Int32 : minReplicas is the lower limit for the number of replicas to which the autoscaler can scale down.  It defaults to 1 pod.  minReplicas is allowed to be 0 if the alpha feature gate HPAScaleToZero is enabled and at least one Object or External metric is configured.  Scaling is active as long as at least one metric value is available.
     - scaleTargetRef::IoK8sApiAutoscalingV2beta2CrossVersionObjectReference : scaleTargetRef points to the target resource to scale, and is used to the pods for which metrics should be collected, as well as to actually change the replica count.
 """
 mutable struct IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerSpec <: SwaggerModel
+    behavior::Any # spec type: Union{ Nothing, IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerBehavior } # spec name: behavior
     maxReplicas::Any # spec type: Union{ Nothing, Int32 } # spec name: maxReplicas
     metrics::Any # spec type: Union{ Nothing, Vector{IoK8sApiAutoscalingV2beta2MetricSpec} } # spec name: metrics
     minReplicas::Any # spec type: Union{ Nothing, Int32 } # spec name: minReplicas
     scaleTargetRef::Any # spec type: Union{ Nothing, IoK8sApiAutoscalingV2beta2CrossVersionObjectReference } # spec name: scaleTargetRef
 
-    function IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerSpec(;maxReplicas=nothing, metrics=nothing, minReplicas=nothing, scaleTargetRef=nothing)
+    function IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerSpec(;behavior=nothing, maxReplicas=nothing, metrics=nothing, minReplicas=nothing, scaleTargetRef=nothing)
         o = new()
+        validate_property(IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerSpec, Symbol("behavior"), behavior)
+        setfield!(o, Symbol("behavior"), behavior)
         validate_property(IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerSpec, Symbol("maxReplicas"), maxReplicas)
         setfield!(o, Symbol("maxReplicas"), maxReplicas)
         validate_property(IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerSpec, Symbol("metrics"), metrics)
@@ -36,8 +41,8 @@ mutable struct IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerSpec <: SwaggerM
     end
 end # type IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerSpec
 
-const _property_map_IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerSpec = Dict{Symbol,Symbol}(Symbol("maxReplicas")=>Symbol("maxReplicas"), Symbol("metrics")=>Symbol("metrics"), Symbol("minReplicas")=>Symbol("minReplicas"), Symbol("scaleTargetRef")=>Symbol("scaleTargetRef"))
-const _property_types_IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerSpec = Dict{Symbol,String}(Symbol("maxReplicas")=>"Int32", Symbol("metrics")=>"Vector{IoK8sApiAutoscalingV2beta2MetricSpec}", Symbol("minReplicas")=>"Int32", Symbol("scaleTargetRef")=>"IoK8sApiAutoscalingV2beta2CrossVersionObjectReference")
+const _property_map_IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerSpec = Dict{Symbol,Symbol}(Symbol("behavior")=>Symbol("behavior"), Symbol("maxReplicas")=>Symbol("maxReplicas"), Symbol("metrics")=>Symbol("metrics"), Symbol("minReplicas")=>Symbol("minReplicas"), Symbol("scaleTargetRef")=>Symbol("scaleTargetRef"))
+const _property_types_IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerSpec = Dict{Symbol,String}(Symbol("behavior")=>"IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerBehavior", Symbol("maxReplicas")=>"Int32", Symbol("metrics")=>"Vector{IoK8sApiAutoscalingV2beta2MetricSpec}", Symbol("minReplicas")=>"Int32", Symbol("scaleTargetRef")=>"IoK8sApiAutoscalingV2beta2CrossVersionObjectReference")
 Base.propertynames(::Type{ IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerSpec }) = collect(keys(_property_map_IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerSpec))
 Swagger.property_type(::Type{ IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerSpec }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerSpec[name]))}
 Swagger.field_name(::Type{ IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerSpec }, property_name::Symbol) =  _property_map_IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerSpec[property_name]

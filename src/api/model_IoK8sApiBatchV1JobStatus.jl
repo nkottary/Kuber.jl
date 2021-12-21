@@ -14,8 +14,8 @@
     )
 
     - active::Int32 : The number of actively running pods.
-    - completionTime::IoK8sApimachineryPkgApisMetaV1Time : Represents time when the job was completed. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC.
-    - conditions::Vector{IoK8sApiBatchV1JobCondition} : The latest available observations of an object&#39;s current state. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
+    - completionTime::IoK8sApimachineryPkgApisMetaV1Time : Represents time when the job was completed. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. The completion time is only set when the job finishes successfully.
+    - conditions::Vector{IoK8sApiBatchV1JobCondition} : The latest available observations of an object&#39;s current state. When a job fails, one of the conditions will have type &#x3D;&#x3D; \&quot;Failed\&quot;. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
     - failed::Int32 : The number of pods which reached phase Failed.
     - startTime::IoK8sApimachineryPkgApisMetaV1Time : Represents time when the job was acknowledged by the job controller. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC.
     - succeeded::Int32 : The number of pods which reached phase Succeeded.

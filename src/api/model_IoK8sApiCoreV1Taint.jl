@@ -14,7 +14,7 @@
     - effect::String : Required. The effect of the taint on pods that do not tolerate the taint. Valid effects are NoSchedule, PreferNoSchedule and NoExecute.
     - key::String : Required. The taint key to be applied to a node.
     - timeAdded::IoK8sApimachineryPkgApisMetaV1Time : TimeAdded represents the time at which the taint was added. It is only written for NoExecute taints.
-    - value::String : Required. The taint value corresponding to the taint key.
+    - value::String : The taint value corresponding to the taint key.
 """
 mutable struct IoK8sApiCoreV1Taint <: SwaggerModel
     effect::Any # spec type: Union{ Nothing, String } # spec name: effect

@@ -12,7 +12,7 @@
     )
 
     - configMapKeyRef::IoK8sApiCoreV1ConfigMapKeySelector : Selects a key of a ConfigMap.
-    - fieldRef::IoK8sApiCoreV1ObjectFieldSelector : Selects a field of the pod: supports metadata.name, metadata.namespace, metadata.labels, metadata.annotations, spec.nodeName, spec.serviceAccountName, status.hostIP, status.podIP, status.podIPs.
+    - fieldRef::IoK8sApiCoreV1ObjectFieldSelector : Selects a field of the pod: supports metadata.name, metadata.namespace, &#x60;metadata.labels[&#39;&lt;KEY&gt;&#39;]&#x60;, &#x60;metadata.annotations[&#39;&lt;KEY&gt;&#39;]&#x60;, spec.nodeName, spec.serviceAccountName, status.hostIP, status.podIP, status.podIPs.
     - resourceFieldRef::IoK8sApiCoreV1ResourceFieldSelector : Selects a resource of the container: only resources limits and requests (limits.cpu, limits.memory, limits.ephemeral-storage, requests.cpu, requests.memory and requests.ephemeral-storage) are currently supported.
     - secretKeyRef::IoK8sApiCoreV1SecretKeySelector : Selects a key of a secret in the pod&#39;s namespace
 """

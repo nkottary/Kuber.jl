@@ -1988,11 +1988,10 @@ function createCoreV1PersistentVolume(_api::CoreV1Api, response_stream::Channel,
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_deleteCoreV1CollectionNamespacedConfigMap(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_deleteCoreV1CollectionNamespacedConfigMap(_api::CoreV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/api/v1/namespaces/{namespace}/configmaps", ["BearerToken"], body)
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
-    Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
     Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
     Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
@@ -2002,8 +2001,8 @@ function _swaggerinternal_deleteCoreV1CollectionNamespacedConfigMap(_api::CoreV1
     Swagger.set_param(_ctx.query, "orphanDependents", orphanDependents)  # type Bool
     Swagger.set_param(_ctx.query, "propagationPolicy", propagationPolicy)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
-    Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
     Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
     return _ctx
@@ -2014,7 +2013,6 @@ end
 delete collection of ConfigMap
 Param: namespace::String (required)
 Param: pretty::String
-Param: allowWatchBookmarks::Bool
 Param: body::IoK8sApimachineryPkgApisMetaV1DeleteOptions
 Param: __continue__::String
 Param: dryRun::String
@@ -2025,25 +2023,24 @@ Param: limit::Int32
 Param: orphanDependents::Bool
 Param: propagationPolicy::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
-Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1Status
 """
-function deleteCoreV1CollectionNamespacedConfigMap(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedConfigMap(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionNamespacedConfigMap(_api::CoreV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedConfigMap(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function deleteCoreV1CollectionNamespacedConfigMap(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedConfigMap(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionNamespacedConfigMap(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedConfigMap(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_deleteCoreV1CollectionNamespacedEndpoints(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_deleteCoreV1CollectionNamespacedEndpoints(_api::CoreV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/api/v1/namespaces/{namespace}/endpoints", ["BearerToken"], body)
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
-    Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
     Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
     Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
@@ -2053,8 +2050,8 @@ function _swaggerinternal_deleteCoreV1CollectionNamespacedEndpoints(_api::CoreV1
     Swagger.set_param(_ctx.query, "orphanDependents", orphanDependents)  # type Bool
     Swagger.set_param(_ctx.query, "propagationPolicy", propagationPolicy)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
-    Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
     Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
     return _ctx
@@ -2065,7 +2062,6 @@ end
 delete collection of Endpoints
 Param: namespace::String (required)
 Param: pretty::String
-Param: allowWatchBookmarks::Bool
 Param: body::IoK8sApimachineryPkgApisMetaV1DeleteOptions
 Param: __continue__::String
 Param: dryRun::String
@@ -2076,25 +2072,24 @@ Param: limit::Int32
 Param: orphanDependents::Bool
 Param: propagationPolicy::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
-Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1Status
 """
-function deleteCoreV1CollectionNamespacedEndpoints(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedEndpoints(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionNamespacedEndpoints(_api::CoreV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedEndpoints(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function deleteCoreV1CollectionNamespacedEndpoints(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedEndpoints(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionNamespacedEndpoints(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedEndpoints(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_deleteCoreV1CollectionNamespacedEvent(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_deleteCoreV1CollectionNamespacedEvent(_api::CoreV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/api/v1/namespaces/{namespace}/events", ["BearerToken"], body)
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
-    Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
     Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
     Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
@@ -2104,8 +2099,8 @@ function _swaggerinternal_deleteCoreV1CollectionNamespacedEvent(_api::CoreV1Api,
     Swagger.set_param(_ctx.query, "orphanDependents", orphanDependents)  # type Bool
     Swagger.set_param(_ctx.query, "propagationPolicy", propagationPolicy)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
-    Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
     Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
     return _ctx
@@ -2116,7 +2111,6 @@ end
 delete collection of Event
 Param: namespace::String (required)
 Param: pretty::String
-Param: allowWatchBookmarks::Bool
 Param: body::IoK8sApimachineryPkgApisMetaV1DeleteOptions
 Param: __continue__::String
 Param: dryRun::String
@@ -2127,25 +2121,24 @@ Param: limit::Int32
 Param: orphanDependents::Bool
 Param: propagationPolicy::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
-Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1Status
 """
-function deleteCoreV1CollectionNamespacedEvent(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedEvent(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionNamespacedEvent(_api::CoreV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedEvent(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function deleteCoreV1CollectionNamespacedEvent(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedEvent(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionNamespacedEvent(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedEvent(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_deleteCoreV1CollectionNamespacedLimitRange(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_deleteCoreV1CollectionNamespacedLimitRange(_api::CoreV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/api/v1/namespaces/{namespace}/limitranges", ["BearerToken"], body)
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
-    Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
     Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
     Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
@@ -2155,8 +2148,8 @@ function _swaggerinternal_deleteCoreV1CollectionNamespacedLimitRange(_api::CoreV
     Swagger.set_param(_ctx.query, "orphanDependents", orphanDependents)  # type Bool
     Swagger.set_param(_ctx.query, "propagationPolicy", propagationPolicy)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
-    Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
     Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
     return _ctx
@@ -2167,7 +2160,6 @@ end
 delete collection of LimitRange
 Param: namespace::String (required)
 Param: pretty::String
-Param: allowWatchBookmarks::Bool
 Param: body::IoK8sApimachineryPkgApisMetaV1DeleteOptions
 Param: __continue__::String
 Param: dryRun::String
@@ -2178,25 +2170,24 @@ Param: limit::Int32
 Param: orphanDependents::Bool
 Param: propagationPolicy::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
-Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1Status
 """
-function deleteCoreV1CollectionNamespacedLimitRange(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedLimitRange(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionNamespacedLimitRange(_api::CoreV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedLimitRange(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function deleteCoreV1CollectionNamespacedLimitRange(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedLimitRange(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionNamespacedLimitRange(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedLimitRange(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_deleteCoreV1CollectionNamespacedPersistentVolumeClaim(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_deleteCoreV1CollectionNamespacedPersistentVolumeClaim(_api::CoreV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/api/v1/namespaces/{namespace}/persistentvolumeclaims", ["BearerToken"], body)
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
-    Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
     Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
     Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
@@ -2206,8 +2197,8 @@ function _swaggerinternal_deleteCoreV1CollectionNamespacedPersistentVolumeClaim(
     Swagger.set_param(_ctx.query, "orphanDependents", orphanDependents)  # type Bool
     Swagger.set_param(_ctx.query, "propagationPolicy", propagationPolicy)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
-    Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
     Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
     return _ctx
@@ -2218,7 +2209,6 @@ end
 delete collection of PersistentVolumeClaim
 Param: namespace::String (required)
 Param: pretty::String
-Param: allowWatchBookmarks::Bool
 Param: body::IoK8sApimachineryPkgApisMetaV1DeleteOptions
 Param: __continue__::String
 Param: dryRun::String
@@ -2229,25 +2219,24 @@ Param: limit::Int32
 Param: orphanDependents::Bool
 Param: propagationPolicy::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
-Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1Status
 """
-function deleteCoreV1CollectionNamespacedPersistentVolumeClaim(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedPersistentVolumeClaim(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionNamespacedPersistentVolumeClaim(_api::CoreV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedPersistentVolumeClaim(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function deleteCoreV1CollectionNamespacedPersistentVolumeClaim(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedPersistentVolumeClaim(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionNamespacedPersistentVolumeClaim(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedPersistentVolumeClaim(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_deleteCoreV1CollectionNamespacedPod(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_deleteCoreV1CollectionNamespacedPod(_api::CoreV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/api/v1/namespaces/{namespace}/pods", ["BearerToken"], body)
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
-    Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
     Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
     Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
@@ -2257,8 +2246,8 @@ function _swaggerinternal_deleteCoreV1CollectionNamespacedPod(_api::CoreV1Api, n
     Swagger.set_param(_ctx.query, "orphanDependents", orphanDependents)  # type Bool
     Swagger.set_param(_ctx.query, "propagationPolicy", propagationPolicy)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
-    Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
     Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
     return _ctx
@@ -2269,7 +2258,6 @@ end
 delete collection of Pod
 Param: namespace::String (required)
 Param: pretty::String
-Param: allowWatchBookmarks::Bool
 Param: body::IoK8sApimachineryPkgApisMetaV1DeleteOptions
 Param: __continue__::String
 Param: dryRun::String
@@ -2280,25 +2268,24 @@ Param: limit::Int32
 Param: orphanDependents::Bool
 Param: propagationPolicy::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
-Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1Status
 """
-function deleteCoreV1CollectionNamespacedPod(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedPod(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionNamespacedPod(_api::CoreV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedPod(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function deleteCoreV1CollectionNamespacedPod(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedPod(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionNamespacedPod(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedPod(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_deleteCoreV1CollectionNamespacedPodTemplate(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_deleteCoreV1CollectionNamespacedPodTemplate(_api::CoreV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/api/v1/namespaces/{namespace}/podtemplates", ["BearerToken"], body)
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
-    Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
     Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
     Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
@@ -2308,8 +2295,8 @@ function _swaggerinternal_deleteCoreV1CollectionNamespacedPodTemplate(_api::Core
     Swagger.set_param(_ctx.query, "orphanDependents", orphanDependents)  # type Bool
     Swagger.set_param(_ctx.query, "propagationPolicy", propagationPolicy)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
-    Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
     Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
     return _ctx
@@ -2320,7 +2307,6 @@ end
 delete collection of PodTemplate
 Param: namespace::String (required)
 Param: pretty::String
-Param: allowWatchBookmarks::Bool
 Param: body::IoK8sApimachineryPkgApisMetaV1DeleteOptions
 Param: __continue__::String
 Param: dryRun::String
@@ -2331,25 +2317,24 @@ Param: limit::Int32
 Param: orphanDependents::Bool
 Param: propagationPolicy::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
-Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1Status
 """
-function deleteCoreV1CollectionNamespacedPodTemplate(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedPodTemplate(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionNamespacedPodTemplate(_api::CoreV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedPodTemplate(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function deleteCoreV1CollectionNamespacedPodTemplate(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedPodTemplate(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionNamespacedPodTemplate(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedPodTemplate(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_deleteCoreV1CollectionNamespacedReplicationController(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_deleteCoreV1CollectionNamespacedReplicationController(_api::CoreV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/api/v1/namespaces/{namespace}/replicationcontrollers", ["BearerToken"], body)
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
-    Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
     Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
     Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
@@ -2359,8 +2344,8 @@ function _swaggerinternal_deleteCoreV1CollectionNamespacedReplicationController(
     Swagger.set_param(_ctx.query, "orphanDependents", orphanDependents)  # type Bool
     Swagger.set_param(_ctx.query, "propagationPolicy", propagationPolicy)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
-    Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
     Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
     return _ctx
@@ -2371,7 +2356,6 @@ end
 delete collection of ReplicationController
 Param: namespace::String (required)
 Param: pretty::String
-Param: allowWatchBookmarks::Bool
 Param: body::IoK8sApimachineryPkgApisMetaV1DeleteOptions
 Param: __continue__::String
 Param: dryRun::String
@@ -2382,25 +2366,24 @@ Param: limit::Int32
 Param: orphanDependents::Bool
 Param: propagationPolicy::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
-Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1Status
 """
-function deleteCoreV1CollectionNamespacedReplicationController(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedReplicationController(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionNamespacedReplicationController(_api::CoreV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedReplicationController(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function deleteCoreV1CollectionNamespacedReplicationController(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedReplicationController(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionNamespacedReplicationController(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedReplicationController(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_deleteCoreV1CollectionNamespacedResourceQuota(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_deleteCoreV1CollectionNamespacedResourceQuota(_api::CoreV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/api/v1/namespaces/{namespace}/resourcequotas", ["BearerToken"], body)
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
-    Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
     Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
     Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
@@ -2410,8 +2393,8 @@ function _swaggerinternal_deleteCoreV1CollectionNamespacedResourceQuota(_api::Co
     Swagger.set_param(_ctx.query, "orphanDependents", orphanDependents)  # type Bool
     Swagger.set_param(_ctx.query, "propagationPolicy", propagationPolicy)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
-    Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
     Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
     return _ctx
@@ -2422,7 +2405,6 @@ end
 delete collection of ResourceQuota
 Param: namespace::String (required)
 Param: pretty::String
-Param: allowWatchBookmarks::Bool
 Param: body::IoK8sApimachineryPkgApisMetaV1DeleteOptions
 Param: __continue__::String
 Param: dryRun::String
@@ -2433,25 +2415,24 @@ Param: limit::Int32
 Param: orphanDependents::Bool
 Param: propagationPolicy::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
-Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1Status
 """
-function deleteCoreV1CollectionNamespacedResourceQuota(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedResourceQuota(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionNamespacedResourceQuota(_api::CoreV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedResourceQuota(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function deleteCoreV1CollectionNamespacedResourceQuota(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedResourceQuota(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionNamespacedResourceQuota(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedResourceQuota(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_deleteCoreV1CollectionNamespacedSecret(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_deleteCoreV1CollectionNamespacedSecret(_api::CoreV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/api/v1/namespaces/{namespace}/secrets", ["BearerToken"], body)
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
-    Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
     Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
     Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
@@ -2461,8 +2442,8 @@ function _swaggerinternal_deleteCoreV1CollectionNamespacedSecret(_api::CoreV1Api
     Swagger.set_param(_ctx.query, "orphanDependents", orphanDependents)  # type Bool
     Swagger.set_param(_ctx.query, "propagationPolicy", propagationPolicy)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
-    Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
     Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
     return _ctx
@@ -2473,7 +2454,6 @@ end
 delete collection of Secret
 Param: namespace::String (required)
 Param: pretty::String
-Param: allowWatchBookmarks::Bool
 Param: body::IoK8sApimachineryPkgApisMetaV1DeleteOptions
 Param: __continue__::String
 Param: dryRun::String
@@ -2484,25 +2464,24 @@ Param: limit::Int32
 Param: orphanDependents::Bool
 Param: propagationPolicy::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
-Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1Status
 """
-function deleteCoreV1CollectionNamespacedSecret(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedSecret(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionNamespacedSecret(_api::CoreV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedSecret(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function deleteCoreV1CollectionNamespacedSecret(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedSecret(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionNamespacedSecret(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedSecret(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_deleteCoreV1CollectionNamespacedServiceAccount(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_deleteCoreV1CollectionNamespacedServiceAccount(_api::CoreV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/api/v1/namespaces/{namespace}/serviceaccounts", ["BearerToken"], body)
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
-    Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
     Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
     Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
@@ -2512,8 +2491,8 @@ function _swaggerinternal_deleteCoreV1CollectionNamespacedServiceAccount(_api::C
     Swagger.set_param(_ctx.query, "orphanDependents", orphanDependents)  # type Bool
     Swagger.set_param(_ctx.query, "propagationPolicy", propagationPolicy)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
-    Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
     Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
     return _ctx
@@ -2524,7 +2503,6 @@ end
 delete collection of ServiceAccount
 Param: namespace::String (required)
 Param: pretty::String
-Param: allowWatchBookmarks::Bool
 Param: body::IoK8sApimachineryPkgApisMetaV1DeleteOptions
 Param: __continue__::String
 Param: dryRun::String
@@ -2535,24 +2513,23 @@ Param: limit::Int32
 Param: orphanDependents::Bool
 Param: propagationPolicy::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
-Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1Status
 """
-function deleteCoreV1CollectionNamespacedServiceAccount(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedServiceAccount(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionNamespacedServiceAccount(_api::CoreV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedServiceAccount(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function deleteCoreV1CollectionNamespacedServiceAccount(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedServiceAccount(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionNamespacedServiceAccount(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionNamespacedServiceAccount(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_deleteCoreV1CollectionNode(_api::CoreV1Api; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_deleteCoreV1CollectionNode(_api::CoreV1Api; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/api/v1/nodes", ["BearerToken"], body)
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
-    Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
     Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
     Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
@@ -2562,8 +2539,8 @@ function _swaggerinternal_deleteCoreV1CollectionNode(_api::CoreV1Api; pretty=not
     Swagger.set_param(_ctx.query, "orphanDependents", orphanDependents)  # type Bool
     Swagger.set_param(_ctx.query, "propagationPolicy", propagationPolicy)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
-    Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
     Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
     return _ctx
@@ -2573,7 +2550,6 @@ end
 
 delete collection of Node
 Param: pretty::String
-Param: allowWatchBookmarks::Bool
 Param: body::IoK8sApimachineryPkgApisMetaV1DeleteOptions
 Param: __continue__::String
 Param: dryRun::String
@@ -2584,24 +2560,23 @@ Param: limit::Int32
 Param: orphanDependents::Bool
 Param: propagationPolicy::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
-Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1Status
 """
-function deleteCoreV1CollectionNode(_api::CoreV1Api; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionNode(_api; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionNode(_api::CoreV1Api; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionNode(_api; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function deleteCoreV1CollectionNode(_api::CoreV1Api, response_stream::Channel; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionNode(_api; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionNode(_api::CoreV1Api, response_stream::Channel; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionNode(_api; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_deleteCoreV1CollectionPersistentVolume(_api::CoreV1Api; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_deleteCoreV1CollectionPersistentVolume(_api::CoreV1Api; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/api/v1/persistentvolumes", ["BearerToken"], body)
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
-    Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
     Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
     Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
@@ -2611,8 +2586,8 @@ function _swaggerinternal_deleteCoreV1CollectionPersistentVolume(_api::CoreV1Api
     Swagger.set_param(_ctx.query, "orphanDependents", orphanDependents)  # type Bool
     Swagger.set_param(_ctx.query, "propagationPolicy", propagationPolicy)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
-    Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
     Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
     return _ctx
@@ -2622,7 +2597,6 @@ end
 
 delete collection of PersistentVolume
 Param: pretty::String
-Param: allowWatchBookmarks::Bool
 Param: body::IoK8sApimachineryPkgApisMetaV1DeleteOptions
 Param: __continue__::String
 Param: dryRun::String
@@ -2633,17 +2607,17 @@ Param: limit::Int32
 Param: orphanDependents::Bool
 Param: propagationPolicy::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
-Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1Status
 """
-function deleteCoreV1CollectionPersistentVolume(_api::CoreV1Api; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionPersistentVolume(_api; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionPersistentVolume(_api::CoreV1Api; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionPersistentVolume(_api; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function deleteCoreV1CollectionPersistentVolume(_api::CoreV1Api, response_stream::Channel; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteCoreV1CollectionPersistentVolume(_api; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteCoreV1CollectionPersistentVolume(_api::CoreV1Api, response_stream::Channel; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteCoreV1CollectionPersistentVolume(_api; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
@@ -2831,7 +2805,7 @@ function deleteCoreV1NamespacedLimitRange(_api::CoreV1Api, response_stream::Chan
 end
 
 function _swaggerinternal_deleteCoreV1NamespacedPersistentVolumeClaim(_api::CoreV1Api, name::String, namespace::String; pretty=nothing, body=nothing, dryRun=nothing, gracePeriodSeconds=nothing, orphanDependents=nothing, propagationPolicy=nothing, _mediaType=nothing)
-    _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}", ["BearerToken"], body)
+    _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApiCoreV1PersistentVolumeClaim, "/api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}", ["BearerToken"], body)
     Swagger.set_param(_ctx.path, "name", name)  # type String
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
@@ -2855,7 +2829,7 @@ Param: dryRun::String
 Param: gracePeriodSeconds::Int32
 Param: orphanDependents::Bool
 Param: propagationPolicy::String
-Return: IoK8sApimachineryPkgApisMetaV1Status
+Return: IoK8sApiCoreV1PersistentVolumeClaim
 """
 function deleteCoreV1NamespacedPersistentVolumeClaim(_api::CoreV1Api, name::String, namespace::String; pretty=nothing, body=nothing, dryRun=nothing, gracePeriodSeconds=nothing, orphanDependents=nothing, propagationPolicy=nothing, _mediaType=nothing)
     _ctx = _swaggerinternal_deleteCoreV1NamespacedPersistentVolumeClaim(_api, name, namespace; pretty=pretty, body=body, dryRun=dryRun, gracePeriodSeconds=gracePeriodSeconds, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, _mediaType=_mediaType)
@@ -2868,7 +2842,7 @@ function deleteCoreV1NamespacedPersistentVolumeClaim(_api::CoreV1Api, response_s
 end
 
 function _swaggerinternal_deleteCoreV1NamespacedPod(_api::CoreV1Api, name::String, namespace::String; pretty=nothing, body=nothing, dryRun=nothing, gracePeriodSeconds=nothing, orphanDependents=nothing, propagationPolicy=nothing, _mediaType=nothing)
-    _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/api/v1/namespaces/{namespace}/pods/{name}", ["BearerToken"], body)
+    _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApiCoreV1Pod, "/api/v1/namespaces/{namespace}/pods/{name}", ["BearerToken"], body)
     Swagger.set_param(_ctx.path, "name", name)  # type String
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
@@ -2892,7 +2866,7 @@ Param: dryRun::String
 Param: gracePeriodSeconds::Int32
 Param: orphanDependents::Bool
 Param: propagationPolicy::String
-Return: IoK8sApimachineryPkgApisMetaV1Status
+Return: IoK8sApiCoreV1Pod
 """
 function deleteCoreV1NamespacedPod(_api::CoreV1Api, name::String, namespace::String; pretty=nothing, body=nothing, dryRun=nothing, gracePeriodSeconds=nothing, orphanDependents=nothing, propagationPolicy=nothing, _mediaType=nothing)
     _ctx = _swaggerinternal_deleteCoreV1NamespacedPod(_api, name, namespace; pretty=pretty, body=body, dryRun=dryRun, gracePeriodSeconds=gracePeriodSeconds, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, _mediaType=_mediaType)
@@ -2905,7 +2879,7 @@ function deleteCoreV1NamespacedPod(_api::CoreV1Api, response_stream::Channel, na
 end
 
 function _swaggerinternal_deleteCoreV1NamespacedPodTemplate(_api::CoreV1Api, name::String, namespace::String; pretty=nothing, body=nothing, dryRun=nothing, gracePeriodSeconds=nothing, orphanDependents=nothing, propagationPolicy=nothing, _mediaType=nothing)
-    _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/api/v1/namespaces/{namespace}/podtemplates/{name}", ["BearerToken"], body)
+    _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApiCoreV1PodTemplate, "/api/v1/namespaces/{namespace}/podtemplates/{name}", ["BearerToken"], body)
     Swagger.set_param(_ctx.path, "name", name)  # type String
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
@@ -2929,7 +2903,7 @@ Param: dryRun::String
 Param: gracePeriodSeconds::Int32
 Param: orphanDependents::Bool
 Param: propagationPolicy::String
-Return: IoK8sApimachineryPkgApisMetaV1Status
+Return: IoK8sApiCoreV1PodTemplate
 """
 function deleteCoreV1NamespacedPodTemplate(_api::CoreV1Api, name::String, namespace::String; pretty=nothing, body=nothing, dryRun=nothing, gracePeriodSeconds=nothing, orphanDependents=nothing, propagationPolicy=nothing, _mediaType=nothing)
     _ctx = _swaggerinternal_deleteCoreV1NamespacedPodTemplate(_api, name, namespace; pretty=pretty, body=body, dryRun=dryRun, gracePeriodSeconds=gracePeriodSeconds, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, _mediaType=_mediaType)
@@ -2979,7 +2953,7 @@ function deleteCoreV1NamespacedReplicationController(_api::CoreV1Api, response_s
 end
 
 function _swaggerinternal_deleteCoreV1NamespacedResourceQuota(_api::CoreV1Api, name::String, namespace::String; pretty=nothing, body=nothing, dryRun=nothing, gracePeriodSeconds=nothing, orphanDependents=nothing, propagationPolicy=nothing, _mediaType=nothing)
-    _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/api/v1/namespaces/{namespace}/resourcequotas/{name}", ["BearerToken"], body)
+    _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApiCoreV1ResourceQuota, "/api/v1/namespaces/{namespace}/resourcequotas/{name}", ["BearerToken"], body)
     Swagger.set_param(_ctx.path, "name", name)  # type String
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
@@ -3003,7 +2977,7 @@ Param: dryRun::String
 Param: gracePeriodSeconds::Int32
 Param: orphanDependents::Bool
 Param: propagationPolicy::String
-Return: IoK8sApimachineryPkgApisMetaV1Status
+Return: IoK8sApiCoreV1ResourceQuota
 """
 function deleteCoreV1NamespacedResourceQuota(_api::CoreV1Api, name::String, namespace::String; pretty=nothing, body=nothing, dryRun=nothing, gracePeriodSeconds=nothing, orphanDependents=nothing, propagationPolicy=nothing, _mediaType=nothing)
     _ctx = _swaggerinternal_deleteCoreV1NamespacedResourceQuota(_api, name, namespace; pretty=pretty, body=body, dryRun=dryRun, gracePeriodSeconds=gracePeriodSeconds, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, _mediaType=_mediaType)
@@ -3090,7 +3064,7 @@ function deleteCoreV1NamespacedService(_api::CoreV1Api, response_stream::Channel
 end
 
 function _swaggerinternal_deleteCoreV1NamespacedServiceAccount(_api::CoreV1Api, name::String, namespace::String; pretty=nothing, body=nothing, dryRun=nothing, gracePeriodSeconds=nothing, orphanDependents=nothing, propagationPolicy=nothing, _mediaType=nothing)
-    _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/api/v1/namespaces/{namespace}/serviceaccounts/{name}", ["BearerToken"], body)
+    _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApiCoreV1ServiceAccount, "/api/v1/namespaces/{namespace}/serviceaccounts/{name}", ["BearerToken"], body)
     Swagger.set_param(_ctx.path, "name", name)  # type String
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
@@ -3114,7 +3088,7 @@ Param: dryRun::String
 Param: gracePeriodSeconds::Int32
 Param: orphanDependents::Bool
 Param: propagationPolicy::String
-Return: IoK8sApimachineryPkgApisMetaV1Status
+Return: IoK8sApiCoreV1ServiceAccount
 """
 function deleteCoreV1NamespacedServiceAccount(_api::CoreV1Api, name::String, namespace::String; pretty=nothing, body=nothing, dryRun=nothing, gracePeriodSeconds=nothing, orphanDependents=nothing, propagationPolicy=nothing, _mediaType=nothing)
     _ctx = _swaggerinternal_deleteCoreV1NamespacedServiceAccount(_api, name, namespace; pretty=pretty, body=body, dryRun=dryRun, gracePeriodSeconds=gracePeriodSeconds, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, _mediaType=_mediaType)
@@ -3162,7 +3136,7 @@ function deleteCoreV1Node(_api::CoreV1Api, response_stream::Channel, name::Strin
 end
 
 function _swaggerinternal_deleteCoreV1PersistentVolume(_api::CoreV1Api, name::String; pretty=nothing, body=nothing, dryRun=nothing, gracePeriodSeconds=nothing, orphanDependents=nothing, propagationPolicy=nothing, _mediaType=nothing)
-    _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/api/v1/persistentvolumes/{name}", ["BearerToken"], body)
+    _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApiCoreV1PersistentVolume, "/api/v1/persistentvolumes/{name}", ["BearerToken"], body)
     Swagger.set_param(_ctx.path, "name", name)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
@@ -3184,7 +3158,7 @@ Param: dryRun::String
 Param: gracePeriodSeconds::Int32
 Param: orphanDependents::Bool
 Param: propagationPolicy::String
-Return: IoK8sApimachineryPkgApisMetaV1Status
+Return: IoK8sApiCoreV1PersistentVolume
 """
 function deleteCoreV1PersistentVolume(_api::CoreV1Api, name::String; pretty=nothing, body=nothing, dryRun=nothing, gracePeriodSeconds=nothing, orphanDependents=nothing, propagationPolicy=nothing, _mediaType=nothing)
     _ctx = _swaggerinternal_deleteCoreV1PersistentVolume(_api, name; pretty=pretty, body=body, dryRun=dryRun, gracePeriodSeconds=gracePeriodSeconds, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, _mediaType=_mediaType)
@@ -3218,7 +3192,7 @@ function getCoreV1APIResources(_api::CoreV1Api, response_stream::Channel; _media
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1ComponentStatus(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1ComponentStatus(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1ComponentStatusList, "/api/v1/componentstatuses", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -3227,6 +3201,7 @@ function _swaggerinternal_listCoreV1ComponentStatus(_api::CoreV1Api; allowWatchB
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -3244,21 +3219,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1ComponentStatusList
 """
-function listCoreV1ComponentStatus(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1ComponentStatus(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1ComponentStatus(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1ComponentStatus(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1ComponentStatus(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1ComponentStatus(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1ComponentStatus(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1ComponentStatus(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1ConfigMapForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1ConfigMapForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1ConfigMapList, "/api/v1/configmaps", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -3267,6 +3243,7 @@ function _swaggerinternal_listCoreV1ConfigMapForAllNamespaces(_api::CoreV1Api; a
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -3284,21 +3261,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1ConfigMapList
 """
-function listCoreV1ConfigMapForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1ConfigMapForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1ConfigMapForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1ConfigMapForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1ConfigMapForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1ConfigMapForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1ConfigMapForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1ConfigMapForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1EndpointsForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1EndpointsForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1EndpointsList, "/api/v1/endpoints", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -3307,6 +3285,7 @@ function _swaggerinternal_listCoreV1EndpointsForAllNamespaces(_api::CoreV1Api; a
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -3324,21 +3303,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1EndpointsList
 """
-function listCoreV1EndpointsForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1EndpointsForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1EndpointsForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1EndpointsForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1EndpointsForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1EndpointsForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1EndpointsForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1EndpointsForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1EventForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1EventForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1EventList, "/api/v1/events", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -3347,6 +3327,7 @@ function _swaggerinternal_listCoreV1EventForAllNamespaces(_api::CoreV1Api; allow
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -3364,21 +3345,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1EventList
 """
-function listCoreV1EventForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1EventForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1EventForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1EventForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1EventForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1EventForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1EventForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1EventForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1LimitRangeForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1LimitRangeForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1LimitRangeList, "/api/v1/limitranges", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -3387,6 +3369,7 @@ function _swaggerinternal_listCoreV1LimitRangeForAllNamespaces(_api::CoreV1Api; 
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -3404,21 +3387,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1LimitRangeList
 """
-function listCoreV1LimitRangeForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1LimitRangeForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1LimitRangeForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1LimitRangeForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1LimitRangeForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1LimitRangeForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1LimitRangeForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1LimitRangeForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1Namespace(_api::CoreV1Api; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1Namespace(_api::CoreV1Api; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1NamespaceList, "/api/v1/namespaces", ["BearerToken"])
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
@@ -3427,6 +3411,7 @@ function _swaggerinternal_listCoreV1Namespace(_api::CoreV1Api; pretty=nothing, a
     Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -3444,21 +3429,22 @@ Param: fieldSelector::String
 Param: labelSelector::String
 Param: limit::Int32
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1NamespaceList
 """
-function listCoreV1Namespace(_api::CoreV1Api; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1Namespace(_api; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1Namespace(_api::CoreV1Api; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1Namespace(_api; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1Namespace(_api::CoreV1Api, response_stream::Channel; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1Namespace(_api; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1Namespace(_api::CoreV1Api, response_stream::Channel; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1Namespace(_api; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1NamespacedConfigMap(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1NamespacedConfigMap(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1ConfigMapList, "/api/v1/namespaces/{namespace}/configmaps", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
@@ -3468,6 +3454,7 @@ function _swaggerinternal_listCoreV1NamespacedConfigMap(_api::CoreV1Api, namespa
     Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -3486,21 +3473,22 @@ Param: fieldSelector::String
 Param: labelSelector::String
 Param: limit::Int32
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1ConfigMapList
 """
-function listCoreV1NamespacedConfigMap(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1NamespacedConfigMap(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1NamespacedConfigMap(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1NamespacedConfigMap(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1NamespacedConfigMap(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1NamespacedConfigMap(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1NamespacedConfigMap(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1NamespacedConfigMap(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1NamespacedEndpoints(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1NamespacedEndpoints(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1EndpointsList, "/api/v1/namespaces/{namespace}/endpoints", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
@@ -3510,6 +3498,7 @@ function _swaggerinternal_listCoreV1NamespacedEndpoints(_api::CoreV1Api, namespa
     Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -3528,21 +3517,22 @@ Param: fieldSelector::String
 Param: labelSelector::String
 Param: limit::Int32
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1EndpointsList
 """
-function listCoreV1NamespacedEndpoints(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1NamespacedEndpoints(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1NamespacedEndpoints(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1NamespacedEndpoints(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1NamespacedEndpoints(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1NamespacedEndpoints(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1NamespacedEndpoints(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1NamespacedEndpoints(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1NamespacedEvent(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1NamespacedEvent(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1EventList, "/api/v1/namespaces/{namespace}/events", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
@@ -3552,6 +3542,7 @@ function _swaggerinternal_listCoreV1NamespacedEvent(_api::CoreV1Api, namespace::
     Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -3570,21 +3561,22 @@ Param: fieldSelector::String
 Param: labelSelector::String
 Param: limit::Int32
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1EventList
 """
-function listCoreV1NamespacedEvent(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1NamespacedEvent(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1NamespacedEvent(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1NamespacedEvent(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1NamespacedEvent(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1NamespacedEvent(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1NamespacedEvent(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1NamespacedEvent(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1NamespacedLimitRange(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1NamespacedLimitRange(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1LimitRangeList, "/api/v1/namespaces/{namespace}/limitranges", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
@@ -3594,6 +3586,7 @@ function _swaggerinternal_listCoreV1NamespacedLimitRange(_api::CoreV1Api, namesp
     Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -3612,21 +3605,22 @@ Param: fieldSelector::String
 Param: labelSelector::String
 Param: limit::Int32
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1LimitRangeList
 """
-function listCoreV1NamespacedLimitRange(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1NamespacedLimitRange(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1NamespacedLimitRange(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1NamespacedLimitRange(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1NamespacedLimitRange(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1NamespacedLimitRange(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1NamespacedLimitRange(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1NamespacedLimitRange(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1NamespacedPersistentVolumeClaim(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1NamespacedPersistentVolumeClaim(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1PersistentVolumeClaimList, "/api/v1/namespaces/{namespace}/persistentvolumeclaims", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
@@ -3636,6 +3630,7 @@ function _swaggerinternal_listCoreV1NamespacedPersistentVolumeClaim(_api::CoreV1
     Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -3654,21 +3649,22 @@ Param: fieldSelector::String
 Param: labelSelector::String
 Param: limit::Int32
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1PersistentVolumeClaimList
 """
-function listCoreV1NamespacedPersistentVolumeClaim(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1NamespacedPersistentVolumeClaim(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1NamespacedPersistentVolumeClaim(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1NamespacedPersistentVolumeClaim(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1NamespacedPersistentVolumeClaim(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1NamespacedPersistentVolumeClaim(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1NamespacedPersistentVolumeClaim(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1NamespacedPersistentVolumeClaim(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1NamespacedPod(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1NamespacedPod(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1PodList, "/api/v1/namespaces/{namespace}/pods", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
@@ -3678,6 +3674,7 @@ function _swaggerinternal_listCoreV1NamespacedPod(_api::CoreV1Api, namespace::St
     Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -3696,21 +3693,22 @@ Param: fieldSelector::String
 Param: labelSelector::String
 Param: limit::Int32
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1PodList
 """
-function listCoreV1NamespacedPod(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1NamespacedPod(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1NamespacedPod(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1NamespacedPod(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1NamespacedPod(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1NamespacedPod(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1NamespacedPod(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1NamespacedPod(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1NamespacedPodTemplate(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1NamespacedPodTemplate(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1PodTemplateList, "/api/v1/namespaces/{namespace}/podtemplates", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
@@ -3720,6 +3718,7 @@ function _swaggerinternal_listCoreV1NamespacedPodTemplate(_api::CoreV1Api, names
     Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -3738,21 +3737,22 @@ Param: fieldSelector::String
 Param: labelSelector::String
 Param: limit::Int32
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1PodTemplateList
 """
-function listCoreV1NamespacedPodTemplate(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1NamespacedPodTemplate(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1NamespacedPodTemplate(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1NamespacedPodTemplate(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1NamespacedPodTemplate(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1NamespacedPodTemplate(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1NamespacedPodTemplate(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1NamespacedPodTemplate(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1NamespacedReplicationController(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1NamespacedReplicationController(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1ReplicationControllerList, "/api/v1/namespaces/{namespace}/replicationcontrollers", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
@@ -3762,6 +3762,7 @@ function _swaggerinternal_listCoreV1NamespacedReplicationController(_api::CoreV1
     Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -3780,21 +3781,22 @@ Param: fieldSelector::String
 Param: labelSelector::String
 Param: limit::Int32
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1ReplicationControllerList
 """
-function listCoreV1NamespacedReplicationController(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1NamespacedReplicationController(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1NamespacedReplicationController(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1NamespacedReplicationController(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1NamespacedReplicationController(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1NamespacedReplicationController(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1NamespacedReplicationController(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1NamespacedReplicationController(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1NamespacedResourceQuota(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1NamespacedResourceQuota(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1ResourceQuotaList, "/api/v1/namespaces/{namespace}/resourcequotas", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
@@ -3804,6 +3806,7 @@ function _swaggerinternal_listCoreV1NamespacedResourceQuota(_api::CoreV1Api, nam
     Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -3822,21 +3825,22 @@ Param: fieldSelector::String
 Param: labelSelector::String
 Param: limit::Int32
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1ResourceQuotaList
 """
-function listCoreV1NamespacedResourceQuota(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1NamespacedResourceQuota(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1NamespacedResourceQuota(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1NamespacedResourceQuota(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1NamespacedResourceQuota(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1NamespacedResourceQuota(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1NamespacedResourceQuota(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1NamespacedResourceQuota(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1NamespacedSecret(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1NamespacedSecret(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1SecretList, "/api/v1/namespaces/{namespace}/secrets", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
@@ -3846,6 +3850,7 @@ function _swaggerinternal_listCoreV1NamespacedSecret(_api::CoreV1Api, namespace:
     Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -3864,21 +3869,22 @@ Param: fieldSelector::String
 Param: labelSelector::String
 Param: limit::Int32
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1SecretList
 """
-function listCoreV1NamespacedSecret(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1NamespacedSecret(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1NamespacedSecret(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1NamespacedSecret(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1NamespacedSecret(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1NamespacedSecret(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1NamespacedSecret(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1NamespacedSecret(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1NamespacedService(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1NamespacedService(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1ServiceList, "/api/v1/namespaces/{namespace}/services", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
@@ -3888,6 +3894,7 @@ function _swaggerinternal_listCoreV1NamespacedService(_api::CoreV1Api, namespace
     Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -3906,21 +3913,22 @@ Param: fieldSelector::String
 Param: labelSelector::String
 Param: limit::Int32
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1ServiceList
 """
-function listCoreV1NamespacedService(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1NamespacedService(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1NamespacedService(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1NamespacedService(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1NamespacedService(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1NamespacedService(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1NamespacedService(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1NamespacedService(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1NamespacedServiceAccount(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1NamespacedServiceAccount(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1ServiceAccountList, "/api/v1/namespaces/{namespace}/serviceaccounts", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
@@ -3930,6 +3938,7 @@ function _swaggerinternal_listCoreV1NamespacedServiceAccount(_api::CoreV1Api, na
     Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -3948,21 +3957,22 @@ Param: fieldSelector::String
 Param: labelSelector::String
 Param: limit::Int32
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1ServiceAccountList
 """
-function listCoreV1NamespacedServiceAccount(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1NamespacedServiceAccount(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1NamespacedServiceAccount(_api::CoreV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1NamespacedServiceAccount(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1NamespacedServiceAccount(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1NamespacedServiceAccount(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1NamespacedServiceAccount(_api::CoreV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1NamespacedServiceAccount(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1Node(_api::CoreV1Api; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1Node(_api::CoreV1Api; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1NodeList, "/api/v1/nodes", ["BearerToken"])
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
@@ -3971,6 +3981,7 @@ function _swaggerinternal_listCoreV1Node(_api::CoreV1Api; pretty=nothing, allowW
     Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -3988,21 +3999,22 @@ Param: fieldSelector::String
 Param: labelSelector::String
 Param: limit::Int32
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1NodeList
 """
-function listCoreV1Node(_api::CoreV1Api; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1Node(_api; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1Node(_api::CoreV1Api; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1Node(_api; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1Node(_api::CoreV1Api, response_stream::Channel; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1Node(_api; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1Node(_api::CoreV1Api, response_stream::Channel; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1Node(_api; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1PersistentVolume(_api::CoreV1Api; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1PersistentVolume(_api::CoreV1Api; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1PersistentVolumeList, "/api/v1/persistentvolumes", ["BearerToken"])
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
@@ -4011,6 +4023,7 @@ function _swaggerinternal_listCoreV1PersistentVolume(_api::CoreV1Api; pretty=not
     Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -4028,21 +4041,22 @@ Param: fieldSelector::String
 Param: labelSelector::String
 Param: limit::Int32
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1PersistentVolumeList
 """
-function listCoreV1PersistentVolume(_api::CoreV1Api; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1PersistentVolume(_api; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1PersistentVolume(_api::CoreV1Api; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1PersistentVolume(_api; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1PersistentVolume(_api::CoreV1Api, response_stream::Channel; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1PersistentVolume(_api; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1PersistentVolume(_api::CoreV1Api, response_stream::Channel; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1PersistentVolume(_api; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1PersistentVolumeClaimForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1PersistentVolumeClaimForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1PersistentVolumeClaimList, "/api/v1/persistentvolumeclaims", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -4051,6 +4065,7 @@ function _swaggerinternal_listCoreV1PersistentVolumeClaimForAllNamespaces(_api::
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -4068,21 +4083,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1PersistentVolumeClaimList
 """
-function listCoreV1PersistentVolumeClaimForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1PersistentVolumeClaimForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1PersistentVolumeClaimForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1PersistentVolumeClaimForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1PersistentVolumeClaimForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1PersistentVolumeClaimForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1PersistentVolumeClaimForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1PersistentVolumeClaimForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1PodForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1PodForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1PodList, "/api/v1/pods", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -4091,6 +4107,7 @@ function _swaggerinternal_listCoreV1PodForAllNamespaces(_api::CoreV1Api; allowWa
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -4108,21 +4125,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1PodList
 """
-function listCoreV1PodForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1PodForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1PodForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1PodForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1PodForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1PodForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1PodForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1PodForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1PodTemplateForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1PodTemplateForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1PodTemplateList, "/api/v1/podtemplates", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -4131,6 +4149,7 @@ function _swaggerinternal_listCoreV1PodTemplateForAllNamespaces(_api::CoreV1Api;
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -4148,21 +4167,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1PodTemplateList
 """
-function listCoreV1PodTemplateForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1PodTemplateForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1PodTemplateForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1PodTemplateForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1PodTemplateForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1PodTemplateForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1PodTemplateForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1PodTemplateForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1ReplicationControllerForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1ReplicationControllerForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1ReplicationControllerList, "/api/v1/replicationcontrollers", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -4171,6 +4191,7 @@ function _swaggerinternal_listCoreV1ReplicationControllerForAllNamespaces(_api::
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -4188,21 +4209,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1ReplicationControllerList
 """
-function listCoreV1ReplicationControllerForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1ReplicationControllerForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1ReplicationControllerForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1ReplicationControllerForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1ReplicationControllerForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1ReplicationControllerForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1ReplicationControllerForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1ReplicationControllerForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1ResourceQuotaForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1ResourceQuotaForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1ResourceQuotaList, "/api/v1/resourcequotas", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -4211,6 +4233,7 @@ function _swaggerinternal_listCoreV1ResourceQuotaForAllNamespaces(_api::CoreV1Ap
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -4228,21 +4251,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1ResourceQuotaList
 """
-function listCoreV1ResourceQuotaForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1ResourceQuotaForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1ResourceQuotaForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1ResourceQuotaForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1ResourceQuotaForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1ResourceQuotaForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1ResourceQuotaForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1ResourceQuotaForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1SecretForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1SecretForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1SecretList, "/api/v1/secrets", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -4251,6 +4275,7 @@ function _swaggerinternal_listCoreV1SecretForAllNamespaces(_api::CoreV1Api; allo
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -4268,21 +4293,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1SecretList
 """
-function listCoreV1SecretForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1SecretForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1SecretForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1SecretForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1SecretForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1SecretForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1SecretForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1SecretForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1ServiceAccountForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1ServiceAccountForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1ServiceAccountList, "/api/v1/serviceaccounts", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -4291,6 +4317,7 @@ function _swaggerinternal_listCoreV1ServiceAccountForAllNamespaces(_api::CoreV1A
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -4308,21 +4335,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1ServiceAccountList
 """
-function listCoreV1ServiceAccountForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1ServiceAccountForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1ServiceAccountForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1ServiceAccountForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1ServiceAccountForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1ServiceAccountForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1ServiceAccountForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1ServiceAccountForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listCoreV1ServiceForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listCoreV1ServiceForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiCoreV1ServiceList, "/api/v1/services", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -4331,6 +4359,7 @@ function _swaggerinternal_listCoreV1ServiceForAllNamespaces(_api::CoreV1Api; all
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -4348,17 +4377,18 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiCoreV1ServiceList
 """
-function listCoreV1ServiceForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1ServiceForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1ServiceForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1ServiceForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listCoreV1ServiceForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listCoreV1ServiceForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listCoreV1ServiceForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listCoreV1ServiceForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
@@ -6791,7 +6821,7 @@ function replaceCoreV1PersistentVolumeStatus(_api::CoreV1Api, response_stream::C
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1ConfigMapListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1ConfigMapListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/configmaps", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -6800,6 +6830,7 @@ function _swaggerinternal_watchCoreV1ConfigMapListForAllNamespaces(_api::CoreV1A
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -6817,21 +6848,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1ConfigMapListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1ConfigMapListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1ConfigMapListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1ConfigMapListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1ConfigMapListForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1ConfigMapListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1ConfigMapListForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1ConfigMapListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1EndpointsListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1EndpointsListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/endpoints", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -6840,6 +6872,7 @@ function _swaggerinternal_watchCoreV1EndpointsListForAllNamespaces(_api::CoreV1A
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -6857,21 +6890,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1EndpointsListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1EndpointsListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1EndpointsListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1EndpointsListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1EndpointsListForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1EndpointsListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1EndpointsListForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1EndpointsListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1EventListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1EventListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/events", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -6880,6 +6914,7 @@ function _swaggerinternal_watchCoreV1EventListForAllNamespaces(_api::CoreV1Api; 
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -6897,21 +6932,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1EventListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1EventListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1EventListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1EventListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1EventListForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1EventListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1EventListForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1EventListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1LimitRangeListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1LimitRangeListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/limitranges", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -6920,6 +6956,7 @@ function _swaggerinternal_watchCoreV1LimitRangeListForAllNamespaces(_api::CoreV1
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -6937,21 +6974,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1LimitRangeListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1LimitRangeListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1LimitRangeListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1LimitRangeListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1LimitRangeListForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1LimitRangeListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1LimitRangeListForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1LimitRangeListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1Namespace(_api::CoreV1Api, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1Namespace(_api::CoreV1Api, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces/{name}", ["BearerToken"])
     Swagger.set_param(_ctx.path, "name", name)  # type String
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
@@ -6961,6 +6999,7 @@ function _swaggerinternal_watchCoreV1Namespace(_api::CoreV1Api, name::String; al
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -6979,21 +7018,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1Namespace(_api::CoreV1Api, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1Namespace(_api, name; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1Namespace(_api::CoreV1Api, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1Namespace(_api, name; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1Namespace(_api::CoreV1Api, response_stream::Channel, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1Namespace(_api, name; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1Namespace(_api::CoreV1Api, response_stream::Channel, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1Namespace(_api, name; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NamespaceList(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NamespaceList(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -7002,6 +7042,7 @@ function _swaggerinternal_watchCoreV1NamespaceList(_api::CoreV1Api; allowWatchBo
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -7019,21 +7060,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NamespaceList(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespaceList(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespaceList(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespaceList(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NamespaceList(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespaceList(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespaceList(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespaceList(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NamespacedConfigMap(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NamespacedConfigMap(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces/{namespace}/configmaps/{name}", ["BearerToken"])
     Swagger.set_param(_ctx.path, "name", name)  # type String
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
@@ -7044,6 +7086,7 @@ function _swaggerinternal_watchCoreV1NamespacedConfigMap(_api::CoreV1Api, name::
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -7063,21 +7106,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NamespacedConfigMap(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedConfigMap(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedConfigMap(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedConfigMap(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NamespacedConfigMap(_api::CoreV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedConfigMap(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedConfigMap(_api::CoreV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedConfigMap(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NamespacedConfigMapList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NamespacedConfigMapList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces/{namespace}/configmaps", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
@@ -7087,6 +7131,7 @@ function _swaggerinternal_watchCoreV1NamespacedConfigMapList(_api::CoreV1Api, na
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -7105,21 +7150,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NamespacedConfigMapList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedConfigMapList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedConfigMapList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedConfigMapList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NamespacedConfigMapList(_api::CoreV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedConfigMapList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedConfigMapList(_api::CoreV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedConfigMapList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NamespacedEndpoints(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NamespacedEndpoints(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces/{namespace}/endpoints/{name}", ["BearerToken"])
     Swagger.set_param(_ctx.path, "name", name)  # type String
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
@@ -7130,6 +7176,7 @@ function _swaggerinternal_watchCoreV1NamespacedEndpoints(_api::CoreV1Api, name::
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -7149,21 +7196,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NamespacedEndpoints(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedEndpoints(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedEndpoints(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedEndpoints(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NamespacedEndpoints(_api::CoreV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedEndpoints(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedEndpoints(_api::CoreV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedEndpoints(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NamespacedEndpointsList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NamespacedEndpointsList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces/{namespace}/endpoints", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
@@ -7173,6 +7221,7 @@ function _swaggerinternal_watchCoreV1NamespacedEndpointsList(_api::CoreV1Api, na
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -7191,21 +7240,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NamespacedEndpointsList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedEndpointsList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedEndpointsList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedEndpointsList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NamespacedEndpointsList(_api::CoreV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedEndpointsList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedEndpointsList(_api::CoreV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedEndpointsList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NamespacedEvent(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NamespacedEvent(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces/{namespace}/events/{name}", ["BearerToken"])
     Swagger.set_param(_ctx.path, "name", name)  # type String
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
@@ -7216,6 +7266,7 @@ function _swaggerinternal_watchCoreV1NamespacedEvent(_api::CoreV1Api, name::Stri
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -7235,21 +7286,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NamespacedEvent(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedEvent(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedEvent(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedEvent(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NamespacedEvent(_api::CoreV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedEvent(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedEvent(_api::CoreV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedEvent(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NamespacedEventList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NamespacedEventList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces/{namespace}/events", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
@@ -7259,6 +7311,7 @@ function _swaggerinternal_watchCoreV1NamespacedEventList(_api::CoreV1Api, namesp
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -7277,21 +7330,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NamespacedEventList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedEventList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedEventList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedEventList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NamespacedEventList(_api::CoreV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedEventList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedEventList(_api::CoreV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedEventList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NamespacedLimitRange(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NamespacedLimitRange(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces/{namespace}/limitranges/{name}", ["BearerToken"])
     Swagger.set_param(_ctx.path, "name", name)  # type String
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
@@ -7302,6 +7356,7 @@ function _swaggerinternal_watchCoreV1NamespacedLimitRange(_api::CoreV1Api, name:
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -7321,21 +7376,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NamespacedLimitRange(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedLimitRange(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedLimitRange(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedLimitRange(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NamespacedLimitRange(_api::CoreV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedLimitRange(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedLimitRange(_api::CoreV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedLimitRange(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NamespacedLimitRangeList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NamespacedLimitRangeList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces/{namespace}/limitranges", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
@@ -7345,6 +7401,7 @@ function _swaggerinternal_watchCoreV1NamespacedLimitRangeList(_api::CoreV1Api, n
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -7363,21 +7420,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NamespacedLimitRangeList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedLimitRangeList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedLimitRangeList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedLimitRangeList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NamespacedLimitRangeList(_api::CoreV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedLimitRangeList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedLimitRangeList(_api::CoreV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedLimitRangeList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NamespacedPersistentVolumeClaim(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NamespacedPersistentVolumeClaim(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces/{namespace}/persistentvolumeclaims/{name}", ["BearerToken"])
     Swagger.set_param(_ctx.path, "name", name)  # type String
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
@@ -7388,6 +7446,7 @@ function _swaggerinternal_watchCoreV1NamespacedPersistentVolumeClaim(_api::CoreV
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -7407,21 +7466,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NamespacedPersistentVolumeClaim(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedPersistentVolumeClaim(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedPersistentVolumeClaim(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedPersistentVolumeClaim(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NamespacedPersistentVolumeClaim(_api::CoreV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedPersistentVolumeClaim(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedPersistentVolumeClaim(_api::CoreV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedPersistentVolumeClaim(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NamespacedPersistentVolumeClaimList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NamespacedPersistentVolumeClaimList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces/{namespace}/persistentvolumeclaims", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
@@ -7431,6 +7491,7 @@ function _swaggerinternal_watchCoreV1NamespacedPersistentVolumeClaimList(_api::C
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -7449,21 +7510,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NamespacedPersistentVolumeClaimList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedPersistentVolumeClaimList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedPersistentVolumeClaimList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedPersistentVolumeClaimList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NamespacedPersistentVolumeClaimList(_api::CoreV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedPersistentVolumeClaimList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedPersistentVolumeClaimList(_api::CoreV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedPersistentVolumeClaimList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NamespacedPod(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NamespacedPod(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces/{namespace}/pods/{name}", ["BearerToken"])
     Swagger.set_param(_ctx.path, "name", name)  # type String
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
@@ -7474,6 +7536,7 @@ function _swaggerinternal_watchCoreV1NamespacedPod(_api::CoreV1Api, name::String
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -7493,21 +7556,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NamespacedPod(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedPod(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedPod(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedPod(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NamespacedPod(_api::CoreV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedPod(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedPod(_api::CoreV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedPod(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NamespacedPodList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NamespacedPodList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces/{namespace}/pods", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
@@ -7517,6 +7581,7 @@ function _swaggerinternal_watchCoreV1NamespacedPodList(_api::CoreV1Api, namespac
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -7535,21 +7600,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NamespacedPodList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedPodList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedPodList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedPodList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NamespacedPodList(_api::CoreV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedPodList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedPodList(_api::CoreV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedPodList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NamespacedPodTemplate(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NamespacedPodTemplate(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces/{namespace}/podtemplates/{name}", ["BearerToken"])
     Swagger.set_param(_ctx.path, "name", name)  # type String
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
@@ -7560,6 +7626,7 @@ function _swaggerinternal_watchCoreV1NamespacedPodTemplate(_api::CoreV1Api, name
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -7579,21 +7646,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NamespacedPodTemplate(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedPodTemplate(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedPodTemplate(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedPodTemplate(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NamespacedPodTemplate(_api::CoreV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedPodTemplate(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedPodTemplate(_api::CoreV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedPodTemplate(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NamespacedPodTemplateList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NamespacedPodTemplateList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces/{namespace}/podtemplates", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
@@ -7603,6 +7671,7 @@ function _swaggerinternal_watchCoreV1NamespacedPodTemplateList(_api::CoreV1Api, 
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -7621,21 +7690,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NamespacedPodTemplateList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedPodTemplateList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedPodTemplateList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedPodTemplateList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NamespacedPodTemplateList(_api::CoreV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedPodTemplateList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedPodTemplateList(_api::CoreV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedPodTemplateList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NamespacedReplicationController(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NamespacedReplicationController(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces/{namespace}/replicationcontrollers/{name}", ["BearerToken"])
     Swagger.set_param(_ctx.path, "name", name)  # type String
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
@@ -7646,6 +7716,7 @@ function _swaggerinternal_watchCoreV1NamespacedReplicationController(_api::CoreV
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -7665,21 +7736,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NamespacedReplicationController(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedReplicationController(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedReplicationController(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedReplicationController(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NamespacedReplicationController(_api::CoreV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedReplicationController(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedReplicationController(_api::CoreV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedReplicationController(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NamespacedReplicationControllerList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NamespacedReplicationControllerList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces/{namespace}/replicationcontrollers", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
@@ -7689,6 +7761,7 @@ function _swaggerinternal_watchCoreV1NamespacedReplicationControllerList(_api::C
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -7707,21 +7780,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NamespacedReplicationControllerList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedReplicationControllerList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedReplicationControllerList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedReplicationControllerList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NamespacedReplicationControllerList(_api::CoreV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedReplicationControllerList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedReplicationControllerList(_api::CoreV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedReplicationControllerList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NamespacedResourceQuota(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NamespacedResourceQuota(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces/{namespace}/resourcequotas/{name}", ["BearerToken"])
     Swagger.set_param(_ctx.path, "name", name)  # type String
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
@@ -7732,6 +7806,7 @@ function _swaggerinternal_watchCoreV1NamespacedResourceQuota(_api::CoreV1Api, na
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -7751,21 +7826,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NamespacedResourceQuota(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedResourceQuota(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedResourceQuota(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedResourceQuota(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NamespacedResourceQuota(_api::CoreV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedResourceQuota(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedResourceQuota(_api::CoreV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedResourceQuota(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NamespacedResourceQuotaList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NamespacedResourceQuotaList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces/{namespace}/resourcequotas", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
@@ -7775,6 +7851,7 @@ function _swaggerinternal_watchCoreV1NamespacedResourceQuotaList(_api::CoreV1Api
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -7793,21 +7870,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NamespacedResourceQuotaList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedResourceQuotaList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedResourceQuotaList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedResourceQuotaList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NamespacedResourceQuotaList(_api::CoreV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedResourceQuotaList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedResourceQuotaList(_api::CoreV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedResourceQuotaList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NamespacedSecret(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NamespacedSecret(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces/{namespace}/secrets/{name}", ["BearerToken"])
     Swagger.set_param(_ctx.path, "name", name)  # type String
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
@@ -7818,6 +7896,7 @@ function _swaggerinternal_watchCoreV1NamespacedSecret(_api::CoreV1Api, name::Str
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -7837,21 +7916,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NamespacedSecret(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedSecret(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedSecret(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedSecret(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NamespacedSecret(_api::CoreV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedSecret(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedSecret(_api::CoreV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedSecret(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NamespacedSecretList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NamespacedSecretList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces/{namespace}/secrets", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
@@ -7861,6 +7941,7 @@ function _swaggerinternal_watchCoreV1NamespacedSecretList(_api::CoreV1Api, names
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -7879,21 +7960,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NamespacedSecretList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedSecretList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedSecretList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedSecretList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NamespacedSecretList(_api::CoreV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedSecretList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedSecretList(_api::CoreV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedSecretList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NamespacedService(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NamespacedService(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces/{namespace}/services/{name}", ["BearerToken"])
     Swagger.set_param(_ctx.path, "name", name)  # type String
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
@@ -7904,6 +7986,7 @@ function _swaggerinternal_watchCoreV1NamespacedService(_api::CoreV1Api, name::St
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -7923,21 +8006,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NamespacedService(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedService(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedService(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedService(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NamespacedService(_api::CoreV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedService(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedService(_api::CoreV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedService(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NamespacedServiceAccount(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NamespacedServiceAccount(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces/{namespace}/serviceaccounts/{name}", ["BearerToken"])
     Swagger.set_param(_ctx.path, "name", name)  # type String
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
@@ -7948,6 +8032,7 @@ function _swaggerinternal_watchCoreV1NamespacedServiceAccount(_api::CoreV1Api, n
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -7967,21 +8052,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NamespacedServiceAccount(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedServiceAccount(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedServiceAccount(_api::CoreV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedServiceAccount(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NamespacedServiceAccount(_api::CoreV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedServiceAccount(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedServiceAccount(_api::CoreV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedServiceAccount(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NamespacedServiceAccountList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NamespacedServiceAccountList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces/{namespace}/serviceaccounts", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
@@ -7991,6 +8077,7 @@ function _swaggerinternal_watchCoreV1NamespacedServiceAccountList(_api::CoreV1Ap
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -8009,21 +8096,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NamespacedServiceAccountList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedServiceAccountList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedServiceAccountList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedServiceAccountList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NamespacedServiceAccountList(_api::CoreV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedServiceAccountList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedServiceAccountList(_api::CoreV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedServiceAccountList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NamespacedServiceList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NamespacedServiceList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/namespaces/{namespace}/services", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
@@ -8033,6 +8121,7 @@ function _swaggerinternal_watchCoreV1NamespacedServiceList(_api::CoreV1Api, name
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -8051,21 +8140,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NamespacedServiceList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedServiceList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedServiceList(_api::CoreV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedServiceList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NamespacedServiceList(_api::CoreV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NamespacedServiceList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NamespacedServiceList(_api::CoreV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NamespacedServiceList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1Node(_api::CoreV1Api, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1Node(_api::CoreV1Api, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/nodes/{name}", ["BearerToken"])
     Swagger.set_param(_ctx.path, "name", name)  # type String
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
@@ -8075,6 +8165,7 @@ function _swaggerinternal_watchCoreV1Node(_api::CoreV1Api, name::String; allowWa
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -8093,21 +8184,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1Node(_api::CoreV1Api, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1Node(_api, name; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1Node(_api::CoreV1Api, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1Node(_api, name; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1Node(_api::CoreV1Api, response_stream::Channel, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1Node(_api, name; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1Node(_api::CoreV1Api, response_stream::Channel, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1Node(_api, name; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1NodeList(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1NodeList(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/nodes", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -8116,6 +8208,7 @@ function _swaggerinternal_watchCoreV1NodeList(_api::CoreV1Api; allowWatchBookmar
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -8133,21 +8226,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1NodeList(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NodeList(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NodeList(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NodeList(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1NodeList(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1NodeList(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1NodeList(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1NodeList(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1PersistentVolume(_api::CoreV1Api, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1PersistentVolume(_api::CoreV1Api, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/persistentvolumes/{name}", ["BearerToken"])
     Swagger.set_param(_ctx.path, "name", name)  # type String
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
@@ -8157,6 +8251,7 @@ function _swaggerinternal_watchCoreV1PersistentVolume(_api::CoreV1Api, name::Str
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -8175,21 +8270,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1PersistentVolume(_api::CoreV1Api, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1PersistentVolume(_api, name; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1PersistentVolume(_api::CoreV1Api, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1PersistentVolume(_api, name; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1PersistentVolume(_api::CoreV1Api, response_stream::Channel, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1PersistentVolume(_api, name; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1PersistentVolume(_api::CoreV1Api, response_stream::Channel, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1PersistentVolume(_api, name; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1PersistentVolumeClaimListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1PersistentVolumeClaimListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/persistentvolumeclaims", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -8198,6 +8294,7 @@ function _swaggerinternal_watchCoreV1PersistentVolumeClaimListForAllNamespaces(_
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -8215,21 +8312,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1PersistentVolumeClaimListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1PersistentVolumeClaimListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1PersistentVolumeClaimListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1PersistentVolumeClaimListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1PersistentVolumeClaimListForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1PersistentVolumeClaimListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1PersistentVolumeClaimListForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1PersistentVolumeClaimListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1PersistentVolumeList(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1PersistentVolumeList(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/persistentvolumes", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -8238,6 +8336,7 @@ function _swaggerinternal_watchCoreV1PersistentVolumeList(_api::CoreV1Api; allow
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -8255,21 +8354,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1PersistentVolumeList(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1PersistentVolumeList(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1PersistentVolumeList(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1PersistentVolumeList(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1PersistentVolumeList(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1PersistentVolumeList(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1PersistentVolumeList(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1PersistentVolumeList(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1PodListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1PodListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/pods", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -8278,6 +8378,7 @@ function _swaggerinternal_watchCoreV1PodListForAllNamespaces(_api::CoreV1Api; al
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -8295,21 +8396,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1PodListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1PodListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1PodListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1PodListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1PodListForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1PodListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1PodListForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1PodListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1PodTemplateListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1PodTemplateListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/podtemplates", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -8318,6 +8420,7 @@ function _swaggerinternal_watchCoreV1PodTemplateListForAllNamespaces(_api::CoreV
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -8335,21 +8438,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1PodTemplateListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1PodTemplateListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1PodTemplateListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1PodTemplateListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1PodTemplateListForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1PodTemplateListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1PodTemplateListForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1PodTemplateListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1ReplicationControllerListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1ReplicationControllerListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/replicationcontrollers", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -8358,6 +8462,7 @@ function _swaggerinternal_watchCoreV1ReplicationControllerListForAllNamespaces(_
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -8375,21 +8480,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1ReplicationControllerListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1ReplicationControllerListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1ReplicationControllerListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1ReplicationControllerListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1ReplicationControllerListForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1ReplicationControllerListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1ReplicationControllerListForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1ReplicationControllerListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1ResourceQuotaListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1ResourceQuotaListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/resourcequotas", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -8398,6 +8504,7 @@ function _swaggerinternal_watchCoreV1ResourceQuotaListForAllNamespaces(_api::Cor
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -8415,21 +8522,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1ResourceQuotaListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1ResourceQuotaListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1ResourceQuotaListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1ResourceQuotaListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1ResourceQuotaListForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1ResourceQuotaListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1ResourceQuotaListForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1ResourceQuotaListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1SecretListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1SecretListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/secrets", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -8438,6 +8546,7 @@ function _swaggerinternal_watchCoreV1SecretListForAllNamespaces(_api::CoreV1Api;
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -8455,21 +8564,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1SecretListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1SecretListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1SecretListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1SecretListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1SecretListForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1SecretListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1SecretListForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1SecretListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1ServiceAccountListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1ServiceAccountListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/serviceaccounts", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -8478,6 +8588,7 @@ function _swaggerinternal_watchCoreV1ServiceAccountListForAllNamespaces(_api::Co
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -8495,21 +8606,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1ServiceAccountListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1ServiceAccountListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1ServiceAccountListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1ServiceAccountListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1ServiceAccountListForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1ServiceAccountListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1ServiceAccountListForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1ServiceAccountListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchCoreV1ServiceListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchCoreV1ServiceListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/api/v1/watch/services", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -8518,6 +8630,7 @@ function _swaggerinternal_watchCoreV1ServiceListForAllNamespaces(_api::CoreV1Api
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -8535,17 +8648,18 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchCoreV1ServiceListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1ServiceListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1ServiceListForAllNamespaces(_api::CoreV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1ServiceListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchCoreV1ServiceListForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchCoreV1ServiceListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchCoreV1ServiceListForAllNamespaces(_api::CoreV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchCoreV1ServiceListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 

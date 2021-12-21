@@ -14,6 +14,7 @@
         runAsNonRoot=nothing,
         runAsUser=nothing,
         seLinuxOptions=nothing,
+        seccompProfile=nothing,
         windowsOptions=nothing,
     )
 
@@ -26,6 +27,7 @@
     - runAsNonRoot::Bool : Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
     - runAsUser::Int64 : The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
     - seLinuxOptions::IoK8sApiCoreV1SELinuxOptions : The SELinux context to be applied to the container. If unspecified, the container runtime will allocate a random SELinux context for each container.  May also be set in PodSecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
+    - seccompProfile::IoK8sApiCoreV1SeccompProfile : The seccomp options to use by this container. If seccomp options are provided at both the pod &amp; container level, the container options override the pod options.
     - windowsOptions::IoK8sApiCoreV1WindowsSecurityContextOptions : The Windows specific settings applied to all containers. If unspecified, the options from the PodSecurityContext will be used. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
 """
 mutable struct IoK8sApiCoreV1SecurityContext <: SwaggerModel
@@ -38,9 +40,10 @@ mutable struct IoK8sApiCoreV1SecurityContext <: SwaggerModel
     runAsNonRoot::Any # spec type: Union{ Nothing, Bool } # spec name: runAsNonRoot
     runAsUser::Any # spec type: Union{ Nothing, Int64 } # spec name: runAsUser
     seLinuxOptions::Any # spec type: Union{ Nothing, IoK8sApiCoreV1SELinuxOptions } # spec name: seLinuxOptions
+    seccompProfile::Any # spec type: Union{ Nothing, IoK8sApiCoreV1SeccompProfile } # spec name: seccompProfile
     windowsOptions::Any # spec type: Union{ Nothing, IoK8sApiCoreV1WindowsSecurityContextOptions } # spec name: windowsOptions
 
-    function IoK8sApiCoreV1SecurityContext(;allowPrivilegeEscalation=nothing, capabilities=nothing, privileged=nothing, procMount=nothing, readOnlyRootFilesystem=nothing, runAsGroup=nothing, runAsNonRoot=nothing, runAsUser=nothing, seLinuxOptions=nothing, windowsOptions=nothing)
+    function IoK8sApiCoreV1SecurityContext(;allowPrivilegeEscalation=nothing, capabilities=nothing, privileged=nothing, procMount=nothing, readOnlyRootFilesystem=nothing, runAsGroup=nothing, runAsNonRoot=nothing, runAsUser=nothing, seLinuxOptions=nothing, seccompProfile=nothing, windowsOptions=nothing)
         o = new()
         validate_property(IoK8sApiCoreV1SecurityContext, Symbol("allowPrivilegeEscalation"), allowPrivilegeEscalation)
         setfield!(o, Symbol("allowPrivilegeEscalation"), allowPrivilegeEscalation)
@@ -60,14 +63,16 @@ mutable struct IoK8sApiCoreV1SecurityContext <: SwaggerModel
         setfield!(o, Symbol("runAsUser"), runAsUser)
         validate_property(IoK8sApiCoreV1SecurityContext, Symbol("seLinuxOptions"), seLinuxOptions)
         setfield!(o, Symbol("seLinuxOptions"), seLinuxOptions)
+        validate_property(IoK8sApiCoreV1SecurityContext, Symbol("seccompProfile"), seccompProfile)
+        setfield!(o, Symbol("seccompProfile"), seccompProfile)
         validate_property(IoK8sApiCoreV1SecurityContext, Symbol("windowsOptions"), windowsOptions)
         setfield!(o, Symbol("windowsOptions"), windowsOptions)
         o
     end
 end # type IoK8sApiCoreV1SecurityContext
 
-const _property_map_IoK8sApiCoreV1SecurityContext = Dict{Symbol,Symbol}(Symbol("allowPrivilegeEscalation")=>Symbol("allowPrivilegeEscalation"), Symbol("capabilities")=>Symbol("capabilities"), Symbol("privileged")=>Symbol("privileged"), Symbol("procMount")=>Symbol("procMount"), Symbol("readOnlyRootFilesystem")=>Symbol("readOnlyRootFilesystem"), Symbol("runAsGroup")=>Symbol("runAsGroup"), Symbol("runAsNonRoot")=>Symbol("runAsNonRoot"), Symbol("runAsUser")=>Symbol("runAsUser"), Symbol("seLinuxOptions")=>Symbol("seLinuxOptions"), Symbol("windowsOptions")=>Symbol("windowsOptions"))
-const _property_types_IoK8sApiCoreV1SecurityContext = Dict{Symbol,String}(Symbol("allowPrivilegeEscalation")=>"Bool", Symbol("capabilities")=>"IoK8sApiCoreV1Capabilities", Symbol("privileged")=>"Bool", Symbol("procMount")=>"String", Symbol("readOnlyRootFilesystem")=>"Bool", Symbol("runAsGroup")=>"Int64", Symbol("runAsNonRoot")=>"Bool", Symbol("runAsUser")=>"Int64", Symbol("seLinuxOptions")=>"IoK8sApiCoreV1SELinuxOptions", Symbol("windowsOptions")=>"IoK8sApiCoreV1WindowsSecurityContextOptions")
+const _property_map_IoK8sApiCoreV1SecurityContext = Dict{Symbol,Symbol}(Symbol("allowPrivilegeEscalation")=>Symbol("allowPrivilegeEscalation"), Symbol("capabilities")=>Symbol("capabilities"), Symbol("privileged")=>Symbol("privileged"), Symbol("procMount")=>Symbol("procMount"), Symbol("readOnlyRootFilesystem")=>Symbol("readOnlyRootFilesystem"), Symbol("runAsGroup")=>Symbol("runAsGroup"), Symbol("runAsNonRoot")=>Symbol("runAsNonRoot"), Symbol("runAsUser")=>Symbol("runAsUser"), Symbol("seLinuxOptions")=>Symbol("seLinuxOptions"), Symbol("seccompProfile")=>Symbol("seccompProfile"), Symbol("windowsOptions")=>Symbol("windowsOptions"))
+const _property_types_IoK8sApiCoreV1SecurityContext = Dict{Symbol,String}(Symbol("allowPrivilegeEscalation")=>"Bool", Symbol("capabilities")=>"IoK8sApiCoreV1Capabilities", Symbol("privileged")=>"Bool", Symbol("procMount")=>"String", Symbol("readOnlyRootFilesystem")=>"Bool", Symbol("runAsGroup")=>"Int64", Symbol("runAsNonRoot")=>"Bool", Symbol("runAsUser")=>"Int64", Symbol("seLinuxOptions")=>"IoK8sApiCoreV1SELinuxOptions", Symbol("seccompProfile")=>"IoK8sApiCoreV1SeccompProfile", Symbol("windowsOptions")=>"IoK8sApiCoreV1WindowsSecurityContextOptions")
 Base.propertynames(::Type{ IoK8sApiCoreV1SecurityContext }) = collect(keys(_property_map_IoK8sApiCoreV1SecurityContext))
 Swagger.property_type(::Type{ IoK8sApiCoreV1SecurityContext }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_IoK8sApiCoreV1SecurityContext[name]))}
 Swagger.field_name(::Type{ IoK8sApiCoreV1SecurityContext }, property_name::Symbol) =  _property_map_IoK8sApiCoreV1SecurityContext[property_name]

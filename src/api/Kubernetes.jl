@@ -23,10 +23,6 @@ include("api_ApiregistrationV1beta1Api.jl")
 include("api_ApisApi.jl")
 include("api_AppsApi.jl")
 include("api_AppsV1Api.jl")
-include("api_AppsV1beta1Api.jl")
-include("api_AppsV1beta2Api.jl")
-include("api_AuditregistrationApi.jl")
-include("api_AuditregistrationV1alpha1Api.jl")
 include("api_AuthenticationApi.jl")
 include("api_AuthenticationV1Api.jl")
 include("api_AuthenticationV1beta1Api.jl")
@@ -40,50 +36,53 @@ include("api_AutoscalingV2beta2Api.jl")
 include("api_BatchApi.jl")
 include("api_BatchV1Api.jl")
 include("api_BatchV1beta1Api.jl")
-include("api_BatchV2alpha1Api.jl")
 include("api_CertificatesApi.jl")
+include("api_CertificatesV1Api.jl")
 include("api_CertificatesV1beta1Api.jl")
 include("api_CoordinationApi.jl")
 include("api_CoordinationV1Api.jl")
 include("api_CoordinationV1beta1Api.jl")
 include("api_CoreApi.jl")
 include("api_CoreV1Api.jl")
-include("api_CustomMetricsV1beta1Api.jl")
+include("api_CrdK8sAmazonawsComV1alpha1Api.jl")
+include("api_CrdProjectcalicoOrgV1Api.jl")
 include("api_DiscoveryApi.jl")
 include("api_DiscoveryV1beta1Api.jl")
 include("api_EventsApi.jl")
+include("api_EventsV1Api.jl")
 include("api_EventsV1beta1Api.jl")
 include("api_ExtensionsApi.jl")
 include("api_ExtensionsV1beta1Api.jl")
 include("api_FlowcontrolApiserverApi.jl")
-include("api_FlowcontrolApiserverV1alpha1Api.jl")
-include("api_LogsApi.jl")
-include("api_MetricsV1beta1Api.jl")
+include("api_FlowcontrolApiserverV1beta1Api.jl")
+include("api_KarpenterShV1alpha5Api.jl")
 include("api_NetworkingApi.jl")
 include("api_NetworkingV1Api.jl")
 include("api_NetworkingV1beta1Api.jl")
 include("api_NodeApi.jl")
-include("api_NodeV1alpha1Api.jl")
+include("api_NodeV1Api.jl")
 include("api_NodeV1beta1Api.jl")
+include("api_OpenidApi.jl")
 include("api_PolicyApi.jl")
 include("api_PolicyV1beta1Api.jl")
 include("api_RbacAuthorizationApi.jl")
 include("api_RbacAuthorizationV1Api.jl")
-include("api_RbacAuthorizationV1alpha1Api.jl")
 include("api_RbacAuthorizationV1beta1Api.jl")
 include("api_SchedulingApi.jl")
 include("api_SchedulingV1Api.jl")
-include("api_SchedulingV1alpha1Api.jl")
 include("api_SchedulingV1beta1Api.jl")
-include("api_SettingsApi.jl")
-include("api_SettingsV1alpha1Api.jl")
 include("api_StorageApi.jl")
 include("api_StorageV1Api.jl")
-include("api_StorageV1alpha1Api.jl")
 include("api_StorageV1beta1Api.jl")
 include("api_VersionApi.jl")
+include("api_VpcresourcesK8sAwsV1beta1Api.jl")
+include("api_WellKnownApi.jl")
 
 # export models
+export convert, AwsK8sVpcresourcesV1beta1SecurityGroupPolicy
+export convert, AwsK8sVpcresourcesV1beta1SecurityGroupPolicyList
+export convert, ComAmazonawsK8sCrdV1alpha1ENIConfig
+export convert, ComAmazonawsK8sCrdV1alpha1ENIConfigList
 export convert, IoK8sApiAdmissionregistrationV1MutatingWebhook
 export convert, IoK8sApiAdmissionregistrationV1MutatingWebhookConfiguration
 export convert, IoK8sApiAdmissionregistrationV1MutatingWebhookConfigurationList
@@ -130,66 +129,6 @@ export convert, IoK8sApiAppsV1StatefulSetList
 export convert, IoK8sApiAppsV1StatefulSetSpec
 export convert, IoK8sApiAppsV1StatefulSetStatus
 export convert, IoK8sApiAppsV1StatefulSetUpdateStrategy
-export convert, IoK8sApiAppsV1beta1ControllerRevision
-export convert, IoK8sApiAppsV1beta1ControllerRevisionList
-export convert, IoK8sApiAppsV1beta1Deployment
-export convert, IoK8sApiAppsV1beta1DeploymentCondition
-export convert, IoK8sApiAppsV1beta1DeploymentList
-export convert, IoK8sApiAppsV1beta1DeploymentRollback
-export convert, IoK8sApiAppsV1beta1DeploymentSpec
-export convert, IoK8sApiAppsV1beta1DeploymentStatus
-export convert, IoK8sApiAppsV1beta1DeploymentStrategy
-export convert, IoK8sApiAppsV1beta1RollbackConfig
-export convert, IoK8sApiAppsV1beta1RollingUpdateDeployment
-export convert, IoK8sApiAppsV1beta1RollingUpdateStatefulSetStrategy
-export convert, IoK8sApiAppsV1beta1Scale
-export convert, IoK8sApiAppsV1beta1ScaleSpec
-export convert, IoK8sApiAppsV1beta1ScaleStatus
-export convert, IoK8sApiAppsV1beta1StatefulSet
-export convert, IoK8sApiAppsV1beta1StatefulSetCondition
-export convert, IoK8sApiAppsV1beta1StatefulSetList
-export convert, IoK8sApiAppsV1beta1StatefulSetSpec
-export convert, IoK8sApiAppsV1beta1StatefulSetStatus
-export convert, IoK8sApiAppsV1beta1StatefulSetUpdateStrategy
-export convert, IoK8sApiAppsV1beta2ControllerRevision
-export convert, IoK8sApiAppsV1beta2ControllerRevisionList
-export convert, IoK8sApiAppsV1beta2DaemonSet
-export convert, IoK8sApiAppsV1beta2DaemonSetCondition
-export convert, IoK8sApiAppsV1beta2DaemonSetList
-export convert, IoK8sApiAppsV1beta2DaemonSetSpec
-export convert, IoK8sApiAppsV1beta2DaemonSetStatus
-export convert, IoK8sApiAppsV1beta2DaemonSetUpdateStrategy
-export convert, IoK8sApiAppsV1beta2Deployment
-export convert, IoK8sApiAppsV1beta2DeploymentCondition
-export convert, IoK8sApiAppsV1beta2DeploymentList
-export convert, IoK8sApiAppsV1beta2DeploymentSpec
-export convert, IoK8sApiAppsV1beta2DeploymentStatus
-export convert, IoK8sApiAppsV1beta2DeploymentStrategy
-export convert, IoK8sApiAppsV1beta2ReplicaSet
-export convert, IoK8sApiAppsV1beta2ReplicaSetCondition
-export convert, IoK8sApiAppsV1beta2ReplicaSetList
-export convert, IoK8sApiAppsV1beta2ReplicaSetSpec
-export convert, IoK8sApiAppsV1beta2ReplicaSetStatus
-export convert, IoK8sApiAppsV1beta2RollingUpdateDaemonSet
-export convert, IoK8sApiAppsV1beta2RollingUpdateDeployment
-export convert, IoK8sApiAppsV1beta2RollingUpdateStatefulSetStrategy
-export convert, IoK8sApiAppsV1beta2Scale
-export convert, IoK8sApiAppsV1beta2ScaleSpec
-export convert, IoK8sApiAppsV1beta2ScaleStatus
-export convert, IoK8sApiAppsV1beta2StatefulSet
-export convert, IoK8sApiAppsV1beta2StatefulSetCondition
-export convert, IoK8sApiAppsV1beta2StatefulSetList
-export convert, IoK8sApiAppsV1beta2StatefulSetSpec
-export convert, IoK8sApiAppsV1beta2StatefulSetStatus
-export convert, IoK8sApiAppsV1beta2StatefulSetUpdateStrategy
-export convert, IoK8sApiAuditregistrationV1alpha1AuditSink
-export convert, IoK8sApiAuditregistrationV1alpha1AuditSinkList
-export convert, IoK8sApiAuditregistrationV1alpha1AuditSinkSpec
-export convert, IoK8sApiAuditregistrationV1alpha1Policy
-export convert, IoK8sApiAuditregistrationV1alpha1ServiceReference
-export convert, IoK8sApiAuditregistrationV1alpha1Webhook
-export convert, IoK8sApiAuditregistrationV1alpha1WebhookClientConfig
-export convert, IoK8sApiAuditregistrationV1alpha1WebhookThrottleConfig
 export convert, IoK8sApiAuthenticationV1BoundObjectReference
 export convert, IoK8sApiAuthenticationV1TokenRequest
 export convert, IoK8sApiAuthenticationV1TokenRequestSpec
@@ -236,6 +175,8 @@ export convert, IoK8sApiAutoscalingV1HorizontalPodAutoscalerStatus
 export convert, IoK8sApiAutoscalingV1Scale
 export convert, IoK8sApiAutoscalingV1ScaleSpec
 export convert, IoK8sApiAutoscalingV1ScaleStatus
+export convert, IoK8sApiAutoscalingV2beta1ContainerResourceMetricSource
+export convert, IoK8sApiAutoscalingV2beta1ContainerResourceMetricStatus
 export convert, IoK8sApiAutoscalingV2beta1CrossVersionObjectReference
 export convert, IoK8sApiAutoscalingV2beta1ExternalMetricSource
 export convert, IoK8sApiAutoscalingV2beta1ExternalMetricStatus
@@ -252,10 +193,15 @@ export convert, IoK8sApiAutoscalingV2beta1PodsMetricSource
 export convert, IoK8sApiAutoscalingV2beta1PodsMetricStatus
 export convert, IoK8sApiAutoscalingV2beta1ResourceMetricSource
 export convert, IoK8sApiAutoscalingV2beta1ResourceMetricStatus
+export convert, IoK8sApiAutoscalingV2beta2ContainerResourceMetricSource
+export convert, IoK8sApiAutoscalingV2beta2ContainerResourceMetricStatus
 export convert, IoK8sApiAutoscalingV2beta2CrossVersionObjectReference
 export convert, IoK8sApiAutoscalingV2beta2ExternalMetricSource
 export convert, IoK8sApiAutoscalingV2beta2ExternalMetricStatus
+export convert, IoK8sApiAutoscalingV2beta2HPAScalingPolicy
+export convert, IoK8sApiAutoscalingV2beta2HPAScalingRules
 export convert, IoK8sApiAutoscalingV2beta2HorizontalPodAutoscaler
+export convert, IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerBehavior
 export convert, IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerCondition
 export convert, IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerList
 export convert, IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerSpec
@@ -281,11 +227,11 @@ export convert, IoK8sApiBatchV1beta1CronJobList
 export convert, IoK8sApiBatchV1beta1CronJobSpec
 export convert, IoK8sApiBatchV1beta1CronJobStatus
 export convert, IoK8sApiBatchV1beta1JobTemplateSpec
-export convert, IoK8sApiBatchV2alpha1CronJob
-export convert, IoK8sApiBatchV2alpha1CronJobList
-export convert, IoK8sApiBatchV2alpha1CronJobSpec
-export convert, IoK8sApiBatchV2alpha1CronJobStatus
-export convert, IoK8sApiBatchV2alpha1JobTemplateSpec
+export convert, IoK8sApiCertificatesV1CertificateSigningRequest
+export convert, IoK8sApiCertificatesV1CertificateSigningRequestCondition
+export convert, IoK8sApiCertificatesV1CertificateSigningRequestList
+export convert, IoK8sApiCertificatesV1CertificateSigningRequestSpec
+export convert, IoK8sApiCertificatesV1CertificateSigningRequestStatus
 export convert, IoK8sApiCertificatesV1beta1CertificateSigningRequest
 export convert, IoK8sApiCertificatesV1beta1CertificateSigningRequestCondition
 export convert, IoK8sApiCertificatesV1beta1CertificateSigningRequestList
@@ -344,6 +290,7 @@ export convert, IoK8sApiCoreV1EnvFromSource
 export convert, IoK8sApiCoreV1EnvVar
 export convert, IoK8sApiCoreV1EnvVarSource
 export convert, IoK8sApiCoreV1EphemeralContainer
+export convert, IoK8sApiCoreV1EphemeralVolumeSource
 export convert, IoK8sApiCoreV1Event
 export convert, IoK8sApiCoreV1EventList
 export convert, IoK8sApiCoreV1EventSeries
@@ -402,6 +349,7 @@ export convert, IoK8sApiCoreV1PersistentVolumeClaimCondition
 export convert, IoK8sApiCoreV1PersistentVolumeClaimList
 export convert, IoK8sApiCoreV1PersistentVolumeClaimSpec
 export convert, IoK8sApiCoreV1PersistentVolumeClaimStatus
+export convert, IoK8sApiCoreV1PersistentVolumeClaimTemplate
 export convert, IoK8sApiCoreV1PersistentVolumeClaimVolumeSource
 export convert, IoK8sApiCoreV1PersistentVolumeList
 export convert, IoK8sApiCoreV1PersistentVolumeSpec
@@ -423,6 +371,7 @@ export convert, IoK8sApiCoreV1PodStatus
 export convert, IoK8sApiCoreV1PodTemplate
 export convert, IoK8sApiCoreV1PodTemplateList
 export convert, IoK8sApiCoreV1PodTemplateSpec
+export convert, IoK8sApiCoreV1PortStatus
 export convert, IoK8sApiCoreV1PortworxVolumeSource
 export convert, IoK8sApiCoreV1PreferredSchedulingTerm
 export convert, IoK8sApiCoreV1Probe
@@ -446,6 +395,7 @@ export convert, IoK8sApiCoreV1ScaleIOPersistentVolumeSource
 export convert, IoK8sApiCoreV1ScaleIOVolumeSource
 export convert, IoK8sApiCoreV1ScopeSelector
 export convert, IoK8sApiCoreV1ScopedResourceSelectorRequirement
+export convert, IoK8sApiCoreV1SeccompProfile
 export convert, IoK8sApiCoreV1Secret
 export convert, IoK8sApiCoreV1SecretEnvSource
 export convert, IoK8sApiCoreV1SecretKeySelector
@@ -481,38 +431,19 @@ export convert, IoK8sApiCoreV1VolumeProjection
 export convert, IoK8sApiCoreV1VsphereVirtualDiskVolumeSource
 export convert, IoK8sApiCoreV1WeightedPodAffinityTerm
 export convert, IoK8sApiCoreV1WindowsSecurityContextOptions
-export convert, IoK8sApiCustomMetricsV1beta1MetricValue
-export convert, IoK8sApiCustomMetricsV1beta1MetricValueList
 export convert, IoK8sApiDiscoveryV1beta1Endpoint
 export convert, IoK8sApiDiscoveryV1beta1EndpointConditions
 export convert, IoK8sApiDiscoveryV1beta1EndpointPort
 export convert, IoK8sApiDiscoveryV1beta1EndpointSlice
 export convert, IoK8sApiDiscoveryV1beta1EndpointSliceList
+export convert, IoK8sApiEventsV1Event
+export convert, IoK8sApiEventsV1EventList
+export convert, IoK8sApiEventsV1EventSeries
 export convert, IoK8sApiEventsV1beta1Event
 export convert, IoK8sApiEventsV1beta1EventList
 export convert, IoK8sApiEventsV1beta1EventSeries
-export convert, IoK8sApiExtensionsV1beta1AllowedCSIDriver
-export convert, IoK8sApiExtensionsV1beta1AllowedFlexVolume
-export convert, IoK8sApiExtensionsV1beta1AllowedHostPath
-export convert, IoK8sApiExtensionsV1beta1DaemonSet
-export convert, IoK8sApiExtensionsV1beta1DaemonSetCondition
-export convert, IoK8sApiExtensionsV1beta1DaemonSetList
-export convert, IoK8sApiExtensionsV1beta1DaemonSetSpec
-export convert, IoK8sApiExtensionsV1beta1DaemonSetStatus
-export convert, IoK8sApiExtensionsV1beta1DaemonSetUpdateStrategy
-export convert, IoK8sApiExtensionsV1beta1Deployment
-export convert, IoK8sApiExtensionsV1beta1DeploymentCondition
-export convert, IoK8sApiExtensionsV1beta1DeploymentList
-export convert, IoK8sApiExtensionsV1beta1DeploymentRollback
-export convert, IoK8sApiExtensionsV1beta1DeploymentSpec
-export convert, IoK8sApiExtensionsV1beta1DeploymentStatus
-export convert, IoK8sApiExtensionsV1beta1DeploymentStrategy
-export convert, IoK8sApiExtensionsV1beta1FSGroupStrategyOptions
 export convert, IoK8sApiExtensionsV1beta1HTTPIngressPath
 export convert, IoK8sApiExtensionsV1beta1HTTPIngressRuleValue
-export convert, IoK8sApiExtensionsV1beta1HostPortRange
-export convert, IoK8sApiExtensionsV1beta1IDRange
-export convert, IoK8sApiExtensionsV1beta1IPBlock
 export convert, IoK8sApiExtensionsV1beta1Ingress
 export convert, IoK8sApiExtensionsV1beta1IngressBackend
 export convert, IoK8sApiExtensionsV1beta1IngressList
@@ -520,60 +451,42 @@ export convert, IoK8sApiExtensionsV1beta1IngressRule
 export convert, IoK8sApiExtensionsV1beta1IngressSpec
 export convert, IoK8sApiExtensionsV1beta1IngressStatus
 export convert, IoK8sApiExtensionsV1beta1IngressTLS
-export convert, IoK8sApiExtensionsV1beta1NetworkPolicy
-export convert, IoK8sApiExtensionsV1beta1NetworkPolicyEgressRule
-export convert, IoK8sApiExtensionsV1beta1NetworkPolicyIngressRule
-export convert, IoK8sApiExtensionsV1beta1NetworkPolicyList
-export convert, IoK8sApiExtensionsV1beta1NetworkPolicyPeer
-export convert, IoK8sApiExtensionsV1beta1NetworkPolicyPort
-export convert, IoK8sApiExtensionsV1beta1NetworkPolicySpec
-export convert, IoK8sApiExtensionsV1beta1PodSecurityPolicy
-export convert, IoK8sApiExtensionsV1beta1PodSecurityPolicyList
-export convert, IoK8sApiExtensionsV1beta1PodSecurityPolicySpec
-export convert, IoK8sApiExtensionsV1beta1ReplicaSet
-export convert, IoK8sApiExtensionsV1beta1ReplicaSetCondition
-export convert, IoK8sApiExtensionsV1beta1ReplicaSetList
-export convert, IoK8sApiExtensionsV1beta1ReplicaSetSpec
-export convert, IoK8sApiExtensionsV1beta1ReplicaSetStatus
-export convert, IoK8sApiExtensionsV1beta1RollbackConfig
-export convert, IoK8sApiExtensionsV1beta1RollingUpdateDaemonSet
-export convert, IoK8sApiExtensionsV1beta1RollingUpdateDeployment
-export convert, IoK8sApiExtensionsV1beta1RunAsGroupStrategyOptions
-export convert, IoK8sApiExtensionsV1beta1RunAsUserStrategyOptions
-export convert, IoK8sApiExtensionsV1beta1RuntimeClassStrategyOptions
-export convert, IoK8sApiExtensionsV1beta1SELinuxStrategyOptions
-export convert, IoK8sApiExtensionsV1beta1Scale
-export convert, IoK8sApiExtensionsV1beta1ScaleSpec
-export convert, IoK8sApiExtensionsV1beta1ScaleStatus
-export convert, IoK8sApiExtensionsV1beta1SupplementalGroupsStrategyOptions
-export convert, IoK8sApiFlowcontrolV1alpha1FlowDistinguisherMethod
-export convert, IoK8sApiFlowcontrolV1alpha1FlowSchema
-export convert, IoK8sApiFlowcontrolV1alpha1FlowSchemaCondition
-export convert, IoK8sApiFlowcontrolV1alpha1FlowSchemaList
-export convert, IoK8sApiFlowcontrolV1alpha1FlowSchemaSpec
-export convert, IoK8sApiFlowcontrolV1alpha1FlowSchemaStatus
-export convert, IoK8sApiFlowcontrolV1alpha1GroupSubject
-export convert, IoK8sApiFlowcontrolV1alpha1LimitResponse
-export convert, IoK8sApiFlowcontrolV1alpha1LimitedPriorityLevelConfiguration
-export convert, IoK8sApiFlowcontrolV1alpha1NonResourcePolicyRule
-export convert, IoK8sApiFlowcontrolV1alpha1PolicyRulesWithSubjects
-export convert, IoK8sApiFlowcontrolV1alpha1PriorityLevelConfiguration
-export convert, IoK8sApiFlowcontrolV1alpha1PriorityLevelConfigurationCondition
-export convert, IoK8sApiFlowcontrolV1alpha1PriorityLevelConfigurationList
-export convert, IoK8sApiFlowcontrolV1alpha1PriorityLevelConfigurationReference
-export convert, IoK8sApiFlowcontrolV1alpha1PriorityLevelConfigurationSpec
-export convert, IoK8sApiFlowcontrolV1alpha1PriorityLevelConfigurationStatus
-export convert, IoK8sApiFlowcontrolV1alpha1QueuingConfiguration
-export convert, IoK8sApiFlowcontrolV1alpha1ResourcePolicyRule
-export convert, IoK8sApiFlowcontrolV1alpha1ServiceAccountSubject
-export convert, IoK8sApiFlowcontrolV1alpha1Subject
-export convert, IoK8sApiFlowcontrolV1alpha1UserSubject
-export convert, IoK8sApiMetricsV1beta1ContainerMetrics
-export convert, IoK8sApiMetricsV1beta1NodeMetrics
-export convert, IoK8sApiMetricsV1beta1NodeMetricsList
-export convert, IoK8sApiMetricsV1beta1PodMetrics
-export convert, IoK8sApiMetricsV1beta1PodMetricsList
+export convert, IoK8sApiFlowcontrolV1beta1FlowDistinguisherMethod
+export convert, IoK8sApiFlowcontrolV1beta1FlowSchema
+export convert, IoK8sApiFlowcontrolV1beta1FlowSchemaCondition
+export convert, IoK8sApiFlowcontrolV1beta1FlowSchemaList
+export convert, IoK8sApiFlowcontrolV1beta1FlowSchemaSpec
+export convert, IoK8sApiFlowcontrolV1beta1FlowSchemaStatus
+export convert, IoK8sApiFlowcontrolV1beta1GroupSubject
+export convert, IoK8sApiFlowcontrolV1beta1LimitResponse
+export convert, IoK8sApiFlowcontrolV1beta1LimitedPriorityLevelConfiguration
+export convert, IoK8sApiFlowcontrolV1beta1NonResourcePolicyRule
+export convert, IoK8sApiFlowcontrolV1beta1PolicyRulesWithSubjects
+export convert, IoK8sApiFlowcontrolV1beta1PriorityLevelConfiguration
+export convert, IoK8sApiFlowcontrolV1beta1PriorityLevelConfigurationCondition
+export convert, IoK8sApiFlowcontrolV1beta1PriorityLevelConfigurationList
+export convert, IoK8sApiFlowcontrolV1beta1PriorityLevelConfigurationReference
+export convert, IoK8sApiFlowcontrolV1beta1PriorityLevelConfigurationSpec
+export convert, IoK8sApiFlowcontrolV1beta1PriorityLevelConfigurationStatus
+export convert, IoK8sApiFlowcontrolV1beta1QueuingConfiguration
+export convert, IoK8sApiFlowcontrolV1beta1ResourcePolicyRule
+export convert, IoK8sApiFlowcontrolV1beta1ServiceAccountSubject
+export convert, IoK8sApiFlowcontrolV1beta1Subject
+export convert, IoK8sApiFlowcontrolV1beta1UserSubject
+export convert, IoK8sApiNetworkingV1HTTPIngressPath
+export convert, IoK8sApiNetworkingV1HTTPIngressRuleValue
 export convert, IoK8sApiNetworkingV1IPBlock
+export convert, IoK8sApiNetworkingV1Ingress
+export convert, IoK8sApiNetworkingV1IngressBackend
+export convert, IoK8sApiNetworkingV1IngressClass
+export convert, IoK8sApiNetworkingV1IngressClassList
+export convert, IoK8sApiNetworkingV1IngressClassSpec
+export convert, IoK8sApiNetworkingV1IngressList
+export convert, IoK8sApiNetworkingV1IngressRule
+export convert, IoK8sApiNetworkingV1IngressServiceBackend
+export convert, IoK8sApiNetworkingV1IngressSpec
+export convert, IoK8sApiNetworkingV1IngressStatus
+export convert, IoK8sApiNetworkingV1IngressTLS
 export convert, IoK8sApiNetworkingV1NetworkPolicy
 export convert, IoK8sApiNetworkingV1NetworkPolicyEgressRule
 export convert, IoK8sApiNetworkingV1NetworkPolicyIngressRule
@@ -581,20 +494,23 @@ export convert, IoK8sApiNetworkingV1NetworkPolicyList
 export convert, IoK8sApiNetworkingV1NetworkPolicyPeer
 export convert, IoK8sApiNetworkingV1NetworkPolicyPort
 export convert, IoK8sApiNetworkingV1NetworkPolicySpec
+export convert, IoK8sApiNetworkingV1ServiceBackendPort
 export convert, IoK8sApiNetworkingV1beta1HTTPIngressPath
 export convert, IoK8sApiNetworkingV1beta1HTTPIngressRuleValue
 export convert, IoK8sApiNetworkingV1beta1Ingress
 export convert, IoK8sApiNetworkingV1beta1IngressBackend
+export convert, IoK8sApiNetworkingV1beta1IngressClass
+export convert, IoK8sApiNetworkingV1beta1IngressClassList
+export convert, IoK8sApiNetworkingV1beta1IngressClassSpec
 export convert, IoK8sApiNetworkingV1beta1IngressList
 export convert, IoK8sApiNetworkingV1beta1IngressRule
 export convert, IoK8sApiNetworkingV1beta1IngressSpec
 export convert, IoK8sApiNetworkingV1beta1IngressStatus
 export convert, IoK8sApiNetworkingV1beta1IngressTLS
-export convert, IoK8sApiNodeV1alpha1Overhead
-export convert, IoK8sApiNodeV1alpha1RuntimeClass
-export convert, IoK8sApiNodeV1alpha1RuntimeClassList
-export convert, IoK8sApiNodeV1alpha1RuntimeClassSpec
-export convert, IoK8sApiNodeV1alpha1Scheduling
+export convert, IoK8sApiNodeV1Overhead
+export convert, IoK8sApiNodeV1RuntimeClass
+export convert, IoK8sApiNodeV1RuntimeClassList
+export convert, IoK8sApiNodeV1Scheduling
 export convert, IoK8sApiNodeV1beta1Overhead
 export convert, IoK8sApiNodeV1beta1RuntimeClass
 export convert, IoK8sApiNodeV1beta1RuntimeClassList
@@ -630,18 +546,6 @@ export convert, IoK8sApiRbacV1RoleBindingList
 export convert, IoK8sApiRbacV1RoleList
 export convert, IoK8sApiRbacV1RoleRef
 export convert, IoK8sApiRbacV1Subject
-export convert, IoK8sApiRbacV1alpha1AggregationRule
-export convert, IoK8sApiRbacV1alpha1ClusterRole
-export convert, IoK8sApiRbacV1alpha1ClusterRoleBinding
-export convert, IoK8sApiRbacV1alpha1ClusterRoleBindingList
-export convert, IoK8sApiRbacV1alpha1ClusterRoleList
-export convert, IoK8sApiRbacV1alpha1PolicyRule
-export convert, IoK8sApiRbacV1alpha1Role
-export convert, IoK8sApiRbacV1alpha1RoleBinding
-export convert, IoK8sApiRbacV1alpha1RoleBindingList
-export convert, IoK8sApiRbacV1alpha1RoleList
-export convert, IoK8sApiRbacV1alpha1RoleRef
-export convert, IoK8sApiRbacV1alpha1Subject
 export convert, IoK8sApiRbacV1beta1AggregationRule
 export convert, IoK8sApiRbacV1beta1ClusterRole
 export convert, IoK8sApiRbacV1beta1ClusterRoleBinding
@@ -656,19 +560,18 @@ export convert, IoK8sApiRbacV1beta1RoleRef
 export convert, IoK8sApiRbacV1beta1Subject
 export convert, IoK8sApiSchedulingV1PriorityClass
 export convert, IoK8sApiSchedulingV1PriorityClassList
-export convert, IoK8sApiSchedulingV1alpha1PriorityClass
-export convert, IoK8sApiSchedulingV1alpha1PriorityClassList
 export convert, IoK8sApiSchedulingV1beta1PriorityClass
 export convert, IoK8sApiSchedulingV1beta1PriorityClassList
-export convert, IoK8sApiSettingsV1alpha1PodPreset
-export convert, IoK8sApiSettingsV1alpha1PodPresetList
-export convert, IoK8sApiSettingsV1alpha1PodPresetSpec
+export convert, IoK8sApiStorageV1CSIDriver
+export convert, IoK8sApiStorageV1CSIDriverList
+export convert, IoK8sApiStorageV1CSIDriverSpec
 export convert, IoK8sApiStorageV1CSINode
 export convert, IoK8sApiStorageV1CSINodeDriver
 export convert, IoK8sApiStorageV1CSINodeList
 export convert, IoK8sApiStorageV1CSINodeSpec
 export convert, IoK8sApiStorageV1StorageClass
 export convert, IoK8sApiStorageV1StorageClassList
+export convert, IoK8sApiStorageV1TokenRequest
 export convert, IoK8sApiStorageV1VolumeAttachment
 export convert, IoK8sApiStorageV1VolumeAttachmentList
 export convert, IoK8sApiStorageV1VolumeAttachmentSource
@@ -676,12 +579,6 @@ export convert, IoK8sApiStorageV1VolumeAttachmentSpec
 export convert, IoK8sApiStorageV1VolumeAttachmentStatus
 export convert, IoK8sApiStorageV1VolumeError
 export convert, IoK8sApiStorageV1VolumeNodeResources
-export convert, IoK8sApiStorageV1alpha1VolumeAttachment
-export convert, IoK8sApiStorageV1alpha1VolumeAttachmentList
-export convert, IoK8sApiStorageV1alpha1VolumeAttachmentSource
-export convert, IoK8sApiStorageV1alpha1VolumeAttachmentSpec
-export convert, IoK8sApiStorageV1alpha1VolumeAttachmentStatus
-export convert, IoK8sApiStorageV1alpha1VolumeError
 export convert, IoK8sApiStorageV1beta1CSIDriver
 export convert, IoK8sApiStorageV1beta1CSIDriverList
 export convert, IoK8sApiStorageV1beta1CSIDriverSpec
@@ -691,6 +588,7 @@ export convert, IoK8sApiStorageV1beta1CSINodeList
 export convert, IoK8sApiStorageV1beta1CSINodeSpec
 export convert, IoK8sApiStorageV1beta1StorageClass
 export convert, IoK8sApiStorageV1beta1StorageClassList
+export convert, IoK8sApiStorageV1beta1TokenRequest
 export convert, IoK8sApiStorageV1beta1VolumeAttachment
 export convert, IoK8sApiStorageV1beta1VolumeAttachmentList
 export convert, IoK8sApiStorageV1beta1VolumeAttachmentSource
@@ -747,8 +645,9 @@ export convert, IoK8sApimachineryPkgApisMetaV1APIGroupList
 export convert, IoK8sApimachineryPkgApisMetaV1APIResource
 export convert, IoK8sApimachineryPkgApisMetaV1APIResourceList
 export convert, IoK8sApimachineryPkgApisMetaV1APIVersions
+export convert, IoK8sApimachineryPkgApisMetaV1Condition
 export convert, IoK8sApimachineryPkgApisMetaV1DeleteOptions
-export convert, IoK8sApimachineryPkgApisMetaV1Duration
+export convert, IoK8sApimachineryPkgApisMetaV1DeleteOptionsV2
 export convert, IoK8sApimachineryPkgApisMetaV1FieldsV1
 export convert, IoK8sApimachineryPkgApisMetaV1GroupVersionForDiscovery
 export convert, IoK8sApimachineryPkgApisMetaV1LabelSelector
@@ -764,6 +663,8 @@ export convert, IoK8sApimachineryPkgApisMetaV1ServerAddressByClientCIDR
 export convert, IoK8sApimachineryPkgApisMetaV1Status
 export convert, IoK8sApimachineryPkgApisMetaV1StatusCause
 export convert, IoK8sApimachineryPkgApisMetaV1StatusDetails
+export convert, IoK8sApimachineryPkgApisMetaV1StatusDetailsV2
+export convert, IoK8sApimachineryPkgApisMetaV1StatusV2
 export convert, IoK8sApimachineryPkgApisMetaV1Time
 export convert, IoK8sApimachineryPkgApisMetaV1WatchEvent
 export convert, IoK8sApimachineryPkgRuntimeRawExtension
@@ -781,9 +682,41 @@ export convert, IoK8sKubeAggregatorPkgApisApiregistrationV1beta1APIServiceList
 export convert, IoK8sKubeAggregatorPkgApisApiregistrationV1beta1APIServiceSpec
 export convert, IoK8sKubeAggregatorPkgApisApiregistrationV1beta1APIServiceStatus
 export convert, IoK8sKubeAggregatorPkgApisApiregistrationV1beta1ServiceReference
+export convert, OrgProjectcalicoCrdV1BGPConfiguration
+export convert, OrgProjectcalicoCrdV1BGPConfigurationList
+export convert, OrgProjectcalicoCrdV1BGPPeer
+export convert, OrgProjectcalicoCrdV1BGPPeerList
+export convert, OrgProjectcalicoCrdV1BlockAffinity
+export convert, OrgProjectcalicoCrdV1BlockAffinityList
+export convert, OrgProjectcalicoCrdV1ClusterInformation
+export convert, OrgProjectcalicoCrdV1ClusterInformationList
+export convert, OrgProjectcalicoCrdV1FelixConfiguration
+export convert, OrgProjectcalicoCrdV1FelixConfigurationList
+export convert, OrgProjectcalicoCrdV1GlobalNetworkPolicy
+export convert, OrgProjectcalicoCrdV1GlobalNetworkPolicyList
+export convert, OrgProjectcalicoCrdV1GlobalNetworkSet
+export convert, OrgProjectcalicoCrdV1GlobalNetworkSetList
+export convert, OrgProjectcalicoCrdV1HostEndpoint
+export convert, OrgProjectcalicoCrdV1HostEndpointList
+export convert, OrgProjectcalicoCrdV1IPAMBlock
+export convert, OrgProjectcalicoCrdV1IPAMBlockList
+export convert, OrgProjectcalicoCrdV1IPPool
+export convert, OrgProjectcalicoCrdV1IPPoolList
+export convert, OrgProjectcalicoCrdV1NetworkPolicy
+export convert, OrgProjectcalicoCrdV1NetworkPolicyList
+export convert, OrgProjectcalicoCrdV1NetworkSet
+export convert, OrgProjectcalicoCrdV1NetworkSetList
+export convert, ShKarpenterV1alpha5Provisioner
+export convert, ShKarpenterV1alpha5ProvisionerList
+export convert, ShKarpenterV1alpha5ProvisionerSpec
+export convert, ShKarpenterV1alpha5ProvisionerSpecLimits
+export convert, ShKarpenterV1alpha5ProvisionerSpecRequirements
+export convert, ShKarpenterV1alpha5ProvisionerSpecTaints
+export convert, ShKarpenterV1alpha5ProvisionerStatus
+export convert, ShKarpenterV1alpha5ProvisionerStatusConditions
 
 # export operations
-export convert, AdmissionregistrationApi, AdmissionregistrationV1Api, AdmissionregistrationV1beta1Api, ApiextensionsApi, ApiextensionsV1Api, ApiextensionsV1beta1Api, ApiregistrationApi, ApiregistrationV1Api, ApiregistrationV1beta1Api, ApisApi, AppsApi, AppsV1Api, AppsV1beta1Api, AppsV1beta2Api, AuditregistrationApi, AuditregistrationV1alpha1Api, AuthenticationApi, AuthenticationV1Api, AuthenticationV1beta1Api, AuthorizationApi, AuthorizationV1Api, AuthorizationV1beta1Api, AutoscalingApi, AutoscalingV1Api, AutoscalingV2beta1Api, AutoscalingV2beta2Api, BatchApi, BatchV1Api, BatchV1beta1Api, BatchV2alpha1Api, CertificatesApi, CertificatesV1beta1Api, CoordinationApi, CoordinationV1Api, CoordinationV1beta1Api, CoreApi, CoreV1Api, CustomMetricsV1beta1Api, DiscoveryApi, DiscoveryV1beta1Api, EventsApi, EventsV1beta1Api, ExtensionsApi, ExtensionsV1beta1Api, FlowcontrolApiserverApi, FlowcontrolApiserverV1alpha1Api, LogsApi, MetricsV1beta1Api, NetworkingApi, NetworkingV1Api, NetworkingV1beta1Api, NodeApi, NodeV1alpha1Api, NodeV1beta1Api, PolicyApi, PolicyV1beta1Api, RbacAuthorizationApi, RbacAuthorizationV1Api, RbacAuthorizationV1alpha1Api, RbacAuthorizationV1beta1Api, SchedulingApi, SchedulingV1Api, SchedulingV1alpha1Api, SchedulingV1beta1Api, SettingsApi, SettingsV1alpha1Api, StorageApi, StorageV1Api, StorageV1alpha1Api, StorageV1beta1Api, VersionApi
+export convert, AdmissionregistrationApi, AdmissionregistrationV1Api, AdmissionregistrationV1beta1Api, ApiextensionsApi, ApiextensionsV1Api, ApiextensionsV1beta1Api, ApiregistrationApi, ApiregistrationV1Api, ApiregistrationV1beta1Api, ApisApi, AppsApi, AppsV1Api, AuthenticationApi, AuthenticationV1Api, AuthenticationV1beta1Api, AuthorizationApi, AuthorizationV1Api, AuthorizationV1beta1Api, AutoscalingApi, AutoscalingV1Api, AutoscalingV2beta1Api, AutoscalingV2beta2Api, BatchApi, BatchV1Api, BatchV1beta1Api, CertificatesApi, CertificatesV1Api, CertificatesV1beta1Api, CoordinationApi, CoordinationV1Api, CoordinationV1beta1Api, CoreApi, CoreV1Api, CrdK8sAmazonawsComV1alpha1Api, CrdProjectcalicoOrgV1Api, DiscoveryApi, DiscoveryV1beta1Api, EventsApi, EventsV1Api, EventsV1beta1Api, ExtensionsApi, ExtensionsV1beta1Api, FlowcontrolApiserverApi, FlowcontrolApiserverV1beta1Api, KarpenterShV1alpha5Api, NetworkingApi, NetworkingV1Api, NetworkingV1beta1Api, NodeApi, NodeV1Api, NodeV1beta1Api, OpenidApi, PolicyApi, PolicyV1beta1Api, RbacAuthorizationApi, RbacAuthorizationV1Api, RbacAuthorizationV1beta1Api, SchedulingApi, SchedulingV1Api, SchedulingV1beta1Api, StorageApi, StorageV1Api, StorageV1beta1Api, VersionApi, VpcresourcesK8sAwsV1beta1Api, WellKnownApi
 
 export check_required, field_name, property_type, hasproperty, propertynames, validate_property, convert
 

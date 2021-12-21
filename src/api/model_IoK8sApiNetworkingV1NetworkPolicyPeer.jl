@@ -2,7 +2,7 @@
 # Do not modify this file directly. Modify the swagger specification instead.
 
 
-@doc raw"""NetworkPolicyPeer describes a peer to allow traffic from. Only certain combinations of fields are allowed
+@doc raw"""NetworkPolicyPeer describes a peer to allow traffic to/from. Only certain combinations of fields are allowed
 
     IoK8sApiNetworkingV1NetworkPolicyPeer(;
         ipBlock=nothing,

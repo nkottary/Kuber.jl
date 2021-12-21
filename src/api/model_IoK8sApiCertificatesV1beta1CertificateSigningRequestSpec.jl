@@ -8,6 +8,7 @@
         extra=nothing,
         groups=nothing,
         request=nothing,
+        signerName=nothing,
         uid=nothing,
         usages=nothing,
         username=nothing,
@@ -16,19 +17,21 @@
     - extra::Dict{String, Vector{String}} : Extra information about the requesting user. See user.Info interface for details.
     - groups::Vector{String} : Group information about the requesting user. See user.Info interface for details.
     - request::Vector{UInt8} : Base64-encoded PKCS#10 CSR data
+    - signerName::String : Requested signer for the request. It is a qualified name in the form: &#x60;scope-hostname.io/name&#x60;. If empty, it will be defaulted:  1. If it&#39;s a kubelet client certificate, it is assigned     \&quot;kubernetes.io/kube-apiserver-client-kubelet\&quot;.  2. If it&#39;s a kubelet serving certificate, it is assigned     \&quot;kubernetes.io/kubelet-serving\&quot;.  3. Otherwise, it is assigned \&quot;kubernetes.io/legacy-unknown\&quot;. Distribution of trust for signers happens out of band. You can select on this field using &#x60;spec.signerName&#x60;.
     - uid::String : UID information about the requesting user. See user.Info interface for details.
-    - usages::Vector{String} : allowedUsages specifies a set of usage contexts the key will be valid for. See: https://tools.ietf.org/html/rfc5280#section-4.2.1.3      https://tools.ietf.org/html/rfc5280#section-4.2.1.12
+    - usages::Vector{String} : allowedUsages specifies a set of usage contexts the key will be valid for. See: https://tools.ietf.org/html/rfc5280#section-4.2.1.3      https://tools.ietf.org/html/rfc5280#section-4.2.1.12 Valid values are:  \&quot;signing\&quot;,  \&quot;digital signature\&quot;,  \&quot;content commitment\&quot;,  \&quot;key encipherment\&quot;,  \&quot;key agreement\&quot;,  \&quot;data encipherment\&quot;,  \&quot;cert sign\&quot;,  \&quot;crl sign\&quot;,  \&quot;encipher only\&quot;,  \&quot;decipher only\&quot;,  \&quot;any\&quot;,  \&quot;server auth\&quot;,  \&quot;client auth\&quot;,  \&quot;code signing\&quot;,  \&quot;email protection\&quot;,  \&quot;s/mime\&quot;,  \&quot;ipsec end system\&quot;,  \&quot;ipsec tunnel\&quot;,  \&quot;ipsec user\&quot;,  \&quot;timestamping\&quot;,  \&quot;ocsp signing\&quot;,  \&quot;microsoft sgc\&quot;,  \&quot;netscape sgc\&quot;
     - username::String : Information about the requesting user. See user.Info interface for details.
 """
 mutable struct IoK8sApiCertificatesV1beta1CertificateSigningRequestSpec <: SwaggerModel
     extra::Any # spec type: Union{ Nothing, Dict{String, Vector{String}} } # spec name: extra
     groups::Any # spec type: Union{ Nothing, Vector{String} } # spec name: groups
     request::Any # spec type: Union{ Nothing, Vector{UInt8} } # spec name: request
+    signerName::Any # spec type: Union{ Nothing, String } # spec name: signerName
     uid::Any # spec type: Union{ Nothing, String } # spec name: uid
     usages::Any # spec type: Union{ Nothing, Vector{String} } # spec name: usages
     username::Any # spec type: Union{ Nothing, String } # spec name: username
 
-    function IoK8sApiCertificatesV1beta1CertificateSigningRequestSpec(;extra=nothing, groups=nothing, request=nothing, uid=nothing, usages=nothing, username=nothing)
+    function IoK8sApiCertificatesV1beta1CertificateSigningRequestSpec(;extra=nothing, groups=nothing, request=nothing, signerName=nothing, uid=nothing, usages=nothing, username=nothing)
         o = new()
         validate_property(IoK8sApiCertificatesV1beta1CertificateSigningRequestSpec, Symbol("extra"), extra)
         setfield!(o, Symbol("extra"), extra)
@@ -36,6 +39,8 @@ mutable struct IoK8sApiCertificatesV1beta1CertificateSigningRequestSpec <: Swagg
         setfield!(o, Symbol("groups"), groups)
         validate_property(IoK8sApiCertificatesV1beta1CertificateSigningRequestSpec, Symbol("request"), request)
         setfield!(o, Symbol("request"), request)
+        validate_property(IoK8sApiCertificatesV1beta1CertificateSigningRequestSpec, Symbol("signerName"), signerName)
+        setfield!(o, Symbol("signerName"), signerName)
         validate_property(IoK8sApiCertificatesV1beta1CertificateSigningRequestSpec, Symbol("uid"), uid)
         setfield!(o, Symbol("uid"), uid)
         validate_property(IoK8sApiCertificatesV1beta1CertificateSigningRequestSpec, Symbol("usages"), usages)
@@ -46,8 +51,8 @@ mutable struct IoK8sApiCertificatesV1beta1CertificateSigningRequestSpec <: Swagg
     end
 end # type IoK8sApiCertificatesV1beta1CertificateSigningRequestSpec
 
-const _property_map_IoK8sApiCertificatesV1beta1CertificateSigningRequestSpec = Dict{Symbol,Symbol}(Symbol("extra")=>Symbol("extra"), Symbol("groups")=>Symbol("groups"), Symbol("request")=>Symbol("request"), Symbol("uid")=>Symbol("uid"), Symbol("usages")=>Symbol("usages"), Symbol("username")=>Symbol("username"))
-const _property_types_IoK8sApiCertificatesV1beta1CertificateSigningRequestSpec = Dict{Symbol,String}(Symbol("extra")=>"Dict{String, Vector{String}}", Symbol("groups")=>"Vector{String}", Symbol("request")=>"Vector{UInt8}", Symbol("uid")=>"String", Symbol("usages")=>"Vector{String}", Symbol("username")=>"String")
+const _property_map_IoK8sApiCertificatesV1beta1CertificateSigningRequestSpec = Dict{Symbol,Symbol}(Symbol("extra")=>Symbol("extra"), Symbol("groups")=>Symbol("groups"), Symbol("request")=>Symbol("request"), Symbol("signerName")=>Symbol("signerName"), Symbol("uid")=>Symbol("uid"), Symbol("usages")=>Symbol("usages"), Symbol("username")=>Symbol("username"))
+const _property_types_IoK8sApiCertificatesV1beta1CertificateSigningRequestSpec = Dict{Symbol,String}(Symbol("extra")=>"Dict{String, Vector{String}}", Symbol("groups")=>"Vector{String}", Symbol("request")=>"Vector{UInt8}", Symbol("signerName")=>"String", Symbol("uid")=>"String", Symbol("usages")=>"Vector{String}", Symbol("username")=>"String")
 Base.propertynames(::Type{ IoK8sApiCertificatesV1beta1CertificateSigningRequestSpec }) = collect(keys(_property_map_IoK8sApiCertificatesV1beta1CertificateSigningRequestSpec))
 Swagger.property_type(::Type{ IoK8sApiCertificatesV1beta1CertificateSigningRequestSpec }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_IoK8sApiCertificatesV1beta1CertificateSigningRequestSpec[name]))}
 Swagger.field_name(::Type{ IoK8sApiCertificatesV1beta1CertificateSigningRequestSpec }, property_name::Symbol) =  _property_map_IoK8sApiCertificatesV1beta1CertificateSigningRequestSpec[property_name]

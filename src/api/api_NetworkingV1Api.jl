@@ -5,6 +5,66 @@ struct NetworkingV1Api <: SwaggerApi
     client::Swagger.Client
 end
 
+function _swaggerinternal_createNetworkingV1IngressClass(_api::NetworkingV1Api, body; pretty=nothing, dryRun=nothing, fieldManager=nothing, _mediaType=nothing)
+    _ctx = Swagger.Ctx(_api.client, "POST", IoK8sApiNetworkingV1IngressClass, "/apis/networking.k8s.io/v1/ingressclasses", ["BearerToken"], body)
+    Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
+    Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
+    Swagger.set_param(_ctx.query, "fieldManager", fieldManager)  # type String
+    Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
+    Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
+    return _ctx
+end
+
+"""
+
+create an IngressClass
+Param: body::IoK8sApiNetworkingV1IngressClass (required)
+Param: pretty::String
+Param: dryRun::String
+Param: fieldManager::String
+Return: IoK8sApiNetworkingV1IngressClass
+"""
+function createNetworkingV1IngressClass(_api::NetworkingV1Api, body; pretty=nothing, dryRun=nothing, fieldManager=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_createNetworkingV1IngressClass(_api, body; pretty=pretty, dryRun=dryRun, fieldManager=fieldManager, _mediaType=_mediaType)
+    Swagger.exec(_ctx)
+end
+
+function createNetworkingV1IngressClass(_api::NetworkingV1Api, response_stream::Channel, body; pretty=nothing, dryRun=nothing, fieldManager=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_createNetworkingV1IngressClass(_api, body; pretty=pretty, dryRun=dryRun, fieldManager=fieldManager, _mediaType=_mediaType)
+    Swagger.exec(_ctx, response_stream)
+end
+
+function _swaggerinternal_createNetworkingV1NamespacedIngress(_api::NetworkingV1Api, namespace::String, body; pretty=nothing, dryRun=nothing, fieldManager=nothing, _mediaType=nothing)
+    _ctx = Swagger.Ctx(_api.client, "POST", IoK8sApiNetworkingV1Ingress, "/apis/networking.k8s.io/v1/namespaces/{namespace}/ingresses", ["BearerToken"], body)
+    Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
+    Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
+    Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
+    Swagger.set_param(_ctx.query, "fieldManager", fieldManager)  # type String
+    Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
+    Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
+    return _ctx
+end
+
+"""
+
+create an Ingress
+Param: namespace::String (required)
+Param: body::IoK8sApiNetworkingV1Ingress (required)
+Param: pretty::String
+Param: dryRun::String
+Param: fieldManager::String
+Return: IoK8sApiNetworkingV1Ingress
+"""
+function createNetworkingV1NamespacedIngress(_api::NetworkingV1Api, namespace::String, body; pretty=nothing, dryRun=nothing, fieldManager=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_createNetworkingV1NamespacedIngress(_api, namespace, body; pretty=pretty, dryRun=dryRun, fieldManager=fieldManager, _mediaType=_mediaType)
+    Swagger.exec(_ctx)
+end
+
+function createNetworkingV1NamespacedIngress(_api::NetworkingV1Api, response_stream::Channel, namespace::String, body; pretty=nothing, dryRun=nothing, fieldManager=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_createNetworkingV1NamespacedIngress(_api, namespace, body; pretty=pretty, dryRun=dryRun, fieldManager=fieldManager, _mediaType=_mediaType)
+    Swagger.exec(_ctx, response_stream)
+end
+
 function _swaggerinternal_createNetworkingV1NamespacedNetworkPolicy(_api::NetworkingV1Api, namespace::String, body; pretty=nothing, dryRun=nothing, fieldManager=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "POST", IoK8sApiNetworkingV1NetworkPolicy, "/apis/networking.k8s.io/v1/namespaces/{namespace}/networkpolicies", ["BearerToken"], body)
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
@@ -36,11 +96,9 @@ function createNetworkingV1NamespacedNetworkPolicy(_api::NetworkingV1Api, respon
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_deleteNetworkingV1CollectionNamespacedNetworkPolicy(_api::NetworkingV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/apis/networking.k8s.io/v1/namespaces/{namespace}/networkpolicies", ["BearerToken"], body)
-    Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
+function _swaggerinternal_deleteNetworkingV1CollectionIngressClass(_api::NetworkingV1Api; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/apis/networking.k8s.io/v1/ingressclasses", ["BearerToken"], body)
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
-    Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
     Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
     Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
@@ -50,8 +108,8 @@ function _swaggerinternal_deleteNetworkingV1CollectionNamespacedNetworkPolicy(_a
     Swagger.set_param(_ctx.query, "orphanDependents", orphanDependents)  # type Bool
     Swagger.set_param(_ctx.query, "propagationPolicy", propagationPolicy)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
-    Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
     Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
     return _ctx
@@ -59,10 +117,8 @@ end
 
 """
 
-delete collection of NetworkPolicy
-Param: namespace::String (required)
+delete collection of IngressClass
 Param: pretty::String
-Param: allowWatchBookmarks::Bool
 Param: body::IoK8sApimachineryPkgApisMetaV1DeleteOptions
 Param: __continue__::String
 Param: dryRun::String
@@ -73,17 +129,187 @@ Param: limit::Int32
 Param: orphanDependents::Bool
 Param: propagationPolicy::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
-Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1Status
 """
-function deleteNetworkingV1CollectionNamespacedNetworkPolicy(_api::NetworkingV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteNetworkingV1CollectionNamespacedNetworkPolicy(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteNetworkingV1CollectionIngressClass(_api::NetworkingV1Api; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteNetworkingV1CollectionIngressClass(_api; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function deleteNetworkingV1CollectionNamespacedNetworkPolicy(_api::NetworkingV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_deleteNetworkingV1CollectionNamespacedNetworkPolicy(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function deleteNetworkingV1CollectionIngressClass(_api::NetworkingV1Api, response_stream::Channel; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteNetworkingV1CollectionIngressClass(_api; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
+    Swagger.exec(_ctx, response_stream)
+end
+
+function _swaggerinternal_deleteNetworkingV1CollectionNamespacedIngress(_api::NetworkingV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/apis/networking.k8s.io/v1/namespaces/{namespace}/ingresses", ["BearerToken"], body)
+    Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
+    Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
+    Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
+    Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
+    Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
+    Swagger.set_param(_ctx.query, "gracePeriodSeconds", gracePeriodSeconds)  # type Int32
+    Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
+    Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
+    Swagger.set_param(_ctx.query, "orphanDependents", orphanDependents)  # type Bool
+    Swagger.set_param(_ctx.query, "propagationPolicy", propagationPolicy)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
+    Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
+    Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
+    Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
+    return _ctx
+end
+
+"""
+
+delete collection of Ingress
+Param: namespace::String (required)
+Param: pretty::String
+Param: body::IoK8sApimachineryPkgApisMetaV1DeleteOptions
+Param: __continue__::String
+Param: dryRun::String
+Param: fieldSelector::String
+Param: gracePeriodSeconds::Int32
+Param: labelSelector::String
+Param: limit::Int32
+Param: orphanDependents::Bool
+Param: propagationPolicy::String
+Param: resourceVersion::String
+Param: resourceVersionMatch::String
+Param: timeoutSeconds::Int32
+Return: IoK8sApimachineryPkgApisMetaV1Status
+"""
+function deleteNetworkingV1CollectionNamespacedIngress(_api::NetworkingV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteNetworkingV1CollectionNamespacedIngress(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
+    Swagger.exec(_ctx)
+end
+
+function deleteNetworkingV1CollectionNamespacedIngress(_api::NetworkingV1Api, response_stream::Channel, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteNetworkingV1CollectionNamespacedIngress(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
+    Swagger.exec(_ctx, response_stream)
+end
+
+function _swaggerinternal_deleteNetworkingV1CollectionNamespacedNetworkPolicy(_api::NetworkingV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/apis/networking.k8s.io/v1/namespaces/{namespace}/networkpolicies", ["BearerToken"], body)
+    Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
+    Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
+    Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
+    Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
+    Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
+    Swagger.set_param(_ctx.query, "gracePeriodSeconds", gracePeriodSeconds)  # type Int32
+    Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
+    Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
+    Swagger.set_param(_ctx.query, "orphanDependents", orphanDependents)  # type Bool
+    Swagger.set_param(_ctx.query, "propagationPolicy", propagationPolicy)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
+    Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
+    Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
+    Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
+    return _ctx
+end
+
+"""
+
+delete collection of NetworkPolicy
+Param: namespace::String (required)
+Param: pretty::String
+Param: body::IoK8sApimachineryPkgApisMetaV1DeleteOptions
+Param: __continue__::String
+Param: dryRun::String
+Param: fieldSelector::String
+Param: gracePeriodSeconds::Int32
+Param: labelSelector::String
+Param: limit::Int32
+Param: orphanDependents::Bool
+Param: propagationPolicy::String
+Param: resourceVersion::String
+Param: resourceVersionMatch::String
+Param: timeoutSeconds::Int32
+Return: IoK8sApimachineryPkgApisMetaV1Status
+"""
+function deleteNetworkingV1CollectionNamespacedNetworkPolicy(_api::NetworkingV1Api, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteNetworkingV1CollectionNamespacedNetworkPolicy(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
+    Swagger.exec(_ctx)
+end
+
+function deleteNetworkingV1CollectionNamespacedNetworkPolicy(_api::NetworkingV1Api, response_stream::Channel, namespace::String; pretty=nothing, body=nothing, __continue__=nothing, dryRun=nothing, fieldSelector=nothing, gracePeriodSeconds=nothing, labelSelector=nothing, limit=nothing, orphanDependents=nothing, propagationPolicy=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteNetworkingV1CollectionNamespacedNetworkPolicy(_api, namespace; pretty=pretty, body=body, __continue__=__continue__, dryRun=dryRun, fieldSelector=fieldSelector, gracePeriodSeconds=gracePeriodSeconds, labelSelector=labelSelector, limit=limit, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, _mediaType=_mediaType)
+    Swagger.exec(_ctx, response_stream)
+end
+
+function _swaggerinternal_deleteNetworkingV1IngressClass(_api::NetworkingV1Api, name::String; pretty=nothing, body=nothing, dryRun=nothing, gracePeriodSeconds=nothing, orphanDependents=nothing, propagationPolicy=nothing, _mediaType=nothing)
+    _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/apis/networking.k8s.io/v1/ingressclasses/{name}", ["BearerToken"], body)
+    Swagger.set_param(_ctx.path, "name", name)  # type String
+    Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
+    Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
+    Swagger.set_param(_ctx.query, "gracePeriodSeconds", gracePeriodSeconds)  # type Int32
+    Swagger.set_param(_ctx.query, "orphanDependents", orphanDependents)  # type Bool
+    Swagger.set_param(_ctx.query, "propagationPolicy", propagationPolicy)  # type String
+    Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
+    Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
+    return _ctx
+end
+
+"""
+
+delete an IngressClass
+Param: name::String (required)
+Param: pretty::String
+Param: body::IoK8sApimachineryPkgApisMetaV1DeleteOptions
+Param: dryRun::String
+Param: gracePeriodSeconds::Int32
+Param: orphanDependents::Bool
+Param: propagationPolicy::String
+Return: IoK8sApimachineryPkgApisMetaV1Status
+"""
+function deleteNetworkingV1IngressClass(_api::NetworkingV1Api, name::String; pretty=nothing, body=nothing, dryRun=nothing, gracePeriodSeconds=nothing, orphanDependents=nothing, propagationPolicy=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteNetworkingV1IngressClass(_api, name; pretty=pretty, body=body, dryRun=dryRun, gracePeriodSeconds=gracePeriodSeconds, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, _mediaType=_mediaType)
+    Swagger.exec(_ctx)
+end
+
+function deleteNetworkingV1IngressClass(_api::NetworkingV1Api, response_stream::Channel, name::String; pretty=nothing, body=nothing, dryRun=nothing, gracePeriodSeconds=nothing, orphanDependents=nothing, propagationPolicy=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteNetworkingV1IngressClass(_api, name; pretty=pretty, body=body, dryRun=dryRun, gracePeriodSeconds=gracePeriodSeconds, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, _mediaType=_mediaType)
+    Swagger.exec(_ctx, response_stream)
+end
+
+function _swaggerinternal_deleteNetworkingV1NamespacedIngress(_api::NetworkingV1Api, name::String, namespace::String; pretty=nothing, body=nothing, dryRun=nothing, gracePeriodSeconds=nothing, orphanDependents=nothing, propagationPolicy=nothing, _mediaType=nothing)
+    _ctx = Swagger.Ctx(_api.client, "DELETE", IoK8sApimachineryPkgApisMetaV1Status, "/apis/networking.k8s.io/v1/namespaces/{namespace}/ingresses/{name}", ["BearerToken"], body)
+    Swagger.set_param(_ctx.path, "name", name)  # type String
+    Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
+    Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
+    Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
+    Swagger.set_param(_ctx.query, "gracePeriodSeconds", gracePeriodSeconds)  # type Int32
+    Swagger.set_param(_ctx.query, "orphanDependents", orphanDependents)  # type Bool
+    Swagger.set_param(_ctx.query, "propagationPolicy", propagationPolicy)  # type String
+    Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
+    Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
+    return _ctx
+end
+
+"""
+
+delete an Ingress
+Param: name::String (required)
+Param: namespace::String (required)
+Param: pretty::String
+Param: body::IoK8sApimachineryPkgApisMetaV1DeleteOptions
+Param: dryRun::String
+Param: gracePeriodSeconds::Int32
+Param: orphanDependents::Bool
+Param: propagationPolicy::String
+Return: IoK8sApimachineryPkgApisMetaV1Status
+"""
+function deleteNetworkingV1NamespacedIngress(_api::NetworkingV1Api, name::String, namespace::String; pretty=nothing, body=nothing, dryRun=nothing, gracePeriodSeconds=nothing, orphanDependents=nothing, propagationPolicy=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteNetworkingV1NamespacedIngress(_api, name, namespace; pretty=pretty, body=body, dryRun=dryRun, gracePeriodSeconds=gracePeriodSeconds, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, _mediaType=_mediaType)
+    Swagger.exec(_ctx)
+end
+
+function deleteNetworkingV1NamespacedIngress(_api::NetworkingV1Api, response_stream::Channel, name::String, namespace::String; pretty=nothing, body=nothing, dryRun=nothing, gracePeriodSeconds=nothing, orphanDependents=nothing, propagationPolicy=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_deleteNetworkingV1NamespacedIngress(_api, name, namespace; pretty=pretty, body=body, dryRun=dryRun, gracePeriodSeconds=gracePeriodSeconds, orphanDependents=orphanDependents, propagationPolicy=propagationPolicy, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
@@ -146,7 +372,135 @@ function getNetworkingV1APIResources(_api::NetworkingV1Api, response_stream::Cha
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listNetworkingV1NamespacedNetworkPolicy(_api::NetworkingV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listNetworkingV1IngressClass(_api::NetworkingV1Api; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiNetworkingV1IngressClassList, "/apis/networking.k8s.io/v1/ingressclasses", ["BearerToken"])
+    Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
+    Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
+    Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
+    Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
+    Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
+    Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
+    Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
+    Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
+    Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
+    Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
+    Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
+    return _ctx
+end
+
+"""
+
+list or watch objects of kind IngressClass
+Param: pretty::String
+Param: allowWatchBookmarks::Bool
+Param: __continue__::String
+Param: fieldSelector::String
+Param: labelSelector::String
+Param: limit::Int32
+Param: resourceVersion::String
+Param: resourceVersionMatch::String
+Param: timeoutSeconds::Int32
+Param: watch::Bool
+Return: IoK8sApiNetworkingV1IngressClassList
+"""
+function listNetworkingV1IngressClass(_api::NetworkingV1Api; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listNetworkingV1IngressClass(_api; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+    Swagger.exec(_ctx)
+end
+
+function listNetworkingV1IngressClass(_api::NetworkingV1Api, response_stream::Channel; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listNetworkingV1IngressClass(_api; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+    Swagger.exec(_ctx, response_stream)
+end
+
+function _swaggerinternal_listNetworkingV1IngressForAllNamespaces(_api::NetworkingV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiNetworkingV1IngressList, "/apis/networking.k8s.io/v1/ingresses", ["BearerToken"])
+    Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
+    Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
+    Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
+    Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
+    Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
+    Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
+    Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
+    Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
+    Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
+    Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
+    return _ctx
+end
+
+"""
+
+list or watch objects of kind Ingress
+Param: allowWatchBookmarks::Bool
+Param: __continue__::String
+Param: fieldSelector::String
+Param: labelSelector::String
+Param: limit::Int32
+Param: pretty::String
+Param: resourceVersion::String
+Param: resourceVersionMatch::String
+Param: timeoutSeconds::Int32
+Param: watch::Bool
+Return: IoK8sApiNetworkingV1IngressList
+"""
+function listNetworkingV1IngressForAllNamespaces(_api::NetworkingV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listNetworkingV1IngressForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+    Swagger.exec(_ctx)
+end
+
+function listNetworkingV1IngressForAllNamespaces(_api::NetworkingV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listNetworkingV1IngressForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+    Swagger.exec(_ctx, response_stream)
+end
+
+function _swaggerinternal_listNetworkingV1NamespacedIngress(_api::NetworkingV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiNetworkingV1IngressList, "/apis/networking.k8s.io/v1/namespaces/{namespace}/ingresses", ["BearerToken"])
+    Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
+    Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
+    Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
+    Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
+    Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
+    Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
+    Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
+    Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
+    Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
+    Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
+    Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
+    Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
+    return _ctx
+end
+
+"""
+
+list or watch objects of kind Ingress
+Param: namespace::String (required)
+Param: pretty::String
+Param: allowWatchBookmarks::Bool
+Param: __continue__::String
+Param: fieldSelector::String
+Param: labelSelector::String
+Param: limit::Int32
+Param: resourceVersion::String
+Param: resourceVersionMatch::String
+Param: timeoutSeconds::Int32
+Param: watch::Bool
+Return: IoK8sApiNetworkingV1IngressList
+"""
+function listNetworkingV1NamespacedIngress(_api::NetworkingV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listNetworkingV1NamespacedIngress(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+    Swagger.exec(_ctx)
+end
+
+function listNetworkingV1NamespacedIngress(_api::NetworkingV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listNetworkingV1NamespacedIngress(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+    Swagger.exec(_ctx, response_stream)
+end
+
+function _swaggerinternal_listNetworkingV1NamespacedNetworkPolicy(_api::NetworkingV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiNetworkingV1NetworkPolicyList, "/apis/networking.k8s.io/v1/namespaces/{namespace}/networkpolicies", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
@@ -156,6 +510,7 @@ function _swaggerinternal_listNetworkingV1NamespacedNetworkPolicy(_api::Networki
     Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -174,21 +529,22 @@ Param: fieldSelector::String
 Param: labelSelector::String
 Param: limit::Int32
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiNetworkingV1NetworkPolicyList
 """
-function listNetworkingV1NamespacedNetworkPolicy(_api::NetworkingV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listNetworkingV1NamespacedNetworkPolicy(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listNetworkingV1NamespacedNetworkPolicy(_api::NetworkingV1Api, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listNetworkingV1NamespacedNetworkPolicy(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listNetworkingV1NamespacedNetworkPolicy(_api::NetworkingV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listNetworkingV1NamespacedNetworkPolicy(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listNetworkingV1NamespacedNetworkPolicy(_api::NetworkingV1Api, response_stream::Channel, namespace::String; pretty=nothing, allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listNetworkingV1NamespacedNetworkPolicy(_api, namespace; pretty=pretty, allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_listNetworkingV1NetworkPolicyForAllNamespaces(_api::NetworkingV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_listNetworkingV1NetworkPolicyForAllNamespaces(_api::NetworkingV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiNetworkingV1NetworkPolicyList, "/apis/networking.k8s.io/v1/networkpolicies", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -197,6 +553,7 @@ function _swaggerinternal_listNetworkingV1NetworkPolicyForAllNamespaces(_api::Ne
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -214,17 +571,121 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApiNetworkingV1NetworkPolicyList
 """
-function listNetworkingV1NetworkPolicyForAllNamespaces(_api::NetworkingV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listNetworkingV1NetworkPolicyForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listNetworkingV1NetworkPolicyForAllNamespaces(_api::NetworkingV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listNetworkingV1NetworkPolicyForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function listNetworkingV1NetworkPolicyForAllNamespaces(_api::NetworkingV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_listNetworkingV1NetworkPolicyForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function listNetworkingV1NetworkPolicyForAllNamespaces(_api::NetworkingV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_listNetworkingV1NetworkPolicyForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+    Swagger.exec(_ctx, response_stream)
+end
+
+function _swaggerinternal_patchNetworkingV1IngressClass(_api::NetworkingV1Api, name::String, body; pretty=nothing, dryRun=nothing, fieldManager=nothing, force=nothing, _mediaType=nothing)
+    _ctx = Swagger.Ctx(_api.client, "PATCH", IoK8sApiNetworkingV1IngressClass, "/apis/networking.k8s.io/v1/ingressclasses/{name}", ["BearerToken"], body)
+    Swagger.set_param(_ctx.path, "name", name)  # type String
+    Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
+    Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
+    Swagger.set_param(_ctx.query, "fieldManager", fieldManager)  # type String
+    Swagger.set_param(_ctx.query, "force", force)  # type Bool
+    Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
+    Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["application/json-patch+json", "application/merge-patch+json", "application/strategic-merge-patch+json", "application/apply-patch+yaml"] : [_mediaType])
+    return _ctx
+end
+
+"""
+
+partially update the specified IngressClass
+Param: name::String (required)
+Param: body::IoK8sApimachineryPkgApisMetaV1Patch (required)
+Param: pretty::String
+Param: dryRun::String
+Param: fieldManager::String
+Param: force::Bool
+Return: IoK8sApiNetworkingV1IngressClass
+"""
+function patchNetworkingV1IngressClass(_api::NetworkingV1Api, name::String, body; pretty=nothing, dryRun=nothing, fieldManager=nothing, force=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_patchNetworkingV1IngressClass(_api, name, body; pretty=pretty, dryRun=dryRun, fieldManager=fieldManager, force=force, _mediaType=_mediaType)
+    Swagger.exec(_ctx)
+end
+
+function patchNetworkingV1IngressClass(_api::NetworkingV1Api, response_stream::Channel, name::String, body; pretty=nothing, dryRun=nothing, fieldManager=nothing, force=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_patchNetworkingV1IngressClass(_api, name, body; pretty=pretty, dryRun=dryRun, fieldManager=fieldManager, force=force, _mediaType=_mediaType)
+    Swagger.exec(_ctx, response_stream)
+end
+
+function _swaggerinternal_patchNetworkingV1NamespacedIngress(_api::NetworkingV1Api, name::String, namespace::String, body; pretty=nothing, dryRun=nothing, fieldManager=nothing, force=nothing, _mediaType=nothing)
+    _ctx = Swagger.Ctx(_api.client, "PATCH", IoK8sApiNetworkingV1Ingress, "/apis/networking.k8s.io/v1/namespaces/{namespace}/ingresses/{name}", ["BearerToken"], body)
+    Swagger.set_param(_ctx.path, "name", name)  # type String
+    Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
+    Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
+    Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
+    Swagger.set_param(_ctx.query, "fieldManager", fieldManager)  # type String
+    Swagger.set_param(_ctx.query, "force", force)  # type Bool
+    Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
+    Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["application/json-patch+json", "application/merge-patch+json", "application/strategic-merge-patch+json", "application/apply-patch+yaml"] : [_mediaType])
+    return _ctx
+end
+
+"""
+
+partially update the specified Ingress
+Param: name::String (required)
+Param: namespace::String (required)
+Param: body::IoK8sApimachineryPkgApisMetaV1Patch (required)
+Param: pretty::String
+Param: dryRun::String
+Param: fieldManager::String
+Param: force::Bool
+Return: IoK8sApiNetworkingV1Ingress
+"""
+function patchNetworkingV1NamespacedIngress(_api::NetworkingV1Api, name::String, namespace::String, body; pretty=nothing, dryRun=nothing, fieldManager=nothing, force=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_patchNetworkingV1NamespacedIngress(_api, name, namespace, body; pretty=pretty, dryRun=dryRun, fieldManager=fieldManager, force=force, _mediaType=_mediaType)
+    Swagger.exec(_ctx)
+end
+
+function patchNetworkingV1NamespacedIngress(_api::NetworkingV1Api, response_stream::Channel, name::String, namespace::String, body; pretty=nothing, dryRun=nothing, fieldManager=nothing, force=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_patchNetworkingV1NamespacedIngress(_api, name, namespace, body; pretty=pretty, dryRun=dryRun, fieldManager=fieldManager, force=force, _mediaType=_mediaType)
+    Swagger.exec(_ctx, response_stream)
+end
+
+function _swaggerinternal_patchNetworkingV1NamespacedIngressStatus(_api::NetworkingV1Api, name::String, namespace::String, body; pretty=nothing, dryRun=nothing, fieldManager=nothing, force=nothing, _mediaType=nothing)
+    _ctx = Swagger.Ctx(_api.client, "PATCH", IoK8sApiNetworkingV1Ingress, "/apis/networking.k8s.io/v1/namespaces/{namespace}/ingresses/{name}/status", ["BearerToken"], body)
+    Swagger.set_param(_ctx.path, "name", name)  # type String
+    Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
+    Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
+    Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
+    Swagger.set_param(_ctx.query, "fieldManager", fieldManager)  # type String
+    Swagger.set_param(_ctx.query, "force", force)  # type Bool
+    Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
+    Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["application/json-patch+json", "application/merge-patch+json", "application/strategic-merge-patch+json", "application/apply-patch+yaml"] : [_mediaType])
+    return _ctx
+end
+
+"""
+
+partially update status of the specified Ingress
+Param: name::String (required)
+Param: namespace::String (required)
+Param: body::IoK8sApimachineryPkgApisMetaV1Patch (required)
+Param: pretty::String
+Param: dryRun::String
+Param: fieldManager::String
+Param: force::Bool
+Return: IoK8sApiNetworkingV1Ingress
+"""
+function patchNetworkingV1NamespacedIngressStatus(_api::NetworkingV1Api, name::String, namespace::String, body; pretty=nothing, dryRun=nothing, fieldManager=nothing, force=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_patchNetworkingV1NamespacedIngressStatus(_api, name, namespace, body; pretty=pretty, dryRun=dryRun, fieldManager=fieldManager, force=force, _mediaType=_mediaType)
+    Swagger.exec(_ctx)
+end
+
+function patchNetworkingV1NamespacedIngressStatus(_api::NetworkingV1Api, response_stream::Channel, name::String, namespace::String, body; pretty=nothing, dryRun=nothing, fieldManager=nothing, force=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_patchNetworkingV1NamespacedIngressStatus(_api, name, namespace, body; pretty=pretty, dryRun=dryRun, fieldManager=fieldManager, force=force, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
@@ -263,6 +724,96 @@ function patchNetworkingV1NamespacedNetworkPolicy(_api::NetworkingV1Api, respons
     Swagger.exec(_ctx, response_stream)
 end
 
+function _swaggerinternal_readNetworkingV1IngressClass(_api::NetworkingV1Api, name::String; pretty=nothing, exact=nothing, __export__=nothing, _mediaType=nothing)
+    _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiNetworkingV1IngressClass, "/apis/networking.k8s.io/v1/ingressclasses/{name}", ["BearerToken"])
+    Swagger.set_param(_ctx.path, "name", name)  # type String
+    Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
+    Swagger.set_param(_ctx.query, "exact", exact)  # type Bool
+    Swagger.set_param(_ctx.query, "export", __export__)  # type Bool
+    Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
+    Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
+    return _ctx
+end
+
+"""
+
+read the specified IngressClass
+Param: name::String (required)
+Param: pretty::String
+Param: exact::Bool
+Param: __export__::Bool
+Return: IoK8sApiNetworkingV1IngressClass
+"""
+function readNetworkingV1IngressClass(_api::NetworkingV1Api, name::String; pretty=nothing, exact=nothing, __export__=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_readNetworkingV1IngressClass(_api, name; pretty=pretty, exact=exact, __export__=__export__, _mediaType=_mediaType)
+    Swagger.exec(_ctx)
+end
+
+function readNetworkingV1IngressClass(_api::NetworkingV1Api, response_stream::Channel, name::String; pretty=nothing, exact=nothing, __export__=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_readNetworkingV1IngressClass(_api, name; pretty=pretty, exact=exact, __export__=__export__, _mediaType=_mediaType)
+    Swagger.exec(_ctx, response_stream)
+end
+
+function _swaggerinternal_readNetworkingV1NamespacedIngress(_api::NetworkingV1Api, name::String, namespace::String; pretty=nothing, exact=nothing, __export__=nothing, _mediaType=nothing)
+    _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiNetworkingV1Ingress, "/apis/networking.k8s.io/v1/namespaces/{namespace}/ingresses/{name}", ["BearerToken"])
+    Swagger.set_param(_ctx.path, "name", name)  # type String
+    Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
+    Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
+    Swagger.set_param(_ctx.query, "exact", exact)  # type Bool
+    Swagger.set_param(_ctx.query, "export", __export__)  # type Bool
+    Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
+    Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
+    return _ctx
+end
+
+"""
+
+read the specified Ingress
+Param: name::String (required)
+Param: namespace::String (required)
+Param: pretty::String
+Param: exact::Bool
+Param: __export__::Bool
+Return: IoK8sApiNetworkingV1Ingress
+"""
+function readNetworkingV1NamespacedIngress(_api::NetworkingV1Api, name::String, namespace::String; pretty=nothing, exact=nothing, __export__=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_readNetworkingV1NamespacedIngress(_api, name, namespace; pretty=pretty, exact=exact, __export__=__export__, _mediaType=_mediaType)
+    Swagger.exec(_ctx)
+end
+
+function readNetworkingV1NamespacedIngress(_api::NetworkingV1Api, response_stream::Channel, name::String, namespace::String; pretty=nothing, exact=nothing, __export__=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_readNetworkingV1NamespacedIngress(_api, name, namespace; pretty=pretty, exact=exact, __export__=__export__, _mediaType=_mediaType)
+    Swagger.exec(_ctx, response_stream)
+end
+
+function _swaggerinternal_readNetworkingV1NamespacedIngressStatus(_api::NetworkingV1Api, name::String, namespace::String; pretty=nothing, _mediaType=nothing)
+    _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiNetworkingV1Ingress, "/apis/networking.k8s.io/v1/namespaces/{namespace}/ingresses/{name}/status", ["BearerToken"])
+    Swagger.set_param(_ctx.path, "name", name)  # type String
+    Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
+    Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
+    Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
+    Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
+    return _ctx
+end
+
+"""
+
+read status of the specified Ingress
+Param: name::String (required)
+Param: namespace::String (required)
+Param: pretty::String
+Return: IoK8sApiNetworkingV1Ingress
+"""
+function readNetworkingV1NamespacedIngressStatus(_api::NetworkingV1Api, name::String, namespace::String; pretty=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_readNetworkingV1NamespacedIngressStatus(_api, name, namespace; pretty=pretty, _mediaType=_mediaType)
+    Swagger.exec(_ctx)
+end
+
+function readNetworkingV1NamespacedIngressStatus(_api::NetworkingV1Api, response_stream::Channel, name::String, namespace::String; pretty=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_readNetworkingV1NamespacedIngressStatus(_api, name, namespace; pretty=pretty, _mediaType=_mediaType)
+    Swagger.exec(_ctx, response_stream)
+end
+
 function _swaggerinternal_readNetworkingV1NamespacedNetworkPolicy(_api::NetworkingV1Api, name::String, namespace::String; pretty=nothing, exact=nothing, __export__=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApiNetworkingV1NetworkPolicy, "/apis/networking.k8s.io/v1/namespaces/{namespace}/networkpolicies/{name}", ["BearerToken"])
     Swagger.set_param(_ctx.path, "name", name)  # type String
@@ -292,6 +843,103 @@ end
 
 function readNetworkingV1NamespacedNetworkPolicy(_api::NetworkingV1Api, response_stream::Channel, name::String, namespace::String; pretty=nothing, exact=nothing, __export__=nothing, _mediaType=nothing)
     _ctx = _swaggerinternal_readNetworkingV1NamespacedNetworkPolicy(_api, name, namespace; pretty=pretty, exact=exact, __export__=__export__, _mediaType=_mediaType)
+    Swagger.exec(_ctx, response_stream)
+end
+
+function _swaggerinternal_replaceNetworkingV1IngressClass(_api::NetworkingV1Api, name::String, body; pretty=nothing, dryRun=nothing, fieldManager=nothing, _mediaType=nothing)
+    _ctx = Swagger.Ctx(_api.client, "PUT", IoK8sApiNetworkingV1IngressClass, "/apis/networking.k8s.io/v1/ingressclasses/{name}", ["BearerToken"], body)
+    Swagger.set_param(_ctx.path, "name", name)  # type String
+    Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
+    Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
+    Swagger.set_param(_ctx.query, "fieldManager", fieldManager)  # type String
+    Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
+    Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
+    return _ctx
+end
+
+"""
+
+replace the specified IngressClass
+Param: name::String (required)
+Param: body::IoK8sApiNetworkingV1IngressClass (required)
+Param: pretty::String
+Param: dryRun::String
+Param: fieldManager::String
+Return: IoK8sApiNetworkingV1IngressClass
+"""
+function replaceNetworkingV1IngressClass(_api::NetworkingV1Api, name::String, body; pretty=nothing, dryRun=nothing, fieldManager=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_replaceNetworkingV1IngressClass(_api, name, body; pretty=pretty, dryRun=dryRun, fieldManager=fieldManager, _mediaType=_mediaType)
+    Swagger.exec(_ctx)
+end
+
+function replaceNetworkingV1IngressClass(_api::NetworkingV1Api, response_stream::Channel, name::String, body; pretty=nothing, dryRun=nothing, fieldManager=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_replaceNetworkingV1IngressClass(_api, name, body; pretty=pretty, dryRun=dryRun, fieldManager=fieldManager, _mediaType=_mediaType)
+    Swagger.exec(_ctx, response_stream)
+end
+
+function _swaggerinternal_replaceNetworkingV1NamespacedIngress(_api::NetworkingV1Api, name::String, namespace::String, body; pretty=nothing, dryRun=nothing, fieldManager=nothing, _mediaType=nothing)
+    _ctx = Swagger.Ctx(_api.client, "PUT", IoK8sApiNetworkingV1Ingress, "/apis/networking.k8s.io/v1/namespaces/{namespace}/ingresses/{name}", ["BearerToken"], body)
+    Swagger.set_param(_ctx.path, "name", name)  # type String
+    Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
+    Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
+    Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
+    Swagger.set_param(_ctx.query, "fieldManager", fieldManager)  # type String
+    Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
+    Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
+    return _ctx
+end
+
+"""
+
+replace the specified Ingress
+Param: name::String (required)
+Param: namespace::String (required)
+Param: body::IoK8sApiNetworkingV1Ingress (required)
+Param: pretty::String
+Param: dryRun::String
+Param: fieldManager::String
+Return: IoK8sApiNetworkingV1Ingress
+"""
+function replaceNetworkingV1NamespacedIngress(_api::NetworkingV1Api, name::String, namespace::String, body; pretty=nothing, dryRun=nothing, fieldManager=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_replaceNetworkingV1NamespacedIngress(_api, name, namespace, body; pretty=pretty, dryRun=dryRun, fieldManager=fieldManager, _mediaType=_mediaType)
+    Swagger.exec(_ctx)
+end
+
+function replaceNetworkingV1NamespacedIngress(_api::NetworkingV1Api, response_stream::Channel, name::String, namespace::String, body; pretty=nothing, dryRun=nothing, fieldManager=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_replaceNetworkingV1NamespacedIngress(_api, name, namespace, body; pretty=pretty, dryRun=dryRun, fieldManager=fieldManager, _mediaType=_mediaType)
+    Swagger.exec(_ctx, response_stream)
+end
+
+function _swaggerinternal_replaceNetworkingV1NamespacedIngressStatus(_api::NetworkingV1Api, name::String, namespace::String, body; pretty=nothing, dryRun=nothing, fieldManager=nothing, _mediaType=nothing)
+    _ctx = Swagger.Ctx(_api.client, "PUT", IoK8sApiNetworkingV1Ingress, "/apis/networking.k8s.io/v1/namespaces/{namespace}/ingresses/{name}/status", ["BearerToken"], body)
+    Swagger.set_param(_ctx.path, "name", name)  # type String
+    Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
+    Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
+    Swagger.set_param(_ctx.query, "dryRun", dryRun)  # type String
+    Swagger.set_param(_ctx.query, "fieldManager", fieldManager)  # type String
+    Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf"])
+    Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
+    return _ctx
+end
+
+"""
+
+replace status of the specified Ingress
+Param: name::String (required)
+Param: namespace::String (required)
+Param: body::IoK8sApiNetworkingV1Ingress (required)
+Param: pretty::String
+Param: dryRun::String
+Param: fieldManager::String
+Return: IoK8sApiNetworkingV1Ingress
+"""
+function replaceNetworkingV1NamespacedIngressStatus(_api::NetworkingV1Api, name::String, namespace::String, body; pretty=nothing, dryRun=nothing, fieldManager=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_replaceNetworkingV1NamespacedIngressStatus(_api, name, namespace, body; pretty=pretty, dryRun=dryRun, fieldManager=fieldManager, _mediaType=_mediaType)
+    Swagger.exec(_ctx)
+end
+
+function replaceNetworkingV1NamespacedIngressStatus(_api::NetworkingV1Api, response_stream::Channel, name::String, namespace::String, body; pretty=nothing, dryRun=nothing, fieldManager=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_replaceNetworkingV1NamespacedIngressStatus(_api, name, namespace, body; pretty=pretty, dryRun=dryRun, fieldManager=fieldManager, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
@@ -328,7 +976,225 @@ function replaceNetworkingV1NamespacedNetworkPolicy(_api::NetworkingV1Api, respo
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchNetworkingV1NamespacedNetworkPolicy(_api::NetworkingV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchNetworkingV1IngressClass(_api::NetworkingV1Api, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/apis/networking.k8s.io/v1/watch/ingressclasses/{name}", ["BearerToken"])
+    Swagger.set_param(_ctx.path, "name", name)  # type String
+    Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
+    Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
+    Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
+    Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
+    Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
+    Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
+    Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
+    Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
+    Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
+    Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
+    return _ctx
+end
+
+"""
+
+watch changes to an object of kind IngressClass. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
+Param: name::String (required)
+Param: allowWatchBookmarks::Bool
+Param: __continue__::String
+Param: fieldSelector::String
+Param: labelSelector::String
+Param: limit::Int32
+Param: pretty::String
+Param: resourceVersion::String
+Param: resourceVersionMatch::String
+Param: timeoutSeconds::Int32
+Param: watch::Bool
+Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
+"""
+function watchNetworkingV1IngressClass(_api::NetworkingV1Api, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchNetworkingV1IngressClass(_api, name; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+    Swagger.exec(_ctx)
+end
+
+function watchNetworkingV1IngressClass(_api::NetworkingV1Api, response_stream::Channel, name::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchNetworkingV1IngressClass(_api, name; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+    Swagger.exec(_ctx, response_stream)
+end
+
+function _swaggerinternal_watchNetworkingV1IngressClassList(_api::NetworkingV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/apis/networking.k8s.io/v1/watch/ingressclasses", ["BearerToken"])
+    Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
+    Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
+    Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
+    Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
+    Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
+    Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
+    Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
+    Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
+    Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
+    Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
+    return _ctx
+end
+
+"""
+
+watch individual changes to a list of IngressClass. deprecated: use the 'watch' parameter with a list operation instead.
+Param: allowWatchBookmarks::Bool
+Param: __continue__::String
+Param: fieldSelector::String
+Param: labelSelector::String
+Param: limit::Int32
+Param: pretty::String
+Param: resourceVersion::String
+Param: resourceVersionMatch::String
+Param: timeoutSeconds::Int32
+Param: watch::Bool
+Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
+"""
+function watchNetworkingV1IngressClassList(_api::NetworkingV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchNetworkingV1IngressClassList(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+    Swagger.exec(_ctx)
+end
+
+function watchNetworkingV1IngressClassList(_api::NetworkingV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchNetworkingV1IngressClassList(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+    Swagger.exec(_ctx, response_stream)
+end
+
+function _swaggerinternal_watchNetworkingV1IngressListForAllNamespaces(_api::NetworkingV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/apis/networking.k8s.io/v1/watch/ingresses", ["BearerToken"])
+    Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
+    Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
+    Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
+    Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
+    Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
+    Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
+    Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
+    Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
+    Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
+    Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
+    return _ctx
+end
+
+"""
+
+watch individual changes to a list of Ingress. deprecated: use the 'watch' parameter with a list operation instead.
+Param: allowWatchBookmarks::Bool
+Param: __continue__::String
+Param: fieldSelector::String
+Param: labelSelector::String
+Param: limit::Int32
+Param: pretty::String
+Param: resourceVersion::String
+Param: resourceVersionMatch::String
+Param: timeoutSeconds::Int32
+Param: watch::Bool
+Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
+"""
+function watchNetworkingV1IngressListForAllNamespaces(_api::NetworkingV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchNetworkingV1IngressListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+    Swagger.exec(_ctx)
+end
+
+function watchNetworkingV1IngressListForAllNamespaces(_api::NetworkingV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchNetworkingV1IngressListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+    Swagger.exec(_ctx, response_stream)
+end
+
+function _swaggerinternal_watchNetworkingV1NamespacedIngress(_api::NetworkingV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/apis/networking.k8s.io/v1/watch/namespaces/{namespace}/ingresses/{name}", ["BearerToken"])
+    Swagger.set_param(_ctx.path, "name", name)  # type String
+    Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
+    Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
+    Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
+    Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
+    Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
+    Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
+    Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
+    Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
+    Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
+    Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
+    Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
+    return _ctx
+end
+
+"""
+
+watch changes to an object of kind Ingress. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
+Param: name::String (required)
+Param: namespace::String (required)
+Param: allowWatchBookmarks::Bool
+Param: __continue__::String
+Param: fieldSelector::String
+Param: labelSelector::String
+Param: limit::Int32
+Param: pretty::String
+Param: resourceVersion::String
+Param: resourceVersionMatch::String
+Param: timeoutSeconds::Int32
+Param: watch::Bool
+Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
+"""
+function watchNetworkingV1NamespacedIngress(_api::NetworkingV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchNetworkingV1NamespacedIngress(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+    Swagger.exec(_ctx)
+end
+
+function watchNetworkingV1NamespacedIngress(_api::NetworkingV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchNetworkingV1NamespacedIngress(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+    Swagger.exec(_ctx, response_stream)
+end
+
+function _swaggerinternal_watchNetworkingV1NamespacedIngressList(_api::NetworkingV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/apis/networking.k8s.io/v1/watch/namespaces/{namespace}/ingresses", ["BearerToken"])
+    Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
+    Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
+    Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
+    Swagger.set_param(_ctx.query, "fieldSelector", fieldSelector)  # type String
+    Swagger.set_param(_ctx.query, "labelSelector", labelSelector)  # type String
+    Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
+    Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
+    Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
+    Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
+    Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
+    Swagger.set_header_content_type(_ctx, (_mediaType === nothing) ? ["*/*"] : [_mediaType])
+    return _ctx
+end
+
+"""
+
+watch individual changes to a list of Ingress. deprecated: use the 'watch' parameter with a list operation instead.
+Param: namespace::String (required)
+Param: allowWatchBookmarks::Bool
+Param: __continue__::String
+Param: fieldSelector::String
+Param: labelSelector::String
+Param: limit::Int32
+Param: pretty::String
+Param: resourceVersion::String
+Param: resourceVersionMatch::String
+Param: timeoutSeconds::Int32
+Param: watch::Bool
+Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
+"""
+function watchNetworkingV1NamespacedIngressList(_api::NetworkingV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchNetworkingV1NamespacedIngressList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+    Swagger.exec(_ctx)
+end
+
+function watchNetworkingV1NamespacedIngressList(_api::NetworkingV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchNetworkingV1NamespacedIngressList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+    Swagger.exec(_ctx, response_stream)
+end
+
+function _swaggerinternal_watchNetworkingV1NamespacedNetworkPolicy(_api::NetworkingV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/apis/networking.k8s.io/v1/watch/namespaces/{namespace}/networkpolicies/{name}", ["BearerToken"])
     Swagger.set_param(_ctx.path, "name", name)  # type String
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
@@ -339,6 +1205,7 @@ function _swaggerinternal_watchNetworkingV1NamespacedNetworkPolicy(_api::Network
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -358,21 +1225,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchNetworkingV1NamespacedNetworkPolicy(_api::NetworkingV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchNetworkingV1NamespacedNetworkPolicy(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchNetworkingV1NamespacedNetworkPolicy(_api::NetworkingV1Api, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchNetworkingV1NamespacedNetworkPolicy(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchNetworkingV1NamespacedNetworkPolicy(_api::NetworkingV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchNetworkingV1NamespacedNetworkPolicy(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchNetworkingV1NamespacedNetworkPolicy(_api::NetworkingV1Api, response_stream::Channel, name::String, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchNetworkingV1NamespacedNetworkPolicy(_api, name, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchNetworkingV1NamespacedNetworkPolicyList(_api::NetworkingV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchNetworkingV1NamespacedNetworkPolicyList(_api::NetworkingV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/apis/networking.k8s.io/v1/watch/namespaces/{namespace}/networkpolicies", ["BearerToken"])
     Swagger.set_param(_ctx.path, "namespace", namespace)  # type String
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
@@ -382,6 +1250,7 @@ function _swaggerinternal_watchNetworkingV1NamespacedNetworkPolicyList(_api::Net
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -400,21 +1269,22 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchNetworkingV1NamespacedNetworkPolicyList(_api::NetworkingV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchNetworkingV1NamespacedNetworkPolicyList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchNetworkingV1NamespacedNetworkPolicyList(_api::NetworkingV1Api, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchNetworkingV1NamespacedNetworkPolicyList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchNetworkingV1NamespacedNetworkPolicyList(_api::NetworkingV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchNetworkingV1NamespacedNetworkPolicyList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchNetworkingV1NamespacedNetworkPolicyList(_api::NetworkingV1Api, response_stream::Channel, namespace::String; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchNetworkingV1NamespacedNetworkPolicyList(_api, namespace; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-function _swaggerinternal_watchNetworkingV1NetworkPolicyListForAllNamespaces(_api::NetworkingV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+function _swaggerinternal_watchNetworkingV1NetworkPolicyListForAllNamespaces(_api::NetworkingV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
     _ctx = Swagger.Ctx(_api.client, "GET", IoK8sApimachineryPkgApisMetaV1WatchEvent, "/apis/networking.k8s.io/v1/watch/networkpolicies", ["BearerToken"])
     Swagger.set_param(_ctx.query, "allowWatchBookmarks", allowWatchBookmarks)  # type Bool
     Swagger.set_param(_ctx.query, "continue", __continue__)  # type String
@@ -423,6 +1293,7 @@ function _swaggerinternal_watchNetworkingV1NetworkPolicyListForAllNamespaces(_ap
     Swagger.set_param(_ctx.query, "limit", limit)  # type Int32
     Swagger.set_param(_ctx.query, "pretty", pretty)  # type String
     Swagger.set_param(_ctx.query, "resourceVersion", resourceVersion)  # type String
+    Swagger.set_param(_ctx.query, "resourceVersionMatch", resourceVersionMatch)  # type String
     Swagger.set_param(_ctx.query, "timeoutSeconds", timeoutSeconds)  # type Int32
     Swagger.set_param(_ctx.query, "watch", watch)  # type Bool
     Swagger.set_header_accept(_ctx, ["application/json", "application/yaml", "application/vnd.kubernetes.protobuf", "application/json;stream=watch", "application/vnd.kubernetes.protobuf;stream=watch"])
@@ -440,18 +1311,19 @@ Param: labelSelector::String
 Param: limit::Int32
 Param: pretty::String
 Param: resourceVersion::String
+Param: resourceVersionMatch::String
 Param: timeoutSeconds::Int32
 Param: watch::Bool
 Return: IoK8sApimachineryPkgApisMetaV1WatchEvent
 """
-function watchNetworkingV1NetworkPolicyListForAllNamespaces(_api::NetworkingV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchNetworkingV1NetworkPolicyListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchNetworkingV1NetworkPolicyListForAllNamespaces(_api::NetworkingV1Api; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchNetworkingV1NetworkPolicyListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx)
 end
 
-function watchNetworkingV1NetworkPolicyListForAllNamespaces(_api::NetworkingV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
-    _ctx = _swaggerinternal_watchNetworkingV1NetworkPolicyListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
+function watchNetworkingV1NetworkPolicyListForAllNamespaces(_api::NetworkingV1Api, response_stream::Channel; allowWatchBookmarks=nothing, __continue__=nothing, fieldSelector=nothing, labelSelector=nothing, limit=nothing, pretty=nothing, resourceVersion=nothing, resourceVersionMatch=nothing, timeoutSeconds=nothing, watch=nothing, _mediaType=nothing)
+    _ctx = _swaggerinternal_watchNetworkingV1NetworkPolicyListForAllNamespaces(_api; allowWatchBookmarks=allowWatchBookmarks, __continue__=__continue__, fieldSelector=fieldSelector, labelSelector=labelSelector, limit=limit, pretty=pretty, resourceVersion=resourceVersion, resourceVersionMatch=resourceVersionMatch, timeoutSeconds=timeoutSeconds, watch=watch, _mediaType=_mediaType)
     Swagger.exec(_ctx, response_stream)
 end
 
-export createNetworkingV1NamespacedNetworkPolicy, deleteNetworkingV1CollectionNamespacedNetworkPolicy, deleteNetworkingV1NamespacedNetworkPolicy, getNetworkingV1APIResources, listNetworkingV1NamespacedNetworkPolicy, listNetworkingV1NetworkPolicyForAllNamespaces, patchNetworkingV1NamespacedNetworkPolicy, readNetworkingV1NamespacedNetworkPolicy, replaceNetworkingV1NamespacedNetworkPolicy, watchNetworkingV1NamespacedNetworkPolicy, watchNetworkingV1NamespacedNetworkPolicyList, watchNetworkingV1NetworkPolicyListForAllNamespaces
+export createNetworkingV1IngressClass, createNetworkingV1NamespacedIngress, createNetworkingV1NamespacedNetworkPolicy, deleteNetworkingV1CollectionIngressClass, deleteNetworkingV1CollectionNamespacedIngress, deleteNetworkingV1CollectionNamespacedNetworkPolicy, deleteNetworkingV1IngressClass, deleteNetworkingV1NamespacedIngress, deleteNetworkingV1NamespacedNetworkPolicy, getNetworkingV1APIResources, listNetworkingV1IngressClass, listNetworkingV1IngressForAllNamespaces, listNetworkingV1NamespacedIngress, listNetworkingV1NamespacedNetworkPolicy, listNetworkingV1NetworkPolicyForAllNamespaces, patchNetworkingV1IngressClass, patchNetworkingV1NamespacedIngress, patchNetworkingV1NamespacedIngressStatus, patchNetworkingV1NamespacedNetworkPolicy, readNetworkingV1IngressClass, readNetworkingV1NamespacedIngress, readNetworkingV1NamespacedIngressStatus, readNetworkingV1NamespacedNetworkPolicy, replaceNetworkingV1IngressClass, replaceNetworkingV1NamespacedIngress, replaceNetworkingV1NamespacedIngressStatus, replaceNetworkingV1NamespacedNetworkPolicy, watchNetworkingV1IngressClass, watchNetworkingV1IngressClassList, watchNetworkingV1IngressListForAllNamespaces, watchNetworkingV1NamespacedIngress, watchNetworkingV1NamespacedIngressList, watchNetworkingV1NamespacedNetworkPolicy, watchNetworkingV1NamespacedNetworkPolicyList, watchNetworkingV1NetworkPolicyListForAllNamespaces

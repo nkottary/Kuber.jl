@@ -4,39 +4,49 @@
 
 @doc raw"""
     IoK8sApiCertificatesV1beta1CertificateSigningRequestCondition(;
+        lastTransitionTime=nothing,
         lastUpdateTime=nothing,
         message=nothing,
         reason=nothing,
+        status=nothing,
         type=nothing,
     )
 
+    - lastTransitionTime::IoK8sApimachineryPkgApisMetaV1Time : lastTransitionTime is the time the condition last transitioned from one status to another. If unset, when a new condition type is added or an existing condition&#39;s status is changed, the server defaults this to the current time.
     - lastUpdateTime::IoK8sApimachineryPkgApisMetaV1Time : timestamp for the last update to this condition
     - message::String : human readable message with details about the request state
     - reason::String : brief reason for the request state
-    - type::String : request approval state, currently Approved or Denied.
+    - status::String : Status of the condition, one of True, False, Unknown. Approved, Denied, and Failed conditions may not be \&quot;False\&quot; or \&quot;Unknown\&quot;. Defaults to \&quot;True\&quot;. If unset, should be treated as \&quot;True\&quot;.
+    - type::String : type of the condition. Known conditions include \&quot;Approved\&quot;, \&quot;Denied\&quot;, and \&quot;Failed\&quot;.
 """
 mutable struct IoK8sApiCertificatesV1beta1CertificateSigningRequestCondition <: SwaggerModel
+    lastTransitionTime::Any # spec type: Union{ Nothing, IoK8sApimachineryPkgApisMetaV1Time } # spec name: lastTransitionTime
     lastUpdateTime::Any # spec type: Union{ Nothing, IoK8sApimachineryPkgApisMetaV1Time } # spec name: lastUpdateTime
     message::Any # spec type: Union{ Nothing, String } # spec name: message
     reason::Any # spec type: Union{ Nothing, String } # spec name: reason
+    status::Any # spec type: Union{ Nothing, String } # spec name: status
     type::Any # spec type: Union{ Nothing, String } # spec name: type
 
-    function IoK8sApiCertificatesV1beta1CertificateSigningRequestCondition(;lastUpdateTime=nothing, message=nothing, reason=nothing, type=nothing)
+    function IoK8sApiCertificatesV1beta1CertificateSigningRequestCondition(;lastTransitionTime=nothing, lastUpdateTime=nothing, message=nothing, reason=nothing, status=nothing, type=nothing)
         o = new()
+        validate_property(IoK8sApiCertificatesV1beta1CertificateSigningRequestCondition, Symbol("lastTransitionTime"), lastTransitionTime)
+        setfield!(o, Symbol("lastTransitionTime"), lastTransitionTime)
         validate_property(IoK8sApiCertificatesV1beta1CertificateSigningRequestCondition, Symbol("lastUpdateTime"), lastUpdateTime)
         setfield!(o, Symbol("lastUpdateTime"), lastUpdateTime)
         validate_property(IoK8sApiCertificatesV1beta1CertificateSigningRequestCondition, Symbol("message"), message)
         setfield!(o, Symbol("message"), message)
         validate_property(IoK8sApiCertificatesV1beta1CertificateSigningRequestCondition, Symbol("reason"), reason)
         setfield!(o, Symbol("reason"), reason)
+        validate_property(IoK8sApiCertificatesV1beta1CertificateSigningRequestCondition, Symbol("status"), status)
+        setfield!(o, Symbol("status"), status)
         validate_property(IoK8sApiCertificatesV1beta1CertificateSigningRequestCondition, Symbol("type"), type)
         setfield!(o, Symbol("type"), type)
         o
     end
 end # type IoK8sApiCertificatesV1beta1CertificateSigningRequestCondition
 
-const _property_map_IoK8sApiCertificatesV1beta1CertificateSigningRequestCondition = Dict{Symbol,Symbol}(Symbol("lastUpdateTime")=>Symbol("lastUpdateTime"), Symbol("message")=>Symbol("message"), Symbol("reason")=>Symbol("reason"), Symbol("type")=>Symbol("type"))
-const _property_types_IoK8sApiCertificatesV1beta1CertificateSigningRequestCondition = Dict{Symbol,String}(Symbol("lastUpdateTime")=>"IoK8sApimachineryPkgApisMetaV1Time", Symbol("message")=>"String", Symbol("reason")=>"String", Symbol("type")=>"String")
+const _property_map_IoK8sApiCertificatesV1beta1CertificateSigningRequestCondition = Dict{Symbol,Symbol}(Symbol("lastTransitionTime")=>Symbol("lastTransitionTime"), Symbol("lastUpdateTime")=>Symbol("lastUpdateTime"), Symbol("message")=>Symbol("message"), Symbol("reason")=>Symbol("reason"), Symbol("status")=>Symbol("status"), Symbol("type")=>Symbol("type"))
+const _property_types_IoK8sApiCertificatesV1beta1CertificateSigningRequestCondition = Dict{Symbol,String}(Symbol("lastTransitionTime")=>"IoK8sApimachineryPkgApisMetaV1Time", Symbol("lastUpdateTime")=>"IoK8sApimachineryPkgApisMetaV1Time", Symbol("message")=>"String", Symbol("reason")=>"String", Symbol("status")=>"String", Symbol("type")=>"String")
 Base.propertynames(::Type{ IoK8sApiCertificatesV1beta1CertificateSigningRequestCondition }) = collect(keys(_property_map_IoK8sApiCertificatesV1beta1CertificateSigningRequestCondition))
 Swagger.property_type(::Type{ IoK8sApiCertificatesV1beta1CertificateSigningRequestCondition }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_IoK8sApiCertificatesV1beta1CertificateSigningRequestCondition[name]))}
 Swagger.field_name(::Type{ IoK8sApiCertificatesV1beta1CertificateSigningRequestCondition }, property_name::Symbol) =  _property_map_IoK8sApiCertificatesV1beta1CertificateSigningRequestCondition[property_name]
