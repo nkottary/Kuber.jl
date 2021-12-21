@@ -749,6 +749,7 @@ export convert, IoK8sApimachineryPkgApisMetaV1APIResource
 export convert, IoK8sApimachineryPkgApisMetaV1APIResourceList
 export convert, IoK8sApimachineryPkgApisMetaV1APIVersions
 export convert, IoK8sApimachineryPkgApisMetaV1DeleteOptions
+export convert, IoK8sApimachineryPkgApisMetaV1DeleteOptionsV2
 export convert, IoK8sApimachineryPkgApisMetaV1Duration
 export convert, IoK8sApimachineryPkgApisMetaV1FieldsV1
 export convert, IoK8sApimachineryPkgApisMetaV1GroupVersionForDiscovery
@@ -765,6 +766,8 @@ export convert, IoK8sApimachineryPkgApisMetaV1ServerAddressByClientCIDR
 export convert, IoK8sApimachineryPkgApisMetaV1Status
 export convert, IoK8sApimachineryPkgApisMetaV1StatusCause
 export convert, IoK8sApimachineryPkgApisMetaV1StatusDetails
+export convert, IoK8sApimachineryPkgApisMetaV1StatusDetailsV2
+export convert, IoK8sApimachineryPkgApisMetaV1StatusV2
 export convert, IoK8sApimachineryPkgApisMetaV1Time
 export convert, IoK8sApimachineryPkgApisMetaV1WatchEvent
 export convert, IoK8sApimachineryPkgRuntimeRawExtension
