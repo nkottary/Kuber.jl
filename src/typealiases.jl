@@ -544,6 +544,18 @@ module Typedefs
         const ClusterRoleBindingList = Kubernetes.IoK8sApiRbacV1beta1ClusterRoleBindingList
         const Role = Kubernetes.IoK8sApiRbacV1beta1Role
     end # module RbacAuthorizationV1beta1
+    module KarpenterShV1alpha5
+        using ..Kubernetes
+        const ProvisionerSpecLimits = Kubernetes.ShKarpenterV1alpha5ProvisionerSpecLimits
+        const ProvisionerList = Kubernetes.ShKarpenterV1alpha5ProvisionerList
+        const Provisioner = Kubernetes.ShKarpenterV1alpha5Provisioner
+        const ProvisionerSpec = Kubernetes.ShKarpenterV1alpha5ProvisionerSpec
+        const ProvisionerSpecTaints = Kubernetes.ShKarpenterV1alpha5ProvisionerSpecTaints
+        const ProvisionerStatus = Kubernetes.ShKarpenterV1alpha5ProvisionerStatus
+        const ProvisionerStatusConditions = Kubernetes.ShKarpenterV1alpha5ProvisionerStatusConditions
+        const StatusV2 = Kubernetes.IoK8sApimachineryPkgApisMetaV1StatusV2
+        const ProvisionerSpecRequirements = Kubernetes.ShKarpenterV1alpha5ProvisionerSpecRequirements
+    end # module KarpenterShV1alpha5
     module Batch
         using ..Kubernetes
         const APIGroup = Kubernetes.IoK8sApimachineryPkgApisMetaV1APIGroup

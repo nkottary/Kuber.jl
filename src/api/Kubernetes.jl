@@ -57,6 +57,7 @@ include("api_ExtensionsApi.jl")
 include("api_ExtensionsV1beta1Api.jl")
 include("api_FlowcontrolApiserverApi.jl")
 include("api_FlowcontrolApiserverV1alpha1Api.jl")
+include("api_KarpenterShV1alpha5Api.jl")
 include("api_LogsApi.jl")
 include("api_MetricsV1beta1Api.jl")
 include("api_NetworkingApi.jl")
@@ -781,9 +782,17 @@ export convert, IoK8sKubeAggregatorPkgApisApiregistrationV1beta1APIServiceList
 export convert, IoK8sKubeAggregatorPkgApisApiregistrationV1beta1APIServiceSpec
 export convert, IoK8sKubeAggregatorPkgApisApiregistrationV1beta1APIServiceStatus
 export convert, IoK8sKubeAggregatorPkgApisApiregistrationV1beta1ServiceReference
+export convert, ShKarpenterV1alpha5Provisioner
+export convert, ShKarpenterV1alpha5ProvisionerList
+export convert, ShKarpenterV1alpha5ProvisionerSpec
+export convert, ShKarpenterV1alpha5ProvisionerSpecLimits
+export convert, ShKarpenterV1alpha5ProvisionerSpecRequirements
+export convert, ShKarpenterV1alpha5ProvisionerSpecTaints
+export convert, ShKarpenterV1alpha5ProvisionerStatus
+export convert, ShKarpenterV1alpha5ProvisionerStatusConditions
 
 # export operations
-export convert, AdmissionregistrationApi, AdmissionregistrationV1Api, AdmissionregistrationV1beta1Api, ApiextensionsApi, ApiextensionsV1Api, ApiextensionsV1beta1Api, ApiregistrationApi, ApiregistrationV1Api, ApiregistrationV1beta1Api, ApisApi, AppsApi, AppsV1Api, AppsV1beta1Api, AppsV1beta2Api, AuditregistrationApi, AuditregistrationV1alpha1Api, AuthenticationApi, AuthenticationV1Api, AuthenticationV1beta1Api, AuthorizationApi, AuthorizationV1Api, AuthorizationV1beta1Api, AutoscalingApi, AutoscalingV1Api, AutoscalingV2beta1Api, AutoscalingV2beta2Api, BatchApi, BatchV1Api, BatchV1beta1Api, BatchV2alpha1Api, CertificatesApi, CertificatesV1beta1Api, CoordinationApi, CoordinationV1Api, CoordinationV1beta1Api, CoreApi, CoreV1Api, CustomMetricsV1beta1Api, DiscoveryApi, DiscoveryV1beta1Api, EventsApi, EventsV1beta1Api, ExtensionsApi, ExtensionsV1beta1Api, FlowcontrolApiserverApi, FlowcontrolApiserverV1alpha1Api, LogsApi, MetricsV1beta1Api, NetworkingApi, NetworkingV1Api, NetworkingV1beta1Api, NodeApi, NodeV1alpha1Api, NodeV1beta1Api, PolicyApi, PolicyV1beta1Api, RbacAuthorizationApi, RbacAuthorizationV1Api, RbacAuthorizationV1alpha1Api, RbacAuthorizationV1beta1Api, SchedulingApi, SchedulingV1Api, SchedulingV1alpha1Api, SchedulingV1beta1Api, SettingsApi, SettingsV1alpha1Api, StorageApi, StorageV1Api, StorageV1alpha1Api, StorageV1beta1Api, VersionApi
+export convert, AdmissionregistrationApi, AdmissionregistrationV1Api, AdmissionregistrationV1beta1Api, ApiextensionsApi, ApiextensionsV1Api, ApiextensionsV1beta1Api, ApiregistrationApi, ApiregistrationV1Api, ApiregistrationV1beta1Api, ApisApi, AppsApi, AppsV1Api, AppsV1beta1Api, AppsV1beta2Api, AuditregistrationApi, AuditregistrationV1alpha1Api, AuthenticationApi, AuthenticationV1Api, AuthenticationV1beta1Api, AuthorizationApi, AuthorizationV1Api, AuthorizationV1beta1Api, AutoscalingApi, AutoscalingV1Api, AutoscalingV2beta1Api, AutoscalingV2beta2Api, BatchApi, BatchV1Api, BatchV1beta1Api, BatchV2alpha1Api, CertificatesApi, CertificatesV1beta1Api, CoordinationApi, CoordinationV1Api, CoordinationV1beta1Api, CoreApi, CoreV1Api, CustomMetricsV1beta1Api, DiscoveryApi, DiscoveryV1beta1Api, EventsApi, EventsV1beta1Api, ExtensionsApi, ExtensionsV1beta1Api, FlowcontrolApiserverApi, FlowcontrolApiserverV1alpha1Api, KarpenterShV1alpha5Api, LogsApi, MetricsV1beta1Api, NetworkingApi, NetworkingV1Api, NetworkingV1beta1Api, NodeApi, NodeV1alpha1Api, NodeV1beta1Api, PolicyApi, PolicyV1beta1Api, RbacAuthorizationApi, RbacAuthorizationV1Api, RbacAuthorizationV1alpha1Api, RbacAuthorizationV1beta1Api, SchedulingApi, SchedulingV1Api, SchedulingV1alpha1Api, SchedulingV1beta1Api, SettingsApi, SettingsV1alpha1Api, StorageApi, StorageV1Api, StorageV1alpha1Api, StorageV1beta1Api, VersionApi
 
 export check_required, field_name, property_type, hasproperty, propertynames, validate_property, convert
 
