@@ -65,7 +65,7 @@
     - scaleIO::IoK8sApiCoreV1ScaleIOPersistentVolumeSource : ScaleIO represents a ScaleIO persistent volume attached and mounted on Kubernetes nodes.
     - storageClassName::String : Name of StorageClass to which this persistent volume belongs. Empty value means that this volume does not belong to any StorageClass.
     - storageos::IoK8sApiCoreV1StorageOSPersistentVolumeSource : StorageOS represents a StorageOS volume that is attached to the kubelet&#39;s host machine and mounted into the pod More info: https://examples.k8s.io/volumes/storageos/README.md
-    - volumeMode::String : volumeMode defines if a volume is intended to be used with a formatted filesystem or to remain in raw block state. Value of Filesystem is implied when not included in spec.
+    - volumeMode::String : volumeMode defines if a volume is intended to be used with a formatted filesystem or to remain in raw block state. Value of Filesystem is implied when not included in spec. This is a beta feature.
     - vsphereVolume::IoK8sApiCoreV1VsphereVirtualDiskVolumeSource : VsphereVolume represents a vSphere volume attached and mounted on kubelets host machine
 """
 mutable struct IoK8sApiCoreV1PersistentVolumeSpec <: SwaggerModel

@@ -2,7 +2,7 @@
 # Do not modify this file directly. Modify the swagger specification instead.
 
 
-@doc raw"""ComponentStatus (and ComponentStatusList) holds the cluster validation info. Deprecated: This API is deprecated in v1.19+
+@doc raw"""ComponentStatus (and ComponentStatusList) holds the cluster validation info.
 
     IoK8sApiCoreV1ComponentStatus(;
         apiVersion=nothing,

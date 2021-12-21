@@ -5,27 +5,22 @@
 @doc raw"""EndpointPort is a tuple that describes a single port.
 
     IoK8sApiCoreV1EndpointPort(;
-        appProtocol=nothing,
         name=nothing,
         port=nothing,
         protocol=nothing,
     )
 
-    - appProtocol::String : The application protocol for this port. This field follows standard Kubernetes label syntax. Un-prefixed names are reserved for IANA standard service names (as per RFC-6335 and http://www.iana.org/assignments/service-names). Non-standard protocols should use prefixed names such as mycompany.com/my-custom-protocol. This is a beta field that is guarded by the ServiceAppProtocol feature gate and enabled by default.
     - name::String : The name of this port.  This must match the &#39;name&#39; field in the corresponding ServicePort. Must be a DNS_LABEL. Optional only if one port is defined.
     - port::Int32 : The port number of the endpoint.
     - protocol::String : The IP protocol for this port. Must be UDP, TCP, or SCTP. Default is TCP.
 """
 mutable struct IoK8sApiCoreV1EndpointPort <: SwaggerModel
-    appProtocol::Any # spec type: Union{ Nothing, String } # spec name: appProtocol
     name::Any # spec type: Union{ Nothing, String } # spec name: name
     port::Any # spec type: Union{ Nothing, Int32 } # spec name: port
     protocol::Any # spec type: Union{ Nothing, String } # spec name: protocol
 
-    function IoK8sApiCoreV1EndpointPort(;appProtocol=nothing, name=nothing, port=nothing, protocol=nothing)
+    function IoK8sApiCoreV1EndpointPort(;name=nothing, port=nothing, protocol=nothing)
         o = new()
-        validate_property(IoK8sApiCoreV1EndpointPort, Symbol("appProtocol"), appProtocol)
-        setfield!(o, Symbol("appProtocol"), appProtocol)
         validate_property(IoK8sApiCoreV1EndpointPort, Symbol("name"), name)
         setfield!(o, Symbol("name"), name)
         validate_property(IoK8sApiCoreV1EndpointPort, Symbol("port"), port)
@@ -36,8 +31,8 @@ mutable struct IoK8sApiCoreV1EndpointPort <: SwaggerModel
     end
 end # type IoK8sApiCoreV1EndpointPort
 
-const _property_map_IoK8sApiCoreV1EndpointPort = Dict{Symbol,Symbol}(Symbol("appProtocol")=>Symbol("appProtocol"), Symbol("name")=>Symbol("name"), Symbol("port")=>Symbol("port"), Symbol("protocol")=>Symbol("protocol"))
-const _property_types_IoK8sApiCoreV1EndpointPort = Dict{Symbol,String}(Symbol("appProtocol")=>"String", Symbol("name")=>"String", Symbol("port")=>"Int32", Symbol("protocol")=>"String")
+const _property_map_IoK8sApiCoreV1EndpointPort = Dict{Symbol,Symbol}(Symbol("name")=>Symbol("name"), Symbol("port")=>Symbol("port"), Symbol("protocol")=>Symbol("protocol"))
+const _property_types_IoK8sApiCoreV1EndpointPort = Dict{Symbol,String}(Symbol("name")=>"String", Symbol("port")=>"Int32", Symbol("protocol")=>"String")
 Base.propertynames(::Type{ IoK8sApiCoreV1EndpointPort }) = collect(keys(_property_map_IoK8sApiCoreV1EndpointPort))
 Swagger.property_type(::Type{ IoK8sApiCoreV1EndpointPort }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_IoK8sApiCoreV1EndpointPort[name]))}
 Swagger.field_name(::Type{ IoK8sApiCoreV1EndpointPort }, property_name::Symbol) =  _property_map_IoK8sApiCoreV1EndpointPort[property_name]

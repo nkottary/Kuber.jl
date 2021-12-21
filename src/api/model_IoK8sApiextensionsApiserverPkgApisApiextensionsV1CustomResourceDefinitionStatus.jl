@@ -38,6 +38,8 @@ Swagger.property_type(::Type{ IoK8sApiextensionsApiserverPkgApisApiextensionsV1C
 Swagger.field_name(::Type{ IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinitionStatus }, property_name::Symbol) =  _property_map_IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinitionStatus[property_name]
 
 function check_required(o::IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinitionStatus)
+    (getproperty(o, Symbol("acceptedNames")) === nothing) && (return false)
+    (getproperty(o, Symbol("storedVersions")) === nothing) && (return false)
     true
 end
 

@@ -6,33 +6,23 @@
 
     IoK8sApiDiscoveryV1beta1EndpointConditions(;
         ready=nothing,
-        serving=nothing,
-        terminating=nothing,
     )
 
-    - ready::Bool : ready indicates that this endpoint is prepared to receive traffic, according to whatever system is managing the endpoint. A nil value indicates an unknown state. In most cases consumers should interpret this unknown state as ready. For compatibility reasons, ready should never be \&quot;true\&quot; for terminating endpoints.
-    - serving::Bool : serving is identical to ready except that it is set regardless of the terminating state of endpoints. This condition should be set to true for a ready endpoint that is terminating. If nil, consumers should defer to the ready condition. This field can be enabled with the EndpointSliceTerminatingCondition feature gate.
-    - terminating::Bool : terminating indicates that this endpoint is terminating. A nil value indicates an unknown state. Consumers should interpret this unknown state to mean that the endpoint is not terminating. This field can be enabled with the EndpointSliceTerminatingCondition feature gate.
+    - ready::Bool : ready indicates that this endpoint is prepared to receive traffic, according to whatever system is managing the endpoint. A nil value indicates an unknown state. In most cases consumers should interpret this unknown state as ready.
 """
 mutable struct IoK8sApiDiscoveryV1beta1EndpointConditions <: SwaggerModel
     ready::Any # spec type: Union{ Nothing, Bool } # spec name: ready
-    serving::Any # spec type: Union{ Nothing, Bool } # spec name: serving
-    terminating::Any # spec type: Union{ Nothing, Bool } # spec name: terminating
 
-    function IoK8sApiDiscoveryV1beta1EndpointConditions(;ready=nothing, serving=nothing, terminating=nothing)
+    function IoK8sApiDiscoveryV1beta1EndpointConditions(;ready=nothing)
         o = new()
         validate_property(IoK8sApiDiscoveryV1beta1EndpointConditions, Symbol("ready"), ready)
         setfield!(o, Symbol("ready"), ready)
-        validate_property(IoK8sApiDiscoveryV1beta1EndpointConditions, Symbol("serving"), serving)
-        setfield!(o, Symbol("serving"), serving)
-        validate_property(IoK8sApiDiscoveryV1beta1EndpointConditions, Symbol("terminating"), terminating)
-        setfield!(o, Symbol("terminating"), terminating)
         o
     end
 end # type IoK8sApiDiscoveryV1beta1EndpointConditions
 
-const _property_map_IoK8sApiDiscoveryV1beta1EndpointConditions = Dict{Symbol,Symbol}(Symbol("ready")=>Symbol("ready"), Symbol("serving")=>Symbol("serving"), Symbol("terminating")=>Symbol("terminating"))
-const _property_types_IoK8sApiDiscoveryV1beta1EndpointConditions = Dict{Symbol,String}(Symbol("ready")=>"Bool", Symbol("serving")=>"Bool", Symbol("terminating")=>"Bool")
+const _property_map_IoK8sApiDiscoveryV1beta1EndpointConditions = Dict{Symbol,Symbol}(Symbol("ready")=>Symbol("ready"))
+const _property_types_IoK8sApiDiscoveryV1beta1EndpointConditions = Dict{Symbol,String}(Symbol("ready")=>"Bool")
 Base.propertynames(::Type{ IoK8sApiDiscoveryV1beta1EndpointConditions }) = collect(keys(_property_map_IoK8sApiDiscoveryV1beta1EndpointConditions))
 Swagger.property_type(::Type{ IoK8sApiDiscoveryV1beta1EndpointConditions }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_IoK8sApiDiscoveryV1beta1EndpointConditions[name]))}
 Swagger.field_name(::Type{ IoK8sApiDiscoveryV1beta1EndpointConditions }, property_name::Symbol) =  _property_map_IoK8sApiDiscoveryV1beta1EndpointConditions[property_name]

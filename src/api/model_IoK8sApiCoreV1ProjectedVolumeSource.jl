@@ -9,7 +9,7 @@
         sources=nothing,
     )
 
-    - defaultMode::Int32 : Mode bits used to set permissions on created files by default. Must be an octal value between 0000 and 0777 or a decimal value between 0 and 511. YAML accepts both octal and decimal values, JSON requires decimal values for mode bits. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+    - defaultMode::Int32 : Mode bits to use on created files by default. Must be a value between 0 and 0777. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
     - sources::Vector{IoK8sApiCoreV1VolumeProjection} : list of volume projections
 """
 mutable struct IoK8sApiCoreV1ProjectedVolumeSource <: SwaggerModel
@@ -33,6 +33,7 @@ Swagger.property_type(::Type{ IoK8sApiCoreV1ProjectedVolumeSource }, name::Symbo
 Swagger.field_name(::Type{ IoK8sApiCoreV1ProjectedVolumeSource }, property_name::Symbol) =  _property_map_IoK8sApiCoreV1ProjectedVolumeSource[property_name]
 
 function check_required(o::IoK8sApiCoreV1ProjectedVolumeSource)
+    (getproperty(o, Symbol("sources")) === nothing) && (return false)
     true
 end
 

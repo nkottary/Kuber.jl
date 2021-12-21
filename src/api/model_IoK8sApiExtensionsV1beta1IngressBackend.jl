@@ -5,24 +5,19 @@
 @doc raw"""IngressBackend describes all endpoints for a given service and port.
 
     IoK8sApiExtensionsV1beta1IngressBackend(;
-        resource=nothing,
         serviceName=nothing,
         servicePort=nothing,
     )
 
-    - resource::IoK8sApiCoreV1TypedLocalObjectReference : Resource is an ObjectRef to another Kubernetes resource in the namespace of the Ingress object. If resource is specified, serviceName and servicePort must not be specified.
     - serviceName::String : Specifies the name of the referenced service.
     - servicePort::IoK8sApimachineryPkgUtilIntstrIntOrString : Specifies the port of the referenced service.
 """
 mutable struct IoK8sApiExtensionsV1beta1IngressBackend <: SwaggerModel
-    resource::Any # spec type: Union{ Nothing, IoK8sApiCoreV1TypedLocalObjectReference } # spec name: resource
     serviceName::Any # spec type: Union{ Nothing, String } # spec name: serviceName
     servicePort::Any # spec type: Union{ Nothing, IoK8sApimachineryPkgUtilIntstrIntOrString } # spec name: servicePort
 
-    function IoK8sApiExtensionsV1beta1IngressBackend(;resource=nothing, serviceName=nothing, servicePort=nothing)
+    function IoK8sApiExtensionsV1beta1IngressBackend(;serviceName=nothing, servicePort=nothing)
         o = new()
-        validate_property(IoK8sApiExtensionsV1beta1IngressBackend, Symbol("resource"), resource)
-        setfield!(o, Symbol("resource"), resource)
         validate_property(IoK8sApiExtensionsV1beta1IngressBackend, Symbol("serviceName"), serviceName)
         setfield!(o, Symbol("serviceName"), serviceName)
         validate_property(IoK8sApiExtensionsV1beta1IngressBackend, Symbol("servicePort"), servicePort)
@@ -31,13 +26,15 @@ mutable struct IoK8sApiExtensionsV1beta1IngressBackend <: SwaggerModel
     end
 end # type IoK8sApiExtensionsV1beta1IngressBackend
 
-const _property_map_IoK8sApiExtensionsV1beta1IngressBackend = Dict{Symbol,Symbol}(Symbol("resource")=>Symbol("resource"), Symbol("serviceName")=>Symbol("serviceName"), Symbol("servicePort")=>Symbol("servicePort"))
-const _property_types_IoK8sApiExtensionsV1beta1IngressBackend = Dict{Symbol,String}(Symbol("resource")=>"IoK8sApiCoreV1TypedLocalObjectReference", Symbol("serviceName")=>"String", Symbol("servicePort")=>"IoK8sApimachineryPkgUtilIntstrIntOrString")
+const _property_map_IoK8sApiExtensionsV1beta1IngressBackend = Dict{Symbol,Symbol}(Symbol("serviceName")=>Symbol("serviceName"), Symbol("servicePort")=>Symbol("servicePort"))
+const _property_types_IoK8sApiExtensionsV1beta1IngressBackend = Dict{Symbol,String}(Symbol("serviceName")=>"String", Symbol("servicePort")=>"IoK8sApimachineryPkgUtilIntstrIntOrString")
 Base.propertynames(::Type{ IoK8sApiExtensionsV1beta1IngressBackend }) = collect(keys(_property_map_IoK8sApiExtensionsV1beta1IngressBackend))
 Swagger.property_type(::Type{ IoK8sApiExtensionsV1beta1IngressBackend }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_IoK8sApiExtensionsV1beta1IngressBackend[name]))}
 Swagger.field_name(::Type{ IoK8sApiExtensionsV1beta1IngressBackend }, property_name::Symbol) =  _property_map_IoK8sApiExtensionsV1beta1IngressBackend[property_name]
 
 function check_required(o::IoK8sApiExtensionsV1beta1IngressBackend)
+    (getproperty(o, Symbol("serviceName")) === nothing) && (return false)
+    (getproperty(o, Symbol("servicePort")) === nothing) && (return false)
     true
 end
 

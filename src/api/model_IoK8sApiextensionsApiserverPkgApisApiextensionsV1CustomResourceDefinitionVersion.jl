@@ -6,8 +6,6 @@
 
     IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinitionVersion(;
         additionalPrinterColumns=nothing,
-        deprecated=nothing,
-        deprecationWarning=nothing,
         name=nothing,
         schema=nothing,
         served=nothing,
@@ -16,8 +14,6 @@
     )
 
     - additionalPrinterColumns::Vector{IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceColumnDefinition} : additionalPrinterColumns specifies additional columns returned in Table output. See https://kubernetes.io/docs/reference/using-api/api-concepts/#receiving-resources-as-tables for details. If no columns are specified, a single column displaying the age of the custom resource is used.
-    - deprecated::Bool : deprecated indicates this version of the custom resource API is deprecated. When set to true, API requests to this version receive a warning header in the server response. Defaults to false.
-    - deprecationWarning::String : deprecationWarning overrides the default warning returned to API clients. May only be set when &#x60;deprecated&#x60; is true. The default warning indicates this version is deprecated and recommends use of the newest served version of equal or greater stability, if one exists.
     - name::String : name is the version name, e.g. “v1”, “v2beta1”, etc. The custom resources are served under this version at &#x60;/apis/&lt;group&gt;/&lt;version&gt;/...&#x60; if &#x60;served&#x60; is true.
     - schema::IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceValidation : schema describes the schema used for validation, pruning, and defaulting of this version of the custom resource.
     - served::Bool : served is a flag enabling/disabling this version from being served via REST APIs
@@ -26,22 +22,16 @@
 """
 mutable struct IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinitionVersion <: SwaggerModel
     additionalPrinterColumns::Any # spec type: Union{ Nothing, Vector{IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceColumnDefinition} } # spec name: additionalPrinterColumns
-    deprecated::Any # spec type: Union{ Nothing, Bool } # spec name: deprecated
-    deprecationWarning::Any # spec type: Union{ Nothing, String } # spec name: deprecationWarning
     name::Any # spec type: Union{ Nothing, String } # spec name: name
     schema::Any # spec type: Union{ Nothing, IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceValidation } # spec name: schema
     served::Any # spec type: Union{ Nothing, Bool } # spec name: served
     storage::Any # spec type: Union{ Nothing, Bool } # spec name: storage
     subresources::Any # spec type: Union{ Nothing, IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceSubresources } # spec name: subresources
 
-    function IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinitionVersion(;additionalPrinterColumns=nothing, deprecated=nothing, deprecationWarning=nothing, name=nothing, schema=nothing, served=nothing, storage=nothing, subresources=nothing)
+    function IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinitionVersion(;additionalPrinterColumns=nothing, name=nothing, schema=nothing, served=nothing, storage=nothing, subresources=nothing)
         o = new()
         validate_property(IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinitionVersion, Symbol("additionalPrinterColumns"), additionalPrinterColumns)
         setfield!(o, Symbol("additionalPrinterColumns"), additionalPrinterColumns)
-        validate_property(IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinitionVersion, Symbol("deprecated"), deprecated)
-        setfield!(o, Symbol("deprecated"), deprecated)
-        validate_property(IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinitionVersion, Symbol("deprecationWarning"), deprecationWarning)
-        setfield!(o, Symbol("deprecationWarning"), deprecationWarning)
         validate_property(IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinitionVersion, Symbol("name"), name)
         setfield!(o, Symbol("name"), name)
         validate_property(IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinitionVersion, Symbol("schema"), schema)
@@ -56,8 +46,8 @@ mutable struct IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDe
     end
 end # type IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinitionVersion
 
-const _property_map_IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinitionVersion = Dict{Symbol,Symbol}(Symbol("additionalPrinterColumns")=>Symbol("additionalPrinterColumns"), Symbol("deprecated")=>Symbol("deprecated"), Symbol("deprecationWarning")=>Symbol("deprecationWarning"), Symbol("name")=>Symbol("name"), Symbol("schema")=>Symbol("schema"), Symbol("served")=>Symbol("served"), Symbol("storage")=>Symbol("storage"), Symbol("subresources")=>Symbol("subresources"))
-const _property_types_IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinitionVersion = Dict{Symbol,String}(Symbol("additionalPrinterColumns")=>"Vector{IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceColumnDefinition}", Symbol("deprecated")=>"Bool", Symbol("deprecationWarning")=>"String", Symbol("name")=>"String", Symbol("schema")=>"IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceValidation", Symbol("served")=>"Bool", Symbol("storage")=>"Bool", Symbol("subresources")=>"IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceSubresources")
+const _property_map_IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinitionVersion = Dict{Symbol,Symbol}(Symbol("additionalPrinterColumns")=>Symbol("additionalPrinterColumns"), Symbol("name")=>Symbol("name"), Symbol("schema")=>Symbol("schema"), Symbol("served")=>Symbol("served"), Symbol("storage")=>Symbol("storage"), Symbol("subresources")=>Symbol("subresources"))
+const _property_types_IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinitionVersion = Dict{Symbol,String}(Symbol("additionalPrinterColumns")=>"Vector{IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceColumnDefinition}", Symbol("name")=>"String", Symbol("schema")=>"IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceValidation", Symbol("served")=>"Bool", Symbol("storage")=>"Bool", Symbol("subresources")=>"IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceSubresources")
 Base.propertynames(::Type{ IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinitionVersion }) = collect(keys(_property_map_IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinitionVersion))
 Swagger.property_type(::Type{ IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinitionVersion }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinitionVersion[name]))}
 Swagger.field_name(::Type{ IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinitionVersion }, property_name::Symbol) =  _property_map_IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinitionVersion[property_name]
