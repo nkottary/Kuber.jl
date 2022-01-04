@@ -9,6 +9,15 @@ const KuberTypeAliasesUnique = Dict{String,Vector{Pair{String,String}}}
 const BaseTypes = ("String", "Float64", "Float32", "Int", "Int64", "Int32", "Int16", "UInt", "UInt64", "UInt32", "UInt16", "DateTime", "Bool", "Nothing")
 const ModelPrefixes = ("IoK8sApimachineryPkgApis", "IoK8sApimachineryPkg", "IoK8sApi", "IoK8sKubeAggregatorPkgApis", "IoK8sApiextensionsApiserverPkgApis")
 
+const CrdModelnameApiMap = Dict{String,String}(
+    "OrgProjectcalicoCrdV1" => "CrdProjectcalicoOrgV1",
+    "ComJuliahubV1beta1" => "JuliahubComV1beta1",
+    "ComCoreosDatabaseEtcdV1beta2" => "EtcdDatabaseCoreosComV1beta2",
+    "ShKarpenterV1alpha5" => "KarpenterShV1alpha5",
+    "ComAmazonawsK8sCrdV1alpha1" => "CrdK8sAmazonawsComV1alpha1",
+    "AwsK8sVpcresourcesV1beta1" => "VpcresourcesK8sAwsV1beta1",
+)
+
 function get_swagger_ctx_call_return_type(fn_body)
     all_calls = findall(x->CSTParser.isbinarysyntax(x), fn_body.args)
     for nidx in all_calls
@@ -82,6 +91,14 @@ function kuberapitypes(file::String, aliases_set::KuberTypeAliasesSet)
 end
 
 function find_matching_api(sorted_apis::Vector{String}, model_name::String)
+    for modelpfx in keys(CrdModelnameApiMap)
+        if startswith(model_name, modelpfx)
+            api_pfx = CrdModelnameApiMap[modelpfx]
+            api_idx = findfirst(x->startswith(x, api_pfx), sorted_apis)
+            return (api_idx !== nothing) ? api_idx : nothing
+        end
+    end
+
     rbac_apis = map(x->startswith(x, "RbacAuthorization") ? replace(x, "Authorization"=>"") : x, sorted_apis)
     flowcontrol_apis = map(x->startswith(x, "FlowcontrolApiserver") ? replace(x, "Apiserver"=>"") : x, sorted_apis)
 
@@ -95,6 +112,12 @@ function find_matching_api(sorted_apis::Vector{String}, model_name::String)
 end
 
 function get_common_name(sorted_apis::Vector{String}, model_name::String)
+    for modelpfx in keys(CrdModelnameApiMap)
+        if startswith(model_name, modelpfx)
+            return replace(model_name, modelpfx=>"")
+        end
+    end
+
     rbac_apis = map(x->startswith(x, "RbacAuthorization") ? replace(x, "Authorization"=>"") : x, sorted_apis)
     flowcontrol_apis = map(x->startswith(x, "FlowcontrolApiserver") ? replace(x, "Apiserver"=>"") : x, sorted_apis)
 

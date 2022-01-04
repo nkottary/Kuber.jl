@@ -544,6 +544,18 @@ module Typedefs
         const ClusterRoleBindingList = Kubernetes.IoK8sApiRbacV1beta1ClusterRoleBindingList
         const Role = Kubernetes.IoK8sApiRbacV1beta1Role
     end # module RbacAuthorizationV1beta1
+    module KarpenterShV1alpha5
+        using ..Kubernetes
+        const ProvisionerSpecLimits = Kubernetes.ShKarpenterV1alpha5ProvisionerSpecLimits
+        const ProvisionerList = Kubernetes.ShKarpenterV1alpha5ProvisionerList
+        const Provisioner = Kubernetes.ShKarpenterV1alpha5Provisioner
+        const ProvisionerSpec = Kubernetes.ShKarpenterV1alpha5ProvisionerSpec
+        const ProvisionerSpecTaints = Kubernetes.ShKarpenterV1alpha5ProvisionerSpecTaints
+        const ProvisionerStatus = Kubernetes.ShKarpenterV1alpha5ProvisionerStatus
+        const ProvisionerStatusConditions = Kubernetes.ShKarpenterV1alpha5ProvisionerStatusConditions
+        const StatusV2 = Kubernetes.IoK8sApimachineryPkgApisMetaV1StatusV2
+        const ProvisionerSpecRequirements = Kubernetes.ShKarpenterV1alpha5ProvisionerSpecRequirements
+    end # module KarpenterShV1alpha5
     module Batch
         using ..Kubernetes
         const APIGroup = Kubernetes.IoK8sApimachineryPkgApisMetaV1APIGroup
@@ -697,6 +709,7 @@ module Typedefs
         const WatchEvent = Kubernetes.IoK8sApimachineryPkgApisMetaV1WatchEvent
         const StatusDetails = Kubernetes.IoK8sApimachineryPkgApisMetaV1StatusDetails
         const APIGroupList = Kubernetes.IoK8sApimachineryPkgApisMetaV1APIGroupList
+        const DeleteOptionsV2 = Kubernetes.IoK8sApimachineryPkgApisMetaV1DeleteOptionsV2
         const GroupVersionForDiscovery = Kubernetes.IoK8sApimachineryPkgApisMetaV1GroupVersionForDiscovery
         const ListMeta = Kubernetes.IoK8sApimachineryPkgApisMetaV1ListMeta
         const Status = Kubernetes.IoK8sApimachineryPkgApisMetaV1Status
@@ -707,11 +720,13 @@ module Typedefs
         const LabelSelector = Kubernetes.IoK8sApimachineryPkgApisMetaV1LabelSelector
         const APIResourceList = Kubernetes.IoK8sApimachineryPkgApisMetaV1APIResourceList
         const ManagedFieldsEntry = Kubernetes.IoK8sApimachineryPkgApisMetaV1ManagedFieldsEntry
+        const StatusV2 = Kubernetes.IoK8sApimachineryPkgApisMetaV1StatusV2
         const StatusCause = Kubernetes.IoK8sApimachineryPkgApisMetaV1StatusCause
         const DeleteOptions = Kubernetes.IoK8sApimachineryPkgApisMetaV1DeleteOptions
         const LabelSelectorRequirement = Kubernetes.IoK8sApimachineryPkgApisMetaV1LabelSelectorRequirement
         const ServerAddressByClientCIDR = Kubernetes.IoK8sApimachineryPkgApisMetaV1ServerAddressByClientCIDR
         const APIResource = Kubernetes.IoK8sApimachineryPkgApisMetaV1APIResource
+        const StatusDetailsV2 = Kubernetes.IoK8sApimachineryPkgApisMetaV1StatusDetailsV2
         const OwnerReference = Kubernetes.IoK8sApimachineryPkgApisMetaV1OwnerReference
         const Preconditions = Kubernetes.IoK8sApimachineryPkgApisMetaV1Preconditions
     end # module MetaV1
@@ -858,6 +873,7 @@ module Typedefs
         const PodTemplateSpec = Kubernetes.IoK8sApiCoreV1PodTemplateSpec
         const VsphereVirtualDiskVolumeSource = Kubernetes.IoK8sApiCoreV1VsphereVirtualDiskVolumeSource
         const FlexPersistentVolumeSource = Kubernetes.IoK8sApiCoreV1FlexPersistentVolumeSource
+        const StatusV2 = Kubernetes.IoK8sApimachineryPkgApisMetaV1StatusV2
         const Probe = Kubernetes.IoK8sApiCoreV1Probe
         const HostAlias = Kubernetes.IoK8sApiCoreV1HostAlias
         const TypedLocalObjectReference = Kubernetes.IoK8sApiCoreV1TypedLocalObjectReference
@@ -895,6 +911,7 @@ module Typedefs
         const Event = Kubernetes.IoK8sApiCoreV1Event
         const EnvVar = Kubernetes.IoK8sApiCoreV1EnvVar
         const FCVolumeSource = Kubernetes.IoK8sApiCoreV1FCVolumeSource
+        const StatusDetailsV2 = Kubernetes.IoK8sApimachineryPkgApisMetaV1StatusDetailsV2
         const VolumeProjection = Kubernetes.IoK8sApiCoreV1VolumeProjection
         const OwnerReference = Kubernetes.IoK8sApimachineryPkgApisMetaV1OwnerReference
         const FieldsV1 = Kubernetes.IoK8sApimachineryPkgApisMetaV1FieldsV1
@@ -912,6 +929,7 @@ module Typedefs
         const EnvVarSource = Kubernetes.IoK8sApiCoreV1EnvVarSource
         const SecretProjection = Kubernetes.IoK8sApiCoreV1SecretProjection
         const ConfigMapVolumeSource = Kubernetes.IoK8sApiCoreV1ConfigMapVolumeSource
+        const DeleteOptionsV2 = Kubernetes.IoK8sApimachineryPkgApisMetaV1DeleteOptionsV2
         const EventSeries = Kubernetes.IoK8sApiCoreV1EventSeries
         const PodStatus = Kubernetes.IoK8sApiCoreV1PodStatus
         const ReplicationControllerStatus = Kubernetes.IoK8sApiCoreV1ReplicationControllerStatus
